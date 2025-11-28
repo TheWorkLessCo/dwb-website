@@ -1,0 +1,21 @@
+# Robots.txt for Dallas Window Butler
+# https://dallaswindowbutler.com
+
+User-agent: *
+Allow: /
+
+# Disallow offer pages (landing pages)
+Disallow: /offer/
+
+# Disallow API routes
+Disallow: /api/
+
+# Allow all service area pages for local SEO
+Allow: /rockwall-windows
+Allow: /mckinney-windows
+Allow: /allen-windows
+Allow: /plano-windows
+Allow: /north-richardson-windows
+
+# Sitemap location
+Sitemap: https://dallaswindowbutler.com/sitemap.xml
