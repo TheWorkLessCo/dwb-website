@@ -1,10 +1,13 @@
+import type { Metadata } from "next"
 import { Header } from "@/components/header"
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Window Replacement Special Offer - Rockwall, TX | Dallas Window Butler",
   description:
     "$100 OFF per window replacement in Rockwall, TX. Energy-efficient windows with professional installation. Get your free quote today!",
-  canonical: "https://YOURDOMAIN.com/offer/windows-rockwall",
+  alternates: {
+    canonical: "https://dallaswindowbutler.com/offer/windows-rockwall",
+  },
 }
 
 export default function WindowsRockwallOfferPage() {

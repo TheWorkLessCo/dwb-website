@@ -158,8 +158,6 @@ export default function AllenWindowsPage() {
               src: "/allen-texas-suburban-neighborhoods-with-modern-ene.jpg",
               alt: "Professional window replacement in Allen, TX suburban homes",
             },
-            internalLinking:
-              "Looking for window replacement in other areas? We also serve Rockwall, McKinney, Plano, and North Richardson.",
           },
         }}
         customHeadings={{

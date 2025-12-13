@@ -14,6 +14,13 @@ export interface CityData {
     hero: string
     alt: string
   }
+  uniqueContent?: {
+    localizedText: string
+    geoTaggedImage?: {
+      src: string
+      alt?: string
+    }
+  }
 }
 
 export const cityData: Record<string, CityData> = {

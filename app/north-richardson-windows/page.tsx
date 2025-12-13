@@ -162,8 +162,6 @@ export default function NorthRichardsonWindowsPage() {
               src: "/north-richardson-cityline-modern-condos-and-tradit.jpg",
               alt: "Professional window replacement in North Richardson, TX condos and homes",
             },
-            internalLinking:
-              "Looking for window replacement in other areas? We also serve Rockwall, McKinney, Allen, and Plano.",
           },
         }}
         customHeadings={{

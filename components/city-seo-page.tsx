@@ -24,6 +24,13 @@ interface CityData {
     text: string
     rating: number
   }>
+  uniqueContent?: {
+    localizedText: string
+    geoTaggedImage?: {
+      src: string
+      alt?: string
+    }
+  }
 }
 
 interface CustomHeadings {

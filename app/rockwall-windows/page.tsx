@@ -158,8 +158,6 @@ export default function RockwallWindowsPage() {
               src: "/rockwall-lakeside-homes-with-new-windows.jpg",
               alt: "Professional window replacement in Rockwall, TX lakeside homes",
             },
-            internalLinking:
-              "Looking for window replacement in other areas? We also serve McKinney, Allen, Plano, and North Richardson.",
           },
         }}
         customHeadings={{

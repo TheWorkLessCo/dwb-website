@@ -6,7 +6,9 @@ export const metadata: Metadata = {
   title: "Best Window Replacement in McKinney, TX | Dallas Window Butler",
   description:
     "Choose Dallas Window Butler for the best window replacement in McKinney, TX. Energy-efficient installs, IG unit repair, and trusted 5-star service. Get your free consultation today!",
-  canonical: "https://dallaswindowbutler.com/mckinney-windows",
+  alternates: {
+    canonical: "https://dallaswindowbutler.com/mckinney-windows",
+  },
 }
 
 export default function McKinneyWindowsPage() {
@@ -147,8 +149,6 @@ export default function McKinneyWindowsPage() {
               src: "/mckinney-historic-downtown-homes-with-energy-effic.jpg",
               alt: "Professional window replacement in McKinney, TX historic and modern homes",
             },
-            internalLinking:
-              "Looking for window replacement in other areas? We also serve Rockwall, Allen, Plano, and North Richardson.",
           },
         }}
         customHeadings={{

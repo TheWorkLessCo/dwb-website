@@ -158,8 +158,6 @@ export default function PlanoWindowsPage() {
               src: "/plano-texas-luxury-homes-legacy-west-with-premium-.jpg",
               alt: "Professional window replacement in Plano, TX luxury homes and developments",
             },
-            internalLinking:
-              "Looking for window replacement in other areas? We also serve Rockwall, McKinney, Allen, and North Richardson.",
           },
         }}
         customHeadings={{

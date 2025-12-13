@@ -7,7 +7,9 @@ export const metadata: Metadata = {
   title: "Window Replacement in Rockwall, TX | Dallas Window Butler",
   description:
     "Trusted for professional window replacement, glass/IG unit repair, and door replacement in Rockwall. Energy-efficient, lifetime-backed installs.",
-  canonical: "https://YOURDOMAIN.com/services/rockwall",
+  alternates: {
+    canonical: "https://dallaswindowbutler.com/services/rockwall",
+  },
 }
 
 export default function RockwallServicePage() {
