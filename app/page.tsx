@@ -115,23 +115,20 @@ export default function HomePage() {
             <div className="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
               <div className="prose prose-lg mx-auto text-center">
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  Dallas Window Butler has been the trusted choice for window replacement in Rockwall, McKinney, Allen,
-                  Plano, and North Richardson for over a decade. As North Texas's leading local window company, we
-                  specialize in energy-efficient windows that dramatically reduce your utility bills while enhancing
-                  your home's comfort and curb appeal.
+                  Dallas Window Butler has helped thousands of Rockwall, McKinney, Allen, Plano, and North Richardson
+                  homeowners cut their energy bills by up to 30% with premium replacement windows. Since 2010, we've
+                  built our reputation on one promise: windows that work, installed right, guaranteed for life.
                 </p>
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  Our expert team understands the unique challenges of Texas weather – from scorching summers to
-                  unpredictable storms. That's why we exclusively install premium vinyl replacement windows designed to
-                  withstand extreme temperatures while providing superior insulation. Whether you need complete window
-                  replacement or specialized glass/IG unit replacement for fogged windows, we deliver professional
-                  installation backed by lifetime guarantees.
+                  Texas weather is brutal on windows. Scorching summers fade and crack inferior materials. Winter storms
+                  test every seal. That's why we install only Energy Star-certified vinyl windows engineered for our
+                  climate—windows that keep cool air in during summer and protect your home year-round.
                 </p>
                 <p className="text-gray-700 leading-relaxed">
-                  From initial consultation to final cleanup, we make the window replacement process simple and
-                  stress-free. Our no-pressure approach, transparent pricing, and commitment to customer satisfaction
-                  have earned us hundreds of five-star reviews from homeowners throughout the Dallas area. Experience
-                  the difference that quality windows and expert craftsmanship can make for your home.
+                  Whether you need complete window replacement or just fogged glass panes fixed, our family-owned team
+                  makes it simple. Free in-home consultation with zero sales pressure. Clear pricing, no surprises.
+                  Professional installation in as little as one day, with cleanup that leaves your home spotless.
+                  Experience the difference that quality windows and expert craftsmanship make for your home.
                 </p>
               </div>
             </div>

@@ -49,10 +49,10 @@ export function Hero() {
 
                 <div className="space-y-4">
                   <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-balance font-semibold">
-                    Lower Energy Bills & Boost Home Value with Dallas Window Butler
+                    Save $100+ Monthly on Energy Bills with Premium Windows That Never Leak
                   </h1>
                   <p className="text-lg sm:text-xl md:text-2xl text-gray-200 leading-relaxed text-pretty">
-                    Expert window replacement, glass/IG repair, and patio door installation across DFW. Energy Star certified, lifetime warranty, family-owned since 2010.
+                    Family-owned since 2010, we've helped thousands of DFW homeowners cut cooling costs while protecting their investment. Free consultation, no-pressure quotes, and installation you can trust for life.
                   </p>
                 </div>
 
@@ -63,7 +63,7 @@ export function Hero() {
                       <Check className="w-4 h-4 text-white" />
                     </div>
                     <span className="text-base sm:text-lg text-gray-100 leading-relaxed">
-                      112+ five-star reviews from DFW homeowners
+                      Trusted by 112+ DFW families with perfect 5-star reviews
                     </span>
                   </div>
                   <div className="flex items-start gap-3">
@@ -71,7 +71,7 @@ export function Hero() {
                       <Check className="w-4 h-4 text-white" />
                     </div>
                     <span className="text-base sm:text-lg text-gray-100 leading-relaxed">
-                      Lifetime leak-free guarantee on every install
+                      Lifetime workmanship guarantee—if we install it, we fix it free, forever
                     </span>
                   </div>
                 </div>
