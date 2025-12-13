@@ -44,26 +44,26 @@ export function Hero() {
               {/* Left Column - Copy */}
               <div className="text-white space-y-6 lg:space-y-8">
                 <div className="text-sm sm:text-base text-[#049BF2] font-medium uppercase tracking-wide">
-                  For Rockwall & Nearby Homeowners
+                  Serving Dallas-Fort Worth Metroplex
                 </div>
 
                 <div className="space-y-4">
                   <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-balance font-semibold">
-                    BEST REPLACEMENT WINDOWS IN ROCKWALL, TX
+                    Lower Energy Bills & Boost Home Value with Dallas Window Butler
                   </h1>
                   <p className="text-lg sm:text-xl md:text-2xl text-gray-200 leading-relaxed text-pretty">
-                    Energy-efficient window replacement with expert glass/IG unit repair and door replacement you can
-                    trust.
+                    Expert window replacement, glass/IG repair, and patio door installation across DFW. Energy Star certified, lifetime warranty, family-owned since 2010.
                   </p>
                 </div>
 
+                {/* Trust bullets - concise and result-focused */}
                 <div className="space-y-3 sm:space-y-4">
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-6 h-6 bg-[#049BF2] rounded-full flex items-center justify-center mt-0.5">
                       <Check className="w-4 h-4 text-white" />
                     </div>
                     <span className="text-base sm:text-lg text-gray-100 leading-relaxed">
-                      No-pressure in-home consultation
+                      112+ five-star reviews from DFW homeowners
                     </span>
                   </div>
                   <div className="flex items-start gap-3">
@@ -71,20 +71,13 @@ export function Hero() {
                       <Check className="w-4 h-4 text-white" />
                     </div>
                     <span className="text-base sm:text-lg text-gray-100 leading-relaxed">
-                      Top brands, expert installation
-                    </span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 bg-[#049BF2] rounded-full flex items-center justify-center mt-0.5">
-                      <Check className="w-4 h-4 text-white" />
-                    </div>
-                    <span className="text-base sm:text-lg text-gray-100 leading-relaxed">
-                      Lifetime-backed workmanship
+                      Lifetime leak-free guarantee on every install
                     </span>
                   </div>
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2">
+                  {/* Primary CTA - Get Free Quote */}
                   <Button
                     size="lg"
                     className="bg-[#049BF2] hover:bg-[#049BF2]/90 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto"
@@ -94,21 +87,22 @@ export function Hero() {
                       href={JOBBER_FORM_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label="Open request form to get a free quote"
+                      aria-label="Get free quote from Dallas Window Butler"
                       {...trackingAttrs}
                     >
-                      Get My Free Quote
+                      Get Free Quote
                     </a>
                   </Button>
+                  {/* Secondary CTA - Call Now (mobile-visible) */}
                   <Button
                     variant="outline"
                     size="lg"
                     className="border-2 border-white text-white hover:bg-white hover:text-[#049BF2] px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold bg-transparent w-full sm:w-auto"
                     asChild
                   >
-                    <a href="tel:+14696408551">
+                    <a href="tel:4696408551" aria-label="Call Dallas Window Butler now">
                       <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                      Call (469) 640-8551
+                      Call Now
                     </a>
                   </Button>
                 </div>
