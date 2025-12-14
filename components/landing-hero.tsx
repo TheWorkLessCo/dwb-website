@@ -3,10 +3,10 @@
 import { Button } from "@/components/ui/button"
 import { Check, Phone } from "lucide-react"
 import { OfferCardV2 } from "@/components/offer-card-v2" // Updated import to use OfferCardV2 instead of missing LandingOfferCard
+import { CTA_CONFIG } from "@/lib/cta"
 
 export function LandingHero() {
-  const JOBBER_FORM_URL =
-    "https://clienthub.getjobber.com/client_hubs/765818e4-20d7-4c73-8ea5-113760712b29/public/work_request/new?source=social_media"
+  const { phoneHref, phoneDisplay, quoteHref, primaryLabel, secondaryLabel } = CTA_CONFIG
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
@@ -85,13 +85,9 @@ export function LandingHero() {
                   className="bg-[#049BF2] hover:bg-[#049BF2]/90 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto"
                   asChild
                 >
-                  <a
-                    href={JOBBER_FORM_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Open request form to get a free quote"
-                  >
-                    Get My Free Quote
+                  <a href={phoneHref} aria-label={`Call Dallas Window Butler now at ${phoneDisplay}`}>
+                    <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                    {primaryLabel}
                   </a>
                 </Button>
                 <Button
@@ -100,9 +96,8 @@ export function LandingHero() {
                   className="border-2 border-white text-white hover:bg-white hover:text-[#049BF2] px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold bg-transparent w-full sm:w-auto"
                   asChild
                 >
-                  <a href="tel:+14696408551">
-                    <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                    Call (469) 640-8551
+                  <a href={quoteHref} aria-label="Open request form to get a free quote">
+                    {secondaryLabel}
                   </a>
                 </Button>
               </div>
@@ -133,7 +128,7 @@ export function LandingHero() {
 
             {/* Right Column - OfferCardV2 */}
             <div className="w-full max-w-full mx-auto lg:mx-0 lg:justify-self-end overflow-x-hidden">
-              <OfferCardV2 primaryCtaHref={JOBBER_FORM_URL} />
+              <OfferCardV2 primaryCtaHref={quoteHref} />
             </div>
           </div>
         </div>

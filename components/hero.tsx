@@ -1,14 +1,14 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Check, Phone } from 'lucide-react'
+import { Check, Phone } from "lucide-react"
 import { OfferCardV2 } from "@/components/offer-card-v2"
 import { getTrackingAttributes } from "@/lib/tracking"
+import { CTA_CONFIG } from "@/lib/cta"
 
 export function Hero() {
   const trackingAttrs = getTrackingAttributes("home-hero")
-  const JOBBER_FORM_URL =
-    "https://clienthub.getjobber.com/client_hubs/765818e4-20d7-4c73-8ea5-113760712b29/public/work_request/new?source=social_media"
+  const { phoneHref, phoneDisplay, quoteHref, primaryLabel, secondaryLabel } = CTA_CONFIG
 
   return (
     <>
@@ -91,9 +91,9 @@ export function Hero() {
                     className="bg-[#049BF2] hover:bg-[#049BF2]/90 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto"
                     asChild
                   >
-                    <a href="tel:4696408551" aria-label="Call Dallas Window Butler now">
+                    <a href={phoneHref} aria-label={`Call Dallas Window Butler now at ${phoneDisplay}`}>
                       <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                      Call Now
+                      {primaryLabel}
                     </a>
                   </Button>
                   {/* Secondary CTA - Get Free Quote */}
@@ -103,14 +103,8 @@ export function Hero() {
                     className="border-2 border-white text-white hover:bg-white hover:text-[#049BF2] px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold bg-transparent w-full sm:w-auto"
                     asChild
                   >
-                    <a
-                      href={JOBBER_FORM_URL}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="Get free quote from Dallas Window Butler"
-                      {...trackingAttrs}
-                    >
-                      Get My Free Quote
+                    <a href={quoteHref} aria-label="Get free quote from Dallas Window Butler" {...trackingAttrs}>
+                      {secondaryLabel}
                     </a>
                   </Button>
                 </div>
@@ -141,7 +135,7 @@ export function Hero() {
 
               {/* Right Column - OfferCard */}
               <div className="w-full max-w-full mx-auto lg:mx-0 lg:justify-self-end overflow-x-hidden">
-                <OfferCardV2 primaryCtaHref={JOBBER_FORM_URL} />
+                <OfferCardV2 primaryCtaHref={quoteHref} />
 
                 <div className="flex justify-center items-center gap-4 mt-6">
                   <img

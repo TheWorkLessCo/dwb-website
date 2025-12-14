@@ -11,6 +11,7 @@ import { McKinneyComparisonTable } from "@/components/mckinney-comparison-table"
 import { OfferCardV2 } from "@/components/offer-card-v2"
 import { WhyChooseSix } from "@/components/why-choose-six"
 import ImageBridge from "@/components/ImageBridge"
+import { CTA_CONFIG, ALT_SECONDARY_LABEL } from "@/lib/cta"
 
 interface CityData {
   name: string
@@ -45,6 +46,7 @@ interface CitySeoPageProps {
 
 export function CitySeoPage({ cityData, customHeadings }: CitySeoPageProps) {
   const { name: cityName, state, neighborhoods, landmarks, localIssues, testimonials } = cityData
+  const { phoneDisplay, phoneHref, quoteHref, primaryLabel, secondaryLabel } = CTA_CONFIG
 
   const getH1 = () => {
     if (customHeadings?.h1) return customHeadings.h1
@@ -219,22 +221,20 @@ export function CitySeoPage({ cityData, customHeadings }: CitySeoPageProps) {
               <div className="mt-6 flex flex-col sm:flex-row sm:items-center gap-4">
                 {/* Primary CTA */}
                 <a
-                  href="https://clienthub.getjobber.com/client_hubs/765818e4-20d7-4c73-8ea5-113760712b29/public/work_request/new?source=social_media"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={quoteHref}
                   className="inline-flex items-center justify-center rounded-md bg-[#049BF2] px-6 py-3 text-white font-semibold shadow-md hover:bg-[#038ad8] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#049BF2] transition"
                   aria-label="Open request form to get a free quote"
                 >
-                  Get My Free Quote
+                  {secondaryLabel}
                 </a>
 
                 {/* Phone CTA */}
                 <a
-                  href="tel:+14696408551"
+                  href={phoneHref}
                   className="inline-flex items-center justify-center rounded-md border border-[#049BF2] px-6 py-3 text-[#049BF2] font-semibold hover:bg-[#049BF2] hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#049BF2] transition"
-                  aria-label="Call Dallas Window Butler at (469) 640-8551"
+                  aria-label={`Call Dallas Window Butler at ${phoneDisplay}`}
                 >
-                  Call (469) 640-8551
+                  {primaryLabel}
                 </a>
               </div>
 
@@ -301,10 +301,10 @@ export function CitySeoPage({ cityData, customHeadings }: CitySeoPageProps) {
             {/* Right Column - Offer Card */}
             <div className="lg:justify-self-end w-full max-w-md">
               <OfferCardV2
-                primaryCtaHref="/book#form"
+                primaryCtaHref={quoteHref}
                 primaryCtaLabel="CLAIM MY DISCOUNT"
-                tel="+14696408551"
-                telDisplay="(469) 640-8551"
+                tel={phoneHref.replace("tel:", "")}
+                telDisplay={phoneDisplay}
                 showPhoneCta={true}
               />
             </div>
@@ -443,7 +443,7 @@ export function CitySeoPage({ cityData, customHeadings }: CitySeoPageProps) {
               data-offer="100off-per-window"
               data-city={cityData.slug}
             >
-              <Link href="/book#form">Get My Free Quote</Link>
+              <Link href={quoteHref}>{secondaryLabel}</Link>
             </Button>
           </div>
         </div>
@@ -528,7 +528,7 @@ export function CitySeoPage({ cityData, customHeadings }: CitySeoPageProps) {
                   data-offer="100off-per-window"
                   data-city={cityData.slug}
                 >
-                  <Link href="/book#form">Get Quote</Link>
+                  <Link href={quoteHref}>{ALT_SECONDARY_LABEL}</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -549,7 +549,7 @@ export function CitySeoPage({ cityData, customHeadings }: CitySeoPageProps) {
                   data-offer="100off-per-window"
                   data-city={cityData.slug}
                 >
-                  <Link href="/book#form">Learn More</Link>
+                  <Link href={quoteHref}>{ALT_SECONDARY_LABEL}</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -570,7 +570,7 @@ export function CitySeoPage({ cityData, customHeadings }: CitySeoPageProps) {
                   data-offer="100off-per-window"
                   data-city={cityData.slug}
                 >
-                  <Link href="/book#form">Schedule Visit</Link>
+                  <Link href={quoteHref}>{ALT_SECONDARY_LABEL}</Link>
                 </Button>
               </CardContent>
             </Card>

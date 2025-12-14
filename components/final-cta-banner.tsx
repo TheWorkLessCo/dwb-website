@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button"
+import { CTA_CONFIG } from "@/lib/cta"
 
 export default function FinalCTABanner() {
-  const JOBBER_FORM_URL =
-    "https://clienthub.getjobber.com/client_hubs/765818e4-20d7-4c73-8ea5-113760712b29/public/work_request/new?source=social_media"
+  const { quoteHref, secondaryLabel } = CTA_CONFIG
 
   return (
     <section className="py-6 md:py-8 bg-brand-blue">
@@ -21,12 +21,10 @@ export default function FinalCTABanner() {
           asChild
         >
           <a
-            href={JOBBER_FORM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={quoteHref}
             aria-label="Open request form to get a free quote"
           >
-            Get My Free Quote
+            {secondaryLabel}
           </a>
         </Button>
       </div>

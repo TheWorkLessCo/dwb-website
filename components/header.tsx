@@ -8,6 +8,7 @@ import { Phone, Menu, X, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useState, useRef } from "react"
 import { cityLinks } from "@/lib/cities"
+import { CTA_CONFIG } from "@/lib/cta"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -74,8 +75,7 @@ export function Header() {
     }
   }
 
-  const JOBBER_FORM_URL =
-    "https://clienthub.getjobber.com/client_hubs/765818e4-20d7-4c73-8ea5-113760712b29/public/work_request/new?source=social_media"
+  const { phoneDisplay, phoneHref, quoteHref, primaryLabel, secondaryLabel } = CTA_CONFIG
 
   return (
     <>
@@ -365,14 +365,14 @@ export function Header() {
 
             <div className="desktop-nav items-center gap-4 ml-auto" style={{ display: "none" }}>
               <a 
-                href="tel:+14696408551" 
+                href={phoneHref} 
                 className="flex flex-col items-end"
                 aria-label="Call Dallas Window Butler for a free estimate"
               >
                 <div className="flex items-center gap-1.5">
                   <Phone className="w-4 h-4 text-[var(--color-brand-navy)]" />
                   <span className="text-[var(--color-brand-navy)] font-semibold text-lg text-shadow-lift">
-                    (469) 640-8551
+                    {phoneDisplay}
                   </span>
                 </div>
                 <span className="text-xs text-muted-foreground">
@@ -381,25 +381,25 @@ export function Header() {
               </a>
 
               <a
-                href={JOBBER_FORM_URL}
+                href={quoteHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Open request form to get a free quote"
               >
                 <Button className="bg-[var(--color-brand-blue)] hover:bg-[var(--color-brand-blue-dark)] text-white px-4 py-2 transition-all duration-150 ease-out">
-                  GET A FREE QUOTE
+                  {secondaryLabel}
                 </Button>
               </a>
             </div>
 
-            <Button
-              variant="ghost"
-              size="sm"
-              className="mobile-hamburger transition-colors duration-150 ease-out"
-              style={{ display: "none" }}
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-            >
+              <Button
+                variant="ghost"
+                size="sm"
+                className="mobile-hamburger transition-colors duration-150 ease-out"
+                style={{ display: "none" }}
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+              >
               {isMenuOpen ? (
                 <X className="h-6 w-6 text-[var(--color-brand-navy)]" />
               ) : (
@@ -526,21 +526,21 @@ export function Header() {
             {/* Mobile menu footer with CTA and phone */}
             <div className="mobile-menu-footer">
               <a
-                href={JOBBER_FORM_URL}
+                href={quoteHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block mb-4"
               >
                 <Button className="w-full bg-[var(--color-brand-blue)] hover:bg-[var(--color-brand-blue-dark)] text-white py-3 text-base font-semibold transition-all duration-150 ease-out">
-                  Get a Free Quote
+                  {secondaryLabel}
                 </Button>
               </a>
 
               <a
-                href="tel:+14696408551"
+                href={phoneHref}
                 className="block text-center text-base text-[var(--color-brand-navy)] font-medium hover:underline"
               >
-                Call (469) 640-8551
+                Call {phoneDisplay}
               </a>
             </div>
           </div>

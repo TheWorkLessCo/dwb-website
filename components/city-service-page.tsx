@@ -1,9 +1,11 @@
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Star, Shield, Award, CheckCircle, Phone } from "lucide-react"
 import { OfferCardV2 } from "@/components/offer-card-v2"
 import { ModernFAQ } from "@/components/modern-faq"
+import { CTA_CONFIG, ALT_SECONDARY_LABEL } from "@/lib/cta"
 
 interface CityData {
   name: string
@@ -25,6 +27,7 @@ interface CityServicePageProps {
 
 export function CityServicePage({ cityData }: CityServicePageProps) {
   const { name, state, description, commonIssues, testimonials } = cityData
+  const { phoneDisplay, phoneHref, quoteHref, primaryLabel, secondaryLabel } = CTA_CONFIG
 
   const reviewsJsonLd = testimonials.map((testimonial, index) => ({
     "@context": "https://schema.org",
@@ -92,16 +95,20 @@ export function CityServicePage({ cityData }: CityServicePageProps) {
                   data-source={`${name.toLowerCase()}-hero`}
                   data-offer="100off-per-window"
                   data-city={name.toLowerCase()}
+                  asChild
                 >
-                  Claim My Discount
+                  <Link href={quoteHref}>{secondaryLabel}</Link>
                 </Button>
                 <Button
                   variant="outline"
                   size="lg"
                   className="border-brand-blue text-brand-blue hover:bg-slate-50 bg-transparent"
+                  asChild
                 >
-                  <Phone className="h-4 w-4 mr-2" />
-                  Call (469) 640-8551
+                  <a href={phoneHref} aria-label={`Call Dallas Window Butler at ${phoneDisplay}`}>
+                    <Phone className="h-4 w-4 mr-2" />
+                    Call {phoneDisplay}
+                  </a>
                 </Button>
               </div>
 
@@ -244,8 +251,9 @@ export function CityServicePage({ cityData }: CityServicePageProps) {
               data-source={`${name.toLowerCase()}-process`}
               data-offer="100off-per-window"
               data-city={name.toLowerCase()}
+              asChild
             >
-              Get My Free Quote
+              <Link href={quoteHref}>{secondaryLabel}</Link>
             </Button>
           </div>
         </div>
@@ -311,8 +319,9 @@ export function CityServicePage({ cityData }: CityServicePageProps) {
               data-source={`${name.toLowerCase()}-guarantee`}
               data-offer="100off-per-window"
               data-city={name.toLowerCase()}
+              asChild
             >
-              Get My Free Quote
+              <Link href={quoteHref}>{secondaryLabel}</Link>
             </Button>
           </div>
         </div>
@@ -333,8 +342,9 @@ export function CityServicePage({ cityData }: CityServicePageProps) {
                 data-source={`${name.toLowerCase()}-final`}
                 data-offer="100off-per-window"
                 data-city={name.toLowerCase()}
+                asChild
               >
-                Claim My $100 OFF Per Window
+                <Link href={quoteHref}>{ALT_SECONDARY_LABEL}</Link>
               </Button>
             </div>
             <div>
