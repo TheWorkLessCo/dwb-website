@@ -49,10 +49,10 @@ export function Hero() {
 
                 <div className="space-y-4">
                   <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-balance font-semibold">
-                    Save $100+ Monthly on Energy Bills with Premium Windows That Never Leak
+                    Best Replacement Windows in DFW — Installed Right the First Time
                   </h1>
                   <p className="text-lg sm:text-xl md:text-2xl text-gray-200 leading-relaxed text-pretty">
-                    Family-owned since 2010, we've helped thousands of DFW homeowners cut cooling costs while protecting their investment. Free consultation, no-pressure quotes, and installation you can trust for life.
+                    Serving Rockwall, Plano, McKinney, and surrounding DFW communities with energy-efficient window replacement, glass repair, and patio door installations — backed by lifetime warranties and 5-star local reviews.
                   </p>
                 </div>
 
@@ -90,7 +90,7 @@ export function Hero() {
                       aria-label="Get free quote from Dallas Window Butler"
                       {...trackingAttrs}
                     >
-                      Get Free Quote
+                      Get My Free Quote
                     </a>
                   </Button>
                   {/* Secondary CTA - Call Now (mobile-visible) */}
@@ -102,7 +102,7 @@ export function Hero() {
                   >
                     <a href="tel:4696408551" aria-label="Call Dallas Window Butler now">
                       <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                      Call Now
+                      Call for a Free Consultation
                     </a>
                   </Button>
                 </div>
