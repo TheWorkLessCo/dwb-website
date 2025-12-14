@@ -74,13 +74,33 @@ export function Hero() {
                       Lifetime workmanship guarantee—if we install it, we fix it free, forever
                     </span>
                   </div>
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-[#049BF2] rounded-full flex items-center justify-center mt-0.5">
+                      <Check className="w-4 h-4 text-white" />
+                    </div>
+                    <span className="text-base sm:text-lg text-gray-100 leading-relaxed">
+                      Fast, clean installs trusted in Rockwall, Plano, and McKinney
+                    </span>
+                  </div>
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2">
-                  {/* Primary CTA - Get Free Quote */}
+                  {/* Primary CTA - Call Now */}
                   <Button
                     size="lg"
                     className="bg-[#049BF2] hover:bg-[#049BF2]/90 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto"
+                    asChild
+                  >
+                    <a href="tel:4696408551" aria-label="Call Dallas Window Butler now">
+                      <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                      Call Now
+                    </a>
+                  </Button>
+                  {/* Secondary CTA - Get Free Quote */}
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="border-2 border-white text-white hover:bg-white hover:text-[#049BF2] px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold bg-transparent w-full sm:w-auto"
                     asChild
                   >
                     <a
@@ -91,18 +111,6 @@ export function Hero() {
                       {...trackingAttrs}
                     >
                       Get My Free Quote
-                    </a>
-                  </Button>
-                  {/* Secondary CTA - Call Now (mobile-visible) */}
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="border-2 border-white text-white hover:bg-white hover:text-[#049BF2] px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold bg-transparent w-full sm:w-auto"
-                    asChild
-                  >
-                    <a href="tel:4696408551" aria-label="Call Dallas Window Butler now">
-                      <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                      Call for a Free Consultation
                     </a>
                   </Button>
                 </div>

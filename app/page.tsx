@@ -111,6 +111,26 @@ export default function HomePage() {
           {/* 1. Hero section */}
           <Hero />
 
+          {/* Popular city quick links */}
+          <section className="py-8 bg-white">
+            <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+              <div className="text-center space-y-4">
+                <h2 className="text-xl sm:text-2xl font-semibold text-gray-900">Popular in Rockwall / Plano / McKinney</h2>
+                <div className="flex flex-wrap justify-center gap-3">
+                  <a href="/rockwall-windows" className="inline-flex items-center px-5 py-2 rounded-lg border border-[#049BF2] text-[#049BF2] font-semibold hover:bg-[#049BF2] hover:text-white transition-colors">
+                    Rockwall Windows
+                  </a>
+                  <a href="/plano-windows" className="inline-flex items-center px-5 py-2 rounded-lg border border-[#049BF2] text-[#049BF2] font-semibold hover:bg-[#049BF2] hover:text-white transition-colors">
+                    Plano Windows
+                  </a>
+                  <a href="/mckinney-windows" className="inline-flex items-center px-5 py-2 rounded-lg border border-[#049BF2] text-[#049BF2] font-semibold hover:bg-[#049BF2] hover:text-white transition-colors">
+                    McKinney Windows
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+
           <section className="py-12 bg-white">
             <div className="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
               <div className="prose prose-lg mx-auto text-center">
@@ -130,6 +150,21 @@ export default function HomePage() {
                   Professional installation in as little as one day, with cleanup that leaves your home spotless.
                   Experience the difference that quality windows and expert craftsmanship make for your home.
                 </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left mt-8">
+                  <div className="flex items-start gap-2">
+                    <span className="text-[#049BF2] text-lg">•</span>
+                    <span className="text-gray-700">Leak-free, licensed installs trusted in Rockwall</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-[#049BF2] text-lg">•</span>
+                    <span className="text-gray-700">Lifetime warranties honored for Plano homeowners</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-[#049BF2] text-lg">•</span>
+                    <span className="text-gray-700">5-star reviews from McKinney families</span>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
