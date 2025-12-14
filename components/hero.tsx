@@ -52,7 +52,7 @@ export function Hero() {
                     Best Replacement Windows in DFW — Installed Right the First Time
                   </h1>
                   <p className="text-lg sm:text-xl md:text-2xl text-gray-200 leading-relaxed text-pretty">
-                    Serving Rockwall, Plano, McKinney, and surrounding DFW communities with energy-efficient window replacement, glass repair, and patio door installations — backed by lifetime warranties and 5-star local reviews. Rockwall • Plano • McKinney homeowners: call a local team that installs it right the first time.
+                    We specialize in energy-efficient window replacement, glass repair, and patio doors for North Texas homes — installed cleanly, correctly, and backed for life. No pressure. No gimmicks. Just results that last.
                   </p>
                 </div>
 
@@ -63,7 +63,7 @@ export function Hero() {
                       <Check className="w-4 h-4 text-white" />
                     </div>
                     <span className="text-base sm:text-lg text-gray-100 leading-relaxed">
-                      Trusted by 112+ DFW families with perfect 5-star reviews
+                      Installed by in-house pros — no subcontractors, no shortcuts
                     </span>
                   </div>
                   <div className="flex items-start gap-3">
@@ -71,7 +71,7 @@ export function Hero() {
                       <Check className="w-4 h-4 text-white" />
                     </div>
                     <span className="text-base sm:text-lg text-gray-100 leading-relaxed">
-                      Lifetime workmanship guarantee—if we install it, we fix it free, forever
+                      Lifetime workmanship warranty (we fix it free if it ever fails)
                     </span>
                   </div>
                   <div className="flex items-start gap-3">
@@ -79,7 +79,7 @@ export function Hero() {
                       <Check className="w-4 h-4 text-white" />
                     </div>
                     <span className="text-base sm:text-lg text-gray-100 leading-relaxed">
-                      Fast, clean installs trusted in Rockwall, Plano, and McKinney
+                      Trusted by 100+ Rockwall, Plano & McKinney homeowners
                     </span>
                   </div>
                 </div>
