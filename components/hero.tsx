@@ -25,7 +25,7 @@ export function Hero() {
             className="w-full h-full object-cover sm:object-cover md:object-cover lg:object-cover object-center"
           >
             <source
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Pella-making-life-brighter-marketing-video-IjOiCcu9Z0cYFdUVJcsfaVclv6J01a.mp4"
+              src="/videos/hero.mp4"
               type="video/mp4"
             />
             {/* Fallback image if video fails to load */}
