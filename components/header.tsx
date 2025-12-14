@@ -4,9 +4,10 @@ import type React from "react"
 
 import Link from "next/link"
 import Image from "next/image"
-import { Phone, Menu, X, ChevronDown } from 'lucide-react'
+import { Phone, Menu, X, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useState, useRef } from "react"
+import { cityLinks } from "@/lib/cities"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -27,14 +28,6 @@ export function Header() {
     { name: "Motorized Patio Shades", href: "/services/motorized-patio-shades" },
     { name: "Motorized Awnings", href: "/services/motorized-awnings" },
     { name: "Waterproofing & Sealing", href: "/services/waterproofing-sealing" },
-  ]
-
-  const serviceAreas = [
-    { name: "Rockwall", href: "/rockwall-windows" },
-    { name: "McKinney", href: "/mckinney-windows" },
-    { name: "Allen", href: "/allen-windows" },
-    { name: "Plano", href: "/plano-windows" },
-    { name: "North Richardson", href: "/north-richardson-windows" },
   ]
 
   const handleServicesMouseEnter = () => {
@@ -336,14 +329,14 @@ export function Header() {
 
                   <div className="p-2 space-y-1">
                     <div className="px-3 pt-2 pb-1 text-[11px] uppercase tracking-wide text-muted-foreground">Cities</div>
-                    {serviceAreas.map((area) => (
+                    {cityLinks.map((area) => (
                       <Link
                         key={area.href}
                         href={area.href}
                         role="menuitem"
                         className="block w-full rounded-lg px-3 py-2 text-sm leading-snug text-foreground text-shadow-lift hover:bg-muted hover:underline hover:text-shadow-md focus:bg-muted focus:outline-none transition-all duration-150 min-h-[44px] flex items-center font-semibold"
                       >
-                        {area.name}
+                        {area.label}
                       </Link>
                     ))}
                   </div>
@@ -490,14 +483,14 @@ export function Header() {
 
                   {isMobileServiceAreasOpen && (
                     <div className="ml-4 mt-1 space-y-1">
-                      {serviceAreas.map((area) => (
+                  {cityLinks.map((area) => (
                         <Link
                           key={area.href}
                           href={area.href}
                           className="block py-3 px-4 text-base text-foreground hover:bg-muted rounded-lg transition-all duration-150"
                           onClick={() => setIsMenuOpen(false)}
                         >
-                          {area.name}
+                      {area.label}
                         </Link>
                       ))}
                     </div>

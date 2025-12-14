@@ -8,6 +8,7 @@ import { getTrackingAttributes } from "@/lib/tracking"
 import { ModernFAQ } from "@/components/modern-faq"
 import ImageBridge from "@/components/ImageBridge"
 import Link from "next/link"
+import { cityLinks } from "@/lib/cities"
 
 export default function HomePage() {
   const howItWorksTrackingAttrs = getTrackingAttributes("home-how-it-works")
@@ -115,17 +116,19 @@ export default function HomePage() {
           <section className="py-8 bg-white">
             <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
               <div className="text-center space-y-4">
-                <h2 className="text-xl sm:text-2xl font-semibold text-gray-900">Popular in Rockwall / Plano / McKinney</h2>
+                <h2 className="text-xl sm:text-2xl font-semibold text-gray-900">
+                  Popular in Rockwall / Plano / McKinney / Allen / North Richardson
+                </h2>
                 <div className="flex flex-wrap justify-center gap-3">
-                  <a href="/rockwall-windows" className="inline-flex items-center px-5 py-2 rounded-lg border border-[#049BF2] text-[#049BF2] font-semibold hover:bg-[#049BF2] hover:text-white transition-colors">
-                    Rockwall Windows
-                  </a>
-                  <a href="/plano-windows" className="inline-flex items-center px-5 py-2 rounded-lg border border-[#049BF2] text-[#049BF2] font-semibold hover:bg-[#049BF2] hover:text-white transition-colors">
-                    Plano Windows
-                  </a>
-                  <a href="/mckinney-windows" className="inline-flex items-center px-5 py-2 rounded-lg border border-[#049BF2] text-[#049BF2] font-semibold hover:bg-[#049BF2] hover:text-white transition-colors">
-                    McKinney Windows
-                  </a>
+                  {cityLinks.map((city) => (
+                    <a
+                      key={city.href}
+                      href={city.href}
+                      className="inline-flex items-center px-5 py-2 rounded-lg border border-[#049BF2] text-[#049BF2] font-semibold hover:bg-[#049BF2] hover:text-white transition-colors"
+                    >
+                      {city.label} Windows
+                    </a>
+                  ))}
                 </div>
               </div>
             </div>
