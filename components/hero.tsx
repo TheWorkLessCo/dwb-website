@@ -8,7 +8,7 @@ import { CTA_CONFIG } from "@/lib/cta"
 
 export function Hero() {
   const trackingAttrs = getTrackingAttributes("home-hero")
-  const { phoneHref, phoneDisplay, quoteHref, primaryLabel, secondaryLabel } = CTA_CONFIG
+  const { phoneHref, phoneDisplay, quoteHref, primaryLabel } = CTA_CONFIG
 
   return (
     <>
@@ -52,7 +52,7 @@ export function Hero() {
                     Best Replacement Windows in DFW — Installed Right the First Time
                   </h1>
                   <p className="text-lg sm:text-xl md:text-2xl text-gray-200 leading-relaxed text-pretty">
-                    Serving Rockwall, Plano, McKinney, and surrounding DFW communities with energy-efficient window replacement, glass repair, and patio door installations — backed by lifetime warranties and 5-star local reviews.
+                    Serving Rockwall, Plano, McKinney, and surrounding DFW communities with energy-efficient window replacement, glass repair, and patio door installations — backed by lifetime warranties and 5-star local reviews. Rockwall • Plano • McKinney homeowners: call a local team that installs it right the first time.
                   </p>
                 </div>
 
@@ -104,7 +104,7 @@ export function Hero() {
                     asChild
                   >
                     <a href={quoteHref} aria-label="Get free quote from Dallas Window Butler" {...trackingAttrs}>
-                      {secondaryLabel}
+                      Schedule Free Consultation
                     </a>
                   </Button>
                 </div>

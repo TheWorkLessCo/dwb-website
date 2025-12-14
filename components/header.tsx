@@ -75,7 +75,7 @@ export function Header() {
     }
   }
 
-  const { phoneDisplay, phoneHref, quoteHref, primaryLabel, secondaryLabel } = CTA_CONFIG
+  const { phoneDisplay, phoneHref, quoteHref, primaryLabel } = CTA_CONFIG
 
   return (
     <>
@@ -384,10 +384,10 @@ export function Header() {
                 href={quoteHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Open request form to get a free quote"
+                aria-label="Open request form to schedule a free consultation"
               >
                 <Button className="bg-[var(--color-brand-blue)] hover:bg-[var(--color-brand-blue-dark)] text-white px-4 py-2 transition-all duration-150 ease-out">
-                  {secondaryLabel}
+                  Schedule Free Consultation
                 </Button>
               </a>
             </div>
@@ -532,7 +532,7 @@ export function Header() {
                 className="block mb-4"
               >
                 <Button className="w-full bg-[var(--color-brand-blue)] hover:bg-[var(--color-brand-blue-dark)] text-white py-3 text-base font-semibold transition-all duration-150 ease-out">
-                  {secondaryLabel}
+                  Schedule Free Consultation
                 </Button>
               </a>
 
