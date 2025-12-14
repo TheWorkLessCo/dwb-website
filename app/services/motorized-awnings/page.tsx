@@ -84,15 +84,15 @@ export default function MotorizedAwningsPage() {
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-brand-blue-light flex-shrink-0" />
-                  <span className="text-gray-100">UV protection and weather resistance</span>
+                  <span className="text-gray-100">Brackets set into framing, not just fascia, to handle wind loads</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-brand-blue-light flex-shrink-0" />
-                  <span className="text-gray-100">Wind sensors for automatic retraction</span>
+                  <span className="text-gray-100">UV-rated fabric and arms that hold tension through Texas summers</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-brand-blue-light flex-shrink-0" />
-                  <span className="text-gray-100">Remote/app control with color options</span>
+                  <span className="text-gray-100">Wind sensors calibrated on install to protect the awning automatically</span>
                 </div>
               </div>
 

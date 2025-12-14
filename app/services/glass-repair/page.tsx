@@ -147,15 +147,15 @@ export default function GlassRepairPage() {
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-white flex-shrink-0" />
-                  <span className="text-white">40-60% less than full replacement</span>
+                  <span className="text-white">Fogged or cracked IG units replaced without disturbing your frames</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-white flex-shrink-0" />
-                  <span className="text-white">Same-day emergency service available</span>
+                  <span className="text-white">Factory-sealed glass to keep moisture out so fogging doesn’t return</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-white flex-shrink-0" />
-                  <span className="text-white">Warranty on all glass repairs</span>
+                  <span className="text-white">Clean installs that protect surrounding trim, paint, and flooring</span>
                 </div>
               </div>
 

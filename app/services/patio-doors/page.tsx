@@ -152,15 +152,15 @@ export default function PatioDoorPage() {
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-white flex-shrink-0" />
-                  <span className="text-white">All major door brands available</span>
+                  <span className="text-white">Plumb, square installs so panels glide and latch smoothly for years</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-white flex-shrink-0" />
-                  <span className="text-white">Energy Star certified options</span>
+                  <span className="text-white">Low-E glass and upgraded weatherstripping to stop drafts and hot spots</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-white flex-shrink-0" />
-                  <span className="text-white">Lifetime workmanship warranty</span>
+                  <span className="text-white">Thresholds flashed and sealed to prevent leaks and swelling after storms</span>
                 </div>
               </div>
 

@@ -152,15 +152,15 @@ export default function SolarScreensPage() {
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-white flex-shrink-0" />
-                  <span className="text-white">Up to 90% heat reduction</span>
+                  <span className="text-white">Custom-fit frames that won’t rattle or sag in Texas wind</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-white flex-shrink-0" />
-                  <span className="text-white">99% UV protection</span>
+                  <span className="text-white">Heat-cutting mesh chosen to reduce glare without killing your view</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-white flex-shrink-0" />
-                  <span className="text-white">Lifetime workmanship warranty</span>
+                  <span className="text-white">Stainless and UV-safe hardware so screens don’t rust or warp</span>
                 </div>
               </div>
 

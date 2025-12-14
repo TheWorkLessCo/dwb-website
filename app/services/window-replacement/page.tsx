@@ -157,15 +157,15 @@ export default function WindowReplacementPage() {
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-brand-blue-light flex-shrink-0" />
-                  <span className="text-gray-100">All major window brands available</span>
+                  <span className="text-gray-100">Laser-measured installs that stop drafts and rattles day one</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-brand-blue-light flex-shrink-0" />
-                  <span className="text-gray-100">Energy Star certified options</span>
+                  <span className="text-gray-100">Low-E glass packages tuned for Texas heat to cut AC run-time</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-brand-blue-light flex-shrink-0" />
-                  <span className="text-gray-100">Lifetime workmanship warranty</span>
+                  <span className="text-gray-100">Lifetime workmanship—if a sash settles or leaks from our install, we fix it free</span>
                 </div>
               </div>
 

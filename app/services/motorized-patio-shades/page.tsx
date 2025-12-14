@@ -90,15 +90,15 @@ export default function MotorizedPatioShadesPage() {
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-brand-blue-light flex-shrink-0" />
-                  <span className="text-gray-100">Sun and bug blocks for outdoor comfort</span>
+                  <span className="text-gray-100">Side tracks and hem bars leveled so shades seal out sun and bugs</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-brand-blue-light flex-shrink-0" />
-                  <span className="text-gray-100">Wind-rated tracks for durability</span>
+                  <span className="text-gray-100">Motors tuned with wind control to prevent jams on breezy days</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-brand-blue-light flex-shrink-0" />
-                  <span className="text-gray-100">Smart-home control and outdoor fabrics</span>
+                  <span className="text-gray-100">Outdoor-rated fabrics and hardware built to survive Texas sun and storms</span>
                 </div>
               </div>
 

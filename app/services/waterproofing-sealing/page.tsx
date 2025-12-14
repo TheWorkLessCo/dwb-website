@@ -86,15 +86,15 @@ export default function WaterproofingSealingPage() {
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-brand-blue-light flex-shrink-0" />
-                  <span className="text-gray-100">Flashing repairs and sill pan installs</span>
+                  <span className="text-gray-100">Full perimeter sealing with backer rod to stop air and water intrusion</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-brand-blue-light flex-shrink-0" />
-                  <span className="text-gray-100">Perimeter sealing and caulking</span>
+                  <span className="text-gray-100">Sill pans, flashing, and weeps rebuilt so water exits instead of pooling</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-brand-blue-light flex-shrink-0" />
-                  <span className="text-gray-100">Water testing and leak detection</span>
+                  <span className="text-gray-100">Pressure-tested openings until they stay dry through storms</span>
                 </div>
               </div>
 

@@ -84,15 +84,15 @@ export default function BlindsAndShadesPage() {
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-brand-blue-light flex-shrink-0" />
-                  <span className="text-gray-100">Light control and energy savings</span>
+                  <span className="text-gray-100">In-house measure & install so every shade sits level and tight</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-brand-blue-light flex-shrink-0" />
-                  <span className="text-gray-100">Child-safe options available</span>
+                  <span className="text-gray-100">Durable hardware and fabrics selected for daily use, not just showroom</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-brand-blue-light flex-shrink-0" />
-                  <span className="text-gray-100">Blackout bedrooms and motorization-ready</span>
+                  <span className="text-gray-100">Child-safe lifts and motor-ready options installed and tested on-site</span>
                 </div>
               </div>
 
