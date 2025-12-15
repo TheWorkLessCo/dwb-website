@@ -1,5 +1,6 @@
 import type React from "react"
 import { Suspense } from "react"
+import Script from "next/script"
 import { LinkAuditProvider } from "@/components/link-audit-provider"
 import { UtilityBar } from "@/components/utility-bar"
 import { Header } from "@/components/header"
@@ -215,6 +216,22 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans">
+        {/* LeadConnector chat widget - single global injection */}
+        <Script
+          src="https://beta.leadconnectorhq.com/loader.js"
+          data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js"
+          data-widget-id="693f4309f258cff44fa89dd"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="lc-debug"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              console.log('[LeadConnector] script tag injected (debug)');
+            `,
+          }}
+        />
         <LinkAuditProvider>
           <ScrollToTopOnRoute />
           <div id="site-chrome">
@@ -226,89 +243,6 @@ export default function RootLayout({
           <LandingFooter />
         </LinkAuditProvider>
 
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-            if (typeof window !== 'undefined') {
-              if (!window.__DWB_CHAT_INIT) {
-                window.__DWB_CHAT_INIT = true;
-                console.log('[DWB Chat] init');
-
-                const loadWidget = () => {
-                  if (window.__DWB_CHAT_LOADED) { 
-                    console.log('[DWB Chat] already loaded'); 
-                    return; 
-                  }
-                  window.__DWB_CHAT_LOADED = true;
-                  console.log('[DWB Chat] appending script tag now');
-
-                  const s = document.createElement('script');
-                  s.src = 'https://beta.leadconnectorhq.com/loader.js';
-                  s.async = true;
-                  s.setAttribute('data-resources-url','https://beta.leadconnectorhq.com/chat-widget/loader.js');
-                  s.setAttribute('data-widget-id','68d17b69eaf9255b1a31005e');
-                  s.onload = () => console.log('[DWB Chat] script onload fired');
-                  s.onerror = (e) => console.error('[DWB Chat] script onerror', e);
-                  document.body.appendChild(s);
-
-                  const style = document.createElement('style');
-                  style.textContent = \`
-                    .lc-launcher, .hl_chat_widget, [data-testid="chat-widget-launcher"] {
-                      position: fixed !important; 
-                      right: 20px !important; 
-                      bottom: 20px !important; 
-                      z-index: 99999 !important;
-                    }
-                    @media (max-width: 640px){
-                      .lc-launcher, .hl_chat_widget, [data-testid="chat-widget-launcher"] {
-                        right: 12px !important; 
-                        bottom: 12px !important;
-                      }
-                    }
-                  \`;
-                  document.head.appendChild(style);
-
-                  setTimeout(() => {
-                    const n = document.querySelector('.lc-launcher, .hl_chat_widget, [data-testid="chat-widget-launcher"]');
-                    console.log('[DWB Chat] launcher present?', !!n, n);
-                    if (!n) console.warn('[DWB Chat] LAUNCHER NOT FOUND — likely blocked or hidden');
-                  }, 8000);
-                };
-
-                const fallback = setTimeout(() => {
-                  console.log('[DWB Chat] fallback fired — loading widget');
-                  loadWidget();
-                }, 6000);
-
-                const hero = document.querySelector('#hero') || document.querySelector('main section');
-                if (hero && 'IntersectionObserver' in window) {
-                  console.log('[DWB Chat] observer ready / fallback timer started');
-                  const io = new IntersectionObserver((entries) => {
-                    const e = entries[0];
-                    if (!e.isIntersecting) {
-                      console.log('[DWB Chat] hero left viewport — loading widget');
-                      loadWidget();
-                      io.disconnect();
-                      clearTimeout(fallback);
-                    }
-                  }, { rootMargin: '0px 0px -80% 0px', threshold: 0 });
-                  io.observe(hero);
-                } else {
-                  console.log('[DWB Chat] no hero found — will load on scroll past 1200px');
-                  const onScroll = () => {
-                    if (window.scrollY > 1200) {
-                      loadWidget();
-                      window.removeEventListener('scroll', onScroll);
-                      clearTimeout(fallback);
-                    }
-                  };
-                  window.addEventListener('scroll', onScroll, { passive: true });
-                }
-              }
-            }
-          `,
-          }}
-        />
       </body>
     </html>
   )
