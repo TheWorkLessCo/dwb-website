@@ -148,7 +148,7 @@ export const blogPosts: Record<
       <p>From window replacement and glass repair to patio doors, solar screens, and motorized shades, we handle all your window and door needs. This one-stop approach saves you time and ensures consistent quality across all projects.</p>
 
       <h2>Commitment to Customer Satisfaction</h2>
-      <p>Our 112+ five-star Google reviews speak for themselves. We're Energy Star partners, fully insured, and BBB accredited. But what really matters is how we treat every customer—with respect, professionalism, and a genuine commitment to exceeding expectations.</p>
+      <p>Our 100+ five-star reviews speak for themselves. We're Energy Star partners, fully insured, and BBB accredited. But what really matters is how we treat every customer—with respect, professionalism, and a genuine commitment to exceeding expectations.</p>
 
       <h2>Ready to Experience the Difference?</h2>
       <p>Whether you need a single window repair or a whole-home replacement, Dallas Window Butler delivers the expertise, quality, and service you deserve. Contact us today for a free consultation and discover why Dallas-area homeowners trust us with their homes.</p>

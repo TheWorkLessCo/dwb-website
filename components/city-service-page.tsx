@@ -76,8 +76,8 @@ export function CityServicePage({ cityData }: CityServicePageProps) {
                 </div>
 
                 <div className="space-y-4">
-                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-balance font-semibold">
-                    Energy-Efficient Window Replacement... <span className="font-thin text-[#049BF2]">Minus The Markup.</span>
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-balance font-bold">
+                    Premium Window Services in {name}... <span className="font-light text-[#049BF2]">Minus The Markup.</span>
                   </h1>
                   <p className="text-lg sm:text-xl md:text-2xl text-gray-200 leading-relaxed text-pretty">
                     Stop overpaying for the 'big brand' markup in {name}. Get custom-fitted, energy-efficient vinyl windows installed by our in-house 'White Glove' pros. No pressure, no gimmicks—just a flawless install.
@@ -130,7 +130,7 @@ export function CityServicePage({ cityData }: CityServicePageProps) {
                 <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs sm:text-sm opacity-90 pt-4">
                   <div className="flex items-center gap-1.5">
                     <div className="flex text-yellow-400 tracking-tighter">⭐⭐⭐⭐⭐</div>
-                    <span className="text-gray-200 font-medium">100+ reviews in DFW</span>
+                    <span className="text-gray-200 font-medium">100+ reviews</span>
                   </div>
                   <span className="hidden sm:block text-gray-600">|</span>
                   <div className="flex items-center gap-1.5 text-gray-300">
@@ -176,7 +176,7 @@ export function CityServicePage({ cityData }: CityServicePageProps) {
                   <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                 ))}
               </div>
-              <span className="text-gray-700 font-medium">112+ Google Reviews in Rockwall & nearby</span>
+              <span className="text-gray-700 font-medium">100+ reviews in North Texas</span>
             </div>
             <div className="flex items-center gap-6">
               <Badge variant="outline" className="flex items-center gap-2">
@@ -240,13 +240,11 @@ export function CityServicePage({ cityData }: CityServicePageProps) {
       {/* Localized Section */}
       <section className="py-16">
         <div className="container mx-auto px-4 max-w-4xl text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Serving {name} Homeowners Since 2020</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Expert Window Solutions For {name} Homeowners</h2>
           <div className="prose prose-lg mx-auto text-gray-600">
             <p className="mb-4">{description}</p>
             <p className="mb-6">
-              Common window issues we see in {name} include {commonIssues.join(", ")}. As a local business, Dallas
-              Window Butler understands the unique needs of {name} families and provides personalized service you can
-              trust.
+              Homeowners in {name} frequently deal with {commonIssues.join(", ")}. Our team provides specialized solutions for {name}'s unique architectural styles and climate challenges, ensuring a perfect fit and maximum energy savings every time.
             </p>
           </div>
         </div>
@@ -265,24 +263,24 @@ export function CityServicePage({ cityData }: CityServicePageProps) {
               <div className="w-16 h-16 bg-brand-blue text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
                 1
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Book my free consult</h3>
-              <p className="text-gray-600">Tell us your goals and window count for your {name} home.</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Schedule Your {name} Consult</h3>
+              <p className="text-gray-600">Tell us your specific goals and window count for your {name} home.</p>
             </div>
 
             <div className="text-center">
               <div className="w-16 h-16 bg-brand-blue text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
                 2
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Measure & custom order</h3>
-              <p className="text-gray-600">Exact sizing, brand options, clear quote for your {name} project.</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Precision {name} Measurement</h3>
+              <p className="text-gray-600">Custom sizing for your property, premium brand options, and a clear quote.</p>
             </div>
 
             <div className="text-center">
               <div className="w-16 h-16 bg-brand-blue text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
                 3
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">1-day install & cleanup</h3>
-              <p className="text-gray-600">Leak-free finish, spotless job site in your {name} neighborhood.</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Expert {name} Installation</h3>
+              <p className="text-gray-600">Lifetime leak-free finish and a spotless cleanup in your {name} neighborhood.</p>
             </div>
           </div>
 
@@ -372,9 +370,9 @@ export function CityServicePage({ cityData }: CityServicePageProps) {
       {/* Final CTA */}
       <section className="py-16 bg-gray-50 text-center">
         <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Ready to Upgrade Your {name} Home?</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">Start Your {name} Window Project Today</h2>
           <p className="text-xl text-gray-600 mb-6">
-            Join hundreds of satisfied homeowners in {name} who trust Dallas Window Butler.
+            Join the satisfied homeowners in {name} who have upgraded their energy efficiency and curb appeal with our white-glove service.
           </p>
           <Button
             size="lg"

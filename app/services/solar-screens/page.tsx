@@ -1,11 +1,12 @@
 import type { Metadata } from "next"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Shield, CheckCircle, Phone, Sun, Thermometer, Eye, Zap } from "lucide-react"
-import { OfferCardV2 } from "@/components/offer-card-v2"
+import { Star, Check, Shield, Award, CheckCircle, Phone, Sun, Thermometer, Eye, Zap } from "lucide-react"
+import { WarrantyCard } from "@/components/warranty-card"
 import ServiceFAQ from "@/components/ServiceFAQ"
 import ProofPoints from "@/components/ProofPoints"
-import { OutcomeSection } from "@/components/OutcomeSection"
+import OutcomeSection from "@/components/OutcomeSection"
+import { ResultsBar } from "@/components/results-bar"
 import { CTA_CONFIG } from "@/lib/cta"
 
 export const metadata: Metadata = {
@@ -138,70 +139,73 @@ export default function SolarScreensPage() {
         <div className="container mx-auto px-4 max-w-7xl relative z-10">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left Column */}
-            <div className="space-y-6">
+            <div className="text-white space-y-6 lg:space-y-8">
               <div className="space-y-4">
-                <p className="text-white font-medium text-sm uppercase tracking-wide">
+                <div className="text-sm sm:text-base text-[#049BF2] font-medium uppercase tracking-wide">
                   Professional Solar Screen Installation
-                </p>
-                <h1 className="text-4xl lg:text-5xl font-bold text-white text-balance">
-                  Solar Screen Installation Services
+                </div>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-balance font-bold text-white">
+                  Custom Solar Screen Installation For Your DFW Home... <span className="font-light text-[#049BF2]">Beat The Texas Heat, Save On Bills.</span>
                 </h1>
-                <p className="text-xl text-white/90 text-pretty">
+                <p className="text-lg sm:text-xl md:text-2xl text-gray-200 leading-relaxed text-pretty">
                   Reduce heat, glare, and UV rays while maintaining your view. Custom screens with expert installation
                   and lifetime warranty.
                 </p>
               </div>
 
-              {/* Hero Bullets */}
-              <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5 text-brand-blue-light flex-shrink-0" />
-                  <span className="text-gray-100 uppercase font-bold text-[13px]">VIRTUAL QUOTES & MOCK UPS AVAILABLE</span>
+              {/* Trust bullets - concise and result-focused */}
+              <div className="space-y-3 sm:space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-[#049BF2] rounded-full flex items-center justify-center mt-0.5">
+                    <Check className="w-4 h-4 text-white" />
+                  </div>
+                  <span className="text-base sm:text-lg text-gray-100 leading-relaxed">
+                    Virtual Quotes & Mock Ups Available
+                  </span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5 text-brand-blue-light flex-shrink-0" />
-                  <span className="text-gray-100 uppercase font-bold text-[13px]">LIFETIME WARRANTY ON LABOR & MATERIALS</span>
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-[#049BF2] rounded-full flex items-center justify-center mt-0.5">
+                    <Check className="w-4 h-4 text-white" />
+                  </div>
+                  <span className="text-base sm:text-lg text-gray-100 leading-relaxed">
+                    Lifetime Warranty On Labor & Materials
+                  </span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5 text-brand-blue-light flex-shrink-0" />
-                  <span className="text-gray-100">Stainless and UV-safe hardware so screens don’t rust or warp</span>
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-[#049BF2] rounded-full flex items-center justify-center mt-0.5">
+                    <Check className="w-4 h-4 text-white" />
+                  </div>
+                  <span className="text-base sm:text-lg text-gray-100 leading-relaxed">
+                    Stainless and UV-safe hardware so screens don’t rust or warp
+                  </span>
                 </div>
               </div>
 
-              {/* CTAs */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a href={quoteHref} target="_blank" rel="noopener noreferrer">
-                  <Button
-                    size="lg"
-                    className="bg-brand-blue hover:bg-brand-blue-dark text-white px-8 w-full sm:w-auto"
-                    data-source="solar-screens-hero"
-                    data-offer="100off-per-window"
-                  >
-                    {secondaryLabel}
-                  </Button>
-                </a>
+              <div className="flex flex-col gap-3 pt-2">
+                {/* Primary CTA */}
                 <Button
-                  variant="outline"
                   size="lg"
-                  className="border-white text-white hover:bg-white hover:text-brand-blue bg-transparent w-full sm:w-auto"
+                  className="bg-[#049BF2] hover:bg-[#049BF2]/90 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto h-auto"
                   asChild
                 >
-                  <a href={phoneHref}>
-                    <Phone className="h-4 w-4 mr-2" />
-                    Call {phoneDisplay}
+                  <a href={quoteHref} aria-label="Book Your Free No-Pressure Consult" data-source="solar-screens-hero" data-offer="100off-per-window">
+                    Book Your Free No-Pressure Consult
                   </a>
                 </Button>
+                <p className="text-sm sm:text-base text-gray-300 font-medium">
+                  Get a firm price in 30 minutes. No &apos;buy today&apos; games.
+                </p>
               </div>
 
               {/* Trust Badges Section */}
-              <p className="text-xs text-gray-300">We'll never share your info.</p>
+              <p className="text-xs text-gray-400">We&apos;ll never share your info.</p>
 
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-sm opacity-90 pt-2">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-sm opacity-80 pt-2">
                 <div className="flex items-center gap-1">
                   <div className="flex text-yellow-400">⭐⭐⭐⭐⭐</div>
-                  <span className="text-gray-200 ml-2">112 Google reviews in Rockwall</span>
+                  <span className="text-gray-200 ml-2">100+ reviews</span>
                 </div>
-                <div className="flex flex-wrap items-center gap-3 text-gray-200">
+                <div className="flex flex-wrap items-center gap-3 text-gray-300">
                   <span className="flex items-center gap-1">
                     <span className="text-green-400">✓</span>
                     Energy Star Partner
@@ -218,13 +222,15 @@ export default function SolarScreensPage() {
               </div>
             </div>
 
-            {/* Right Column - Offer Card */}
-            <div className="lg:justify-self-end">
-              <OfferCardV2 />
+            {/* Right Column - Warranty Card */}
+            <div className="lg:justify-self-end w-full max-w-md">
+              <WarrantyCard />
             </div>
           </div>
         </div>
       </section>
+
+      <ResultsBar />
 
       {/* Outcome Section */}
       <OutcomeSection />

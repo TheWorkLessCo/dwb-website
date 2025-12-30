@@ -1,9 +1,11 @@
 import type { Metadata } from "next"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Star, Shield, Award, CheckCircle, Phone, Droplets, Wrench, TestTube } from "lucide-react"
-import { OfferCardV2 } from "@/components/offer-card-v2"
+import { Star, Check, Shield, Award, CheckCircle, Phone, Droplets, Wrench, TestTube } from "lucide-react"
+import { WarrantyCard } from "@/components/warranty-card"
 import ServiceFAQ from "@/components/ServiceFAQ"
+import { ResultsBar } from "@/components/results-bar"
+import { CTA_CONFIG } from "@/lib/cta"
 
 export const metadata: Metadata = {
   title: "Waterproofing & Sealing | Dallas Window Butler",
@@ -24,6 +26,7 @@ export const metadata: Metadata = {
 }
 
 export default function WaterproofingSealingPage() {
+  const { quoteHref } = CTA_CONFIG
   const serviceJsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -68,89 +71,97 @@ export default function WaterproofingSealingPage() {
         <div className="container mx-auto px-4 max-w-7xl relative z-10">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left Column */}
-            <div className="space-y-6">
+            <div className="text-white space-y-6 lg:space-y-8">
               <div className="space-y-4">
-                <p className="text-brand-blue-light font-medium text-sm uppercase tracking-wide">
+                <div className="text-sm sm:text-base text-[#049BF2] font-medium uppercase tracking-wide">
                   Leak Prevention Services
-                </p>
-                <h1 className="text-4xl lg:text-5xl font-bold text-white text-balance">
-                  Waterproofing & Sealing for Dallas-Area Homes
+                </div>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-balance font-bold text-white">
+                  Expert Waterproofing & Sealing For Your DFW Home... <span className="font-light text-[#049BF2]">Stop Leaks Before They Cause Damage.</span>
                 </h1>
-                <p className="text-xl text-gray-100 text-pretty">
+                <p className="text-lg sm:text-xl md:text-2xl text-gray-200 leading-relaxed text-pretty">
                   Stop leaks before they start—professional window/door waterproofing & sealing with lifetime-backed
                   workmanship.
                 </p>
               </div>
 
-              {/* Hero Bullets */}
-              <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5 text-brand-blue-light flex-shrink-0" />
-                  <span className="text-gray-100">Full perimeter sealing with backer rod to stop air and water intrusion</span>
+              {/* Trust bullets - concise and result-focused */}
+              <div className="space-y-3 sm:space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-[#049BF2] rounded-full flex items-center justify-center mt-0.5">
+                    <Check className="w-4 h-4 text-white" />
+                  </div>
+                  <span className="text-base sm:text-lg text-gray-100 leading-relaxed">
+                    Virtual Quotes & Mock Ups Available
+                  </span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5 text-brand-blue-light flex-shrink-0" />
-                  <span className="text-gray-100">Sill pans, flashing, and weeps rebuilt so water exits instead of pooling</span>
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-[#049BF2] rounded-full flex items-center justify-center mt-0.5">
+                    <Check className="w-4 h-4 text-white" />
+                  </div>
+                  <span className="text-base sm:text-lg text-gray-100 leading-relaxed">
+                    Lifetime Warranty On Labor & Materials
+                  </span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5 text-brand-blue-light flex-shrink-0" />
-                  <span className="text-gray-100">Pressure-tested openings until they stay dry through storms</span>
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-[#049BF2] rounded-full flex items-center justify-center mt-0.5">
+                    <Check className="w-4 h-4 text-white" />
+                  </div>
+                  <span className="text-base sm:text-lg text-gray-100 leading-relaxed">
+                    Full perimeter sealing with backer rod to stop air and water intrusion
+                  </span>
                 </div>
               </div>
 
-              {/* CTAs */}
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col gap-3 pt-2">
+                {/* Primary CTA */}
                 <Button
                   size="lg"
-                  className="bg-brand-blue hover:bg-brand-blue-dark text-white px-8"
-                  data-source="waterproofing-sealing-hero"
-                  data-offer="leak-inspection"
+                  className="bg-[#049BF2] hover:bg-[#049BF2]/90 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto h-auto"
+                  asChild
                 >
-                  Get Free Inspection
+                  <a href={quoteHref} aria-label="Get Free Inspection" data-source="waterproofing-sealing-hero" data-offer="leak-inspection">
+                    Get Free Inspection
+                  </a>
                 </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-white text-white hover:bg-white hover:text-brand-blue bg-transparent"
-                >
-                  <Phone className="h-4 w-4 mr-2" />
-                  Call (469) 640-8551
-                </Button>
+                <p className="text-sm sm:text-base text-gray-300 font-medium">
+                  Get a firm price in 30 minutes. No &apos;buy today&apos; games.
+                </p>
               </div>
 
-              <div className="pt-6 space-y-3">
-                <p className="text-xs text-gray-300">We'll never share your info.</p>
+              <p className="text-xs text-gray-400">We&apos;ll never share your info.</p>
 
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-sm opacity-90">
-                  <div className="flex items-center gap-1">
-                    <div className="flex text-yellow-400">⭐⭐⭐⭐⭐</div>
-                    <span className="text-white ml-2">112 Google reviews in Rockwall</span>
-                  </div>
-                  <div className="flex flex-wrap items-center gap-3 text-gray-200">
-                    <span className="flex items-center gap-1">
-                      <span className="text-green-400">✓</span>
-                      Energy Star Partner
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <span className="text-brand-blue">🛡️</span>
-                      Fully Insured
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <span className="text-yellow-400">🏆</span>
-                      BBB Accredited
-                    </span>
-                  </div>
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-sm opacity-80 pt-2">
+                <div className="flex items-center gap-1">
+                  <div className="flex text-yellow-400">⭐⭐⭐⭐⭐</div>
+                  <span className="text-gray-200 ml-2">100+ reviews</span>
+                </div>
+                <div className="flex flex-wrap items-center gap-3 text-gray-300">
+                  <span className="flex items-center gap-1">
+                    <span className="text-green-400">✓</span>
+                    Energy Star Partner
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <span className="text-blue-400">🛡️</span>
+                    Fully Insured
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <span className="text-yellow-400">🏆</span>
+                    BBB Accredited
+                  </span>
                 </div>
               </div>
             </div>
 
-            {/* Right Column - Offer Card */}
-            <div className="lg:justify-self-end">
-              <OfferCardV2 />
+            {/* Right Column - Warranty Card */}
+            <div className="lg:justify-self-end w-full max-w-md">
+              <WarrantyCard />
             </div>
           </div>
         </div>
       </section>
+
+      <ResultsBar />
 
       {/* Services Grid */}
       <section className="py-16">

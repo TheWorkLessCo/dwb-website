@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Check, Phone } from "lucide-react"
-import { OfferCardV2 } from "@/components/offer-card-v2"
+import { WarrantyCard } from "@/components/warranty-card"
 import { getTrackingAttributes } from "@/lib/tracking"
 import { CTA_CONFIG } from "@/lib/cta"
 
@@ -44,15 +44,15 @@ export function Hero() {
               {/* Left Column - Copy */}
               <div className="text-white space-y-6 lg:space-y-8">
                 <div className="text-sm sm:text-base text-[#049BF2] font-medium uppercase tracking-wide">
-                  Serving Dallas-Fort Worth Metroplex
+                  TIRED OF DRAFTS & PUSHY SALESPEOPLE?
                 </div>
 
                 <div className="space-y-4">
-                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-balance font-semibold">
-                    Best Replacement Windows in DFW — Installed Right the First Time
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-balance font-bold">
+                    Premium Replacement Windows For Your DFW Home... <span className="font-light text-[#049BF2]">Minus The Nightmare Sales Pitch.</span>
                   </h1>
                   <p className="text-lg sm:text-xl md:text-2xl text-gray-200 leading-relaxed text-pretty">
-                    We specialize in energy-efficient window replacement, glass repair, and patio doors for North Texas homes — installed cleanly, correctly, and backed for life. No pressure. No gimmicks. Just results that last.
+                    Stop overpaying for the &apos;big brand&apos; markup. Get custom-fitted, energy-efficient vinyl windows installed by our in-house &apos;White Glove&apos; pros. No pressure, no gimmicks—just a flawless install.
                   </p>
                 </div>
 
@@ -63,7 +63,7 @@ export function Hero() {
                       <Check className="w-4 h-4 text-white" />
                     </div>
                     <span className="text-base sm:text-lg text-gray-100 leading-relaxed">
-                      Installed by in-house pros — no subcontractors, no shortcuts
+                      Your Home Stays Clean (No Subcontractors)
                     </span>
                   </div>
                   <div className="flex items-start gap-3">
@@ -71,7 +71,7 @@ export function Hero() {
                       <Check className="w-4 h-4 text-white" />
                     </div>
                     <span className="text-base sm:text-lg text-gray-100 leading-relaxed">
-                      Lifetime workmanship warranty (we fix it free if it ever fails)
+                      Bills Go Down (Energy Efficient Vinyl)
                     </span>
                   </div>
                   <div className="flex items-start gap-3">
@@ -79,42 +79,33 @@ export function Hero() {
                       <Check className="w-4 h-4 text-white" />
                     </div>
                     <span className="text-base sm:text-lg text-gray-100 leading-relaxed">
-                      Trusted by 100+ Rockwall, Plano & McKinney homeowners
+                      Zero Sales Pressure (Guaranteed)
                     </span>
                   </div>
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2">
-                  {/* Primary CTA - Call Now */}
+                <div className="flex flex-col gap-3 pt-2">
+                  {/* Primary CTA - Book Your Free No-Pressure Consult */}
                   <Button
                     size="lg"
                     className="bg-[#049BF2] hover:bg-[#049BF2]/90 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto"
                     asChild
                   >
-                    <a href={phoneHref} aria-label={`Call Dallas Window Butler now at ${phoneDisplay}`}>
-                      <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                      {primaryLabel}
+                    <a href={quoteHref} aria-label="Book Your Free No-Pressure Consult" {...trackingAttrs}>
+                      Book Your Free No-Pressure Consult
                     </a>
                   </Button>
-                  {/* Secondary CTA - Get Free Quote */}
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="border-2 border-white text-white hover:bg-white hover:text-[#049BF2] px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold bg-transparent w-full sm:w-auto"
-                    asChild
-                  >
-                    <a href={quoteHref} aria-label="Get free quote from Dallas Window Butler" {...trackingAttrs}>
-                      Schedule Free Consultation
-                    </a>
-                  </Button>
+                  <p className="text-sm sm:text-base text-gray-300 font-medium">
+                    Get a firm price in 30 minutes. No &apos;buy today&apos; games.
+                  </p>
                 </div>
 
-                <p className="text-xs text-gray-400">We'll never share your info.</p>
+                <p className="text-xs text-gray-400">We&apos;ll never share your info.</p>
 
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-sm opacity-80 pt-2">
                   <div className="flex items-center gap-1">
                     <div className="flex text-yellow-400">⭐⭐⭐⭐⭐</div>
-                    <span className="text-gray-200 ml-2">112 Google reviews in Rockwall</span>
+                    <span className="text-gray-200 ml-2">100+ reviews</span>
                   </div>
                   <div className="flex flex-wrap items-center gap-3 text-gray-300">
                     <span className="flex items-center gap-1">
@@ -133,17 +124,9 @@ export function Hero() {
                 </div>
               </div>
 
-              {/* Right Column - OfferCard */}
-              <div className="w-full max-w-full mx-auto lg:mx-0 lg:justify-self-end overflow-x-hidden">
-                <OfferCardV2 primaryCtaHref={quoteHref} />
-
-                <div className="flex justify-center items-center gap-4 mt-6">
-                  <img
-                    src="/images/leak-free-guarantee-badge.png"
-                    alt="Lifetime Leak-Free Guarantee"
-                    className="w-40 h-40 sm:w-48 sm:h-48 lg:w-56 lg:h-56 object-contain"
-                  />
-                </div>
+              {/* Right Column - Warranty Container */}
+              <div className="hidden lg:flex justify-end items-center">
+                <WarrantyCard />
               </div>
             </div>
           </div>

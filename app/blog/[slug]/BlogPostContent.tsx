@@ -1,6 +1,5 @@
 "use client"
 
-import { Header } from "@/components/header"
 import { Button } from "@/components/ui/button"
 import { ArrowLeft, Calendar, Share2 } from "lucide-react"
 import Link from "next/link"
@@ -17,8 +16,6 @@ export function BlogPostContent({ slug }: { slug: string }) {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
-
       {/* Hero Image */}
       <div className="relative h-[400px] lg:h-[500px]">
         <Image src={post.image || "/placeholder.svg"} alt={post.title} fill className="object-cover" priority />

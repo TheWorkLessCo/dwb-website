@@ -224,6 +224,10 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
         <Script
+          src="https://go.dallaswindowbutler.com/reputation/assets/review-widget.js"
+          strategy="afterInteractive"
+        />
+        <Script
           id="lc-debug"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{

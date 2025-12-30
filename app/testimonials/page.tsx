@@ -93,8 +93,8 @@ export default function TestimonialsPage() {
         <div className="absolute inset-0 bg-white/80" />
         <div className="container mx-auto px-4 max-w-4xl text-center relative z-10">
           <div className="space-y-6">
-            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 text-balance">
-              What Dallas-Area Homeowners Are Saying
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-balance font-bold text-gray-900">
+              What DFW Homeowners Are Saying... <span className="font-light text-[#049BF2]">Real Reviews, Real Results.</span>
             </h1>
             <p className="text-xl text-gray-600 text-pretty max-w-3xl mx-auto">
               Real feedback from satisfied clients who trusted Dallas Window Butler for expert window, glass, and door
@@ -162,7 +162,7 @@ export default function TestimonialsPage() {
                   <Star key={i} className="h-6 w-6 text-yellow-400 fill-current" />
                 ))}
               </div>
-              <span className="text-gray-700 font-semibold text-lg">112+ Google Reviews</span>
+              <span className="text-gray-700 font-semibold text-lg">100+ reviews</span>
             </div>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Badge variant="outline" className="flex items-center gap-2 py-2 px-4">

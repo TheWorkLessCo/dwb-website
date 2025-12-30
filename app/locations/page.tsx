@@ -2,9 +2,10 @@ import type { Metadata } from "next"
 import LocationsClient from "./locations-client"
 
 export const metadata: Metadata = {
-  title: "Service Areas | Dallas Window Butler — Best Window Replacement Near You",
+  title: "Service Areas | Dallas Window Butler | Best Window Replacement Near Me",
   description:
-    "See all Dallas Window Butler service areas. Best window replacement, glass/IG unit repair, and door replacement in Rockwall, McKinney, Allen, Plano, and North Richardson.",
+    "Looking for the best window replacement near you? Dallas Window Butler serves Rockwall, McKinney, Allen, Plano & North Richardson with energy-efficient windows and expert glass repair. See all locations and book your free quote!",
+  keywords: "window replacement near me, best window company North Texas, window installation DFW, Rockwall windows, McKinney windows, Allen windows, Plano windows",
 }
 
 export default function LocationsPage() {

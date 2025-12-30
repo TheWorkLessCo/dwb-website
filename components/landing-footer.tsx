@@ -28,7 +28,7 @@ export function LandingFooter() {
           {/* Brand Block - Logo and Company Name */}
           <div className="flex flex-col items-start gap-2" aria-label="Dallas Window Butler brand">
             <Image
-              src="/images/design-mode/DWB%20Logo%20%281000%20x%20310%20px%29%20%281920%20x%201080%20px%29white.png"
+              src="/images/dwb-logo-footer-white.png"
               alt="Dallas Window Butler logo — window & door replacement in DFW"
               width={240}
               height={48}

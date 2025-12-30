@@ -62,8 +62,8 @@ export default function LocationsClient() {
         <section className="bg-gradient-to-br from-blue-50 to-white py-16 pt-6 md:pt-10">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Service Areas — Dallas Window Butler
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-balance font-bold text-gray-900 mb-6">
+                Expert Window Services Across North Texas... <span className="font-light text-[#049BF2]">Master Installation in Every City.</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8 text-balance">
                 We provide the best window replacement, expert glass/IG unit repair, and professional door replacement

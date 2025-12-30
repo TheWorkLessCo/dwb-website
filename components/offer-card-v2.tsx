@@ -14,7 +14,7 @@ interface OfferCardV2Props {
 }
 
 export function OfferCardV2({
-  imageSrc = "/images/design-mode/image.jpg.png",
+  imageSrc = "/images/offer-card-default.png",
   tel = "+14696408551",
   telDisplay = "(469) 640-8551",
   primaryCtaLabel = "CLAIM MY DISCOUNT",

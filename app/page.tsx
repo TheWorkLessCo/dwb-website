@@ -1,6 +1,7 @@
 "use client"
 
 import { Hero } from "@/components/hero"
+import { ResultsBar } from "@/components/results-bar"
 import WhyChooseUsV2 from "@/components/why-choose-us-v2"
 import ComparisonTable from "@/components/comparison-table"
 import FinalCTABanner from "@/components/final-cta-banner"
@@ -8,7 +9,9 @@ import { getTrackingAttributes } from "@/lib/tracking"
 import { ModernFAQ } from "@/components/modern-faq"
 import ImageBridge from "@/components/ImageBridge"
 import Link from "next/link"
+import Image from "next/image"
 import { cityLinks } from "@/lib/cities"
+import { Sun, Droplets, XCircle, CheckCircle, Sparkles, ShieldCheck, DollarSign, VolumeX, Brain, ArrowDown } from "lucide-react"
 
 export default function HomePage() {
   const howItWorksTrackingAttrs = getTrackingAttributes("home-how-it-works")
@@ -112,75 +115,254 @@ export default function HomePage() {
           {/* 1. Hero section */}
           <Hero />
 
-          {/* Popular city quick links */}
-          <section className="py-8 bg-white">
-            <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-              <div className="text-center space-y-4">
-                <h2 className="text-xl sm:text-2xl font-semibold text-gray-900">
-                  Popular in Rockwall / Plano / McKinney / Allen / North Richardson
+          {/* 2. Results Bar */}
+          <ResultsBar />
+
+          {/* 3. Problem/Agitation Section */}
+          <section className="py-20 bg-white">
+            <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+              <div className="max-w-3xl mx-auto mb-16">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 text-balance">
+                  Your Old Windows Are Failing You (And Costing You A Fortune).
                 </h2>
-                <div className="flex flex-wrap justify-center gap-3">
-                  {cityLinks.map((city) => (
-                    <a
-                      key={city.href}
-                      href={city.href}
-                      className="inline-flex items-center px-5 py-2 rounded-lg border border-[#049BF2] text-[#049BF2] font-semibold hover:bg-[#049BF2] hover:text-white transition-colors"
-                    >
-                      {city.label} Windows
-                    </a>
-                  ))}
+                <p className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-[600px] mx-auto text-pretty">
+                  Living in North Texas, you know exactly what window failure feels like. It&apos;s not just about how they look—it&apos;s about how they make you feel.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 text-left mb-12">
+                {/* CARD 1: The Heat */}
+                <div className="group bg-white p-8 rounded-2xl border border-gray-100 shadow-sm animate-pulse-orange hover:animate-pulse-blue transition-all duration-500">
+                  <div className="w-12 h-12 bg-orange-50 group-hover:bg-blue-50 rounded-xl flex items-center justify-center mb-6 transition-colors duration-500">
+                    <Sun className="w-7 h-7 text-orange-500 group-hover:text-blue-500 transition-colors duration-500" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 transition-colors group-hover:text-blue-700">The &quot;Hot Rooms&quot;</h3>
+                  <p className="text-gray-600 leading-relaxed group-hover:text-gray-900 transition-colors">
+                    Your AC runs 24/7, but the master bedroom is still sweating. Old aluminum frames act like radiators, pulling the Texas heat right into your living room.
+                  </p>
+                </div>
+
+                {/* CARD 2: The Fog */}
+                <div className="group bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">The Foggy View</h3>
+                  <div className="transition-all duration-300 filter blur-[3px] group-hover:blur-none">
+                    <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6">
+                      <Droplets className="w-7 h-7 text-blue-500" />
+                    </div>
+                    <p className="text-gray-600 leading-relaxed">
+                      Broken seals mean condensation gets trapped between the glass. Your windows look permanently dirty, and that moisture is slowly rotting your frames.
+                    </p>
+                  </div>
+                </div>
+
+                {/* CARD 3: The Dread */}
+                <div className="group bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300">
+                  <div className="w-12 h-12 bg-gray-100 group-hover:bg-green-50 rounded-xl flex items-center justify-center mb-6 transition-colors duration-300">
+                    <div className="relative w-7 h-7">
+                      <XCircle className="absolute inset-0 w-7 h-7 text-gray-400 group-hover:opacity-0 transition-opacity duration-300" />
+                      <CheckCircle className="absolute inset-0 w-7 h-7 text-green-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 transition-colors group-hover:text-green-700">The Sales Nightmare</h3>
+                  <p className="text-gray-600 leading-relaxed group-hover:text-gray-900 transition-colors">
+                    You&apos;ve put this off because you dread the process. Who wants a pushy salesperson camping out at their kitchen table for 3 hours refusing to leave?
+                  </p>
+                </div>
+              </div>
+
+              {/* AI SMART INSIGHT BADGE */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium animate-fade-in mb-16 shadow-sm">
+                <Sparkles className="w-4 h-4 text-blue-500" />
+                <span>DATA INSIGHT: DFW homes with aluminum windows waste ~35% more energy annually.</span>
+              </div>
+
+              <div className="pt-8 border-t border-gray-50">
+                <p className="text-xl sm:text-2xl font-medium text-gray-800 italic">
+                  &quot;It shouldn&apos;t be this hard (or this hot) to get comfortable in your own home.&quot;
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* 4. Solution/Mentor Section */}
+          <section className="py-20 bg-[#f8f9fa]">
+            <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+                {/* Right Column (Mobile: Top) - Image */}
+                <div className="w-full lg:w-1/2 order-1 lg:order-2">
+                  <div className="relative">
+                    <div className="aspect-[4/5] relative rounded-2xl lg:rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white">
+                      <Image
+                        src="/images/owner-portrait.jpg"
+                        alt="Friendly photo of the founder smiling, no sunglasses, wearing branded shirt"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
+                      {/* Fallback overlay in case image is missing */}
+                      <div className="absolute inset-0 bg-brand-navy/10 flex items-center justify-center -z-10">
+                        <span className="text-gray-400 font-medium italic">Owner Portrait Placeholder</span>
+                      </div>
+                    </div>
+                    {/* Dynamic Trust Badge */}
+                    <div className="absolute -bottom-6 -left-6 bg-white p-4 sm:p-5 rounded-xl shadow-xl border border-gray-100 flex items-center gap-3 animate-fade-in">
+                      <div className="w-10 h-10 bg-green-50 rounded-full flex items-center justify-center">
+                        <ShieldCheck className="w-6 h-6 text-green-500" />
+                      </div>
+                      <span className="text-sm sm:text-base font-bold text-gray-900 leading-tight">
+                        100% In-House Team.<br />No Subcontractors.
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Left Column - Content */}
+                <div className="w-full lg:w-1/2 space-y-6 lg:space-y-8 order-2 lg:order-1">
+                  <div className="space-y-4">
+                    <span className="inline-block text-[#049BF2] font-bold text-sm tracking-widest uppercase">
+                      MEET DALLAS WINDOW BUTLER
+                    </span>
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                        You Deserve Respect, Not a Sales Pitch.
+                      </h2>
+                    </div>
+
+                    <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
+                      <p>
+                        I built this company because I watched DFW homeowners get treated like transactions by the big guys—just another number on a quota sheet. You shouldn&apos;t have to fight off a <strong className="font-semibold text-gray-900">high-pressure closer</strong> just to get a fair price on your own home.
+                      </p>
+                      <p>
+                        That&apos;s why we operate as the <strong className="font-semibold text-gray-900">Window Butler</strong>. We bring a white-glove standard to construction. From the first step inside your home to the final walkthrough, we treat your property the way a butler would—with precision, respect, and care.
+                      </p>
+                      <p>
+                        But premium service shouldn&apos;t require a premium budget. By eliminating commissioned salespeople, we deliver <strong className="font-semibold text-gray-900">distributor-priced windows</strong> and glass with craftsman-grade installation. You pay for the materials and the labor—not the bloat.
+                      </p>
+                      <p>
+                        And because a window is only as good as the install, we back every job with a <strong className="font-semibold text-gray-900">Lifetime Warranty</strong> and our exclusive <strong className="font-semibold text-gray-900">Leak-Free Extended Service Agreement</strong>. Premium quality. No premium price tag. That&apos;s the standard.
+                      </p>
+                    </div>
+
+                  <div className="pt-4 lg:pt-6">
+                    <div className="text-3xl sm:text-4xl font-serif italic text-gray-800 mb-2">
+                      Nathan B.
+                    </div>
+                    <p className="text-gray-500 font-medium">Founder, Dallas Window Butler</p>
+                  </div>
                 </div>
               </div>
             </div>
           </section>
 
-          <section className="py-12 bg-white">
-            <div className="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-              <div className="prose prose-lg mx-auto text-center">
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  Dallas Window Butler has helped thousands of Rockwall, McKinney, Allen, Plano, and North Richardson
-                  homeowners cut their energy bills by up to 30% with premium replacement windows. Since 2010, we've
-                  built our reputation on one promise: windows that work, installed right, guaranteed for life.
-                </p>
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  Texas weather is brutal on windows. Scorching summers fade and crack inferior materials. Winter storms
-                  test every seal. That's why we install only Energy Star-certified vinyl windows engineered for our
-                  climate—windows that keep cool air in during summer and protect your home year-round.
-                </p>
-                <p className="text-gray-700 leading-relaxed">
-                  Whether you need complete window replacement or just fogged glass panes fixed, our family-owned team
-                  makes it simple. Free in-home consultation with zero sales pressure. Clear pricing, no surprises.
-                  Professional installation in as little as one day, with cleanup that leaves your home spotless.
-                  Experience the difference that quality windows and expert craftsmanship make for your home.
-                </p>
+          {/* 5. Benefits Section */}
+          <section className="py-20 bg-white">
+            <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-16">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
+                  Experience The &quot;White Glove&quot; Difference.
+                </h2>
+              </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left mt-8">
-                  <div className="flex items-start gap-2">
-                    <span className="text-[#049BF2] text-lg">•</span>
-                    <span className="text-gray-700">Leak-free, licensed installs trusted in Rockwall</span>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+                {/* CARD 1 - The Financial Win */}
+                <div className="group flex flex-col items-center text-center p-8 rounded-2xl transition-all duration-300 hover:-translate-y-2">
+                  <div className="w-16 h-16 bg-green-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-green-100 transition-colors">
+                    <DollarSign className="w-8 h-8 text-green-600" />
                   </div>
-                  <div className="flex items-start gap-2">
-                    <span className="text-[#049BF2] text-lg">•</span>
-                    <span className="text-gray-700">Lifetime warranties honored for Plano homeowners</span>
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
+                    Stop Overpaying Your Electric Bill.
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Stop cooling the neighborhood. Our multi-chamber vinyl frames and Low-E glass trap the cool air inside, often lowering summer energy bills by up to 30%.
+                  </p>
+                </div>
+
+                {/* CARD 2 - The 'Butler' Win */}
+                <div className="group flex flex-col items-center text-center p-8 rounded-2xl transition-all duration-300 hover:-translate-y-2">
+                  <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-blue-100 transition-colors">
+                    <Sparkles className="w-8 h-8 text-blue-600" />
                   </div>
-                  <div className="flex items-start gap-2">
-                    <span className="text-[#049BF2] text-lg">•</span>
-                    <span className="text-gray-700">5-star reviews from McKinney families</span>
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
+                    Forget The Construction Mess.
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    We didn&apos;t name ourselves &quot;Butler&quot; for nothing. We cover your furniture, protect your floors, and vacuum every speck of dust. Your home will be cleaner than we found it.
+                  </p>
+                </div>
+
+                {/* CARD 3 - The Lifestyle Win */}
+                <div className="group flex flex-col items-center text-center p-8 rounded-2xl transition-all duration-300 hover:-translate-y-2">
+                  <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-slate-100 transition-colors">
+                    <VolumeX className="w-8 h-8 text-slate-600" />
                   </div>
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
+                    Finally, Peace &amp; Quiet.
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Mute the traffic, the barking dogs, and the lawnmowers. Our double-strength insulated glass creates a sound barrier so you can finally enjoy a tranquil home.
+                  </p>
                 </div>
               </div>
             </div>
           </section>
 
-          <section className="py-8 bg-blue-50">
-            <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-              <div className="text-center">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">Proudly Serving North Texas Homeowners</h2>
-                <p className="text-lg text-gray-700 leading-relaxed">
-                  Proudly serving Rockwall, McKinney, Allen, Plano, and North Richardson homeowners with expert window
-                  replacement, professional installation, and lifetime guarantees. Your local window replacement
-                  specialists are ready to transform your home's comfort and energy efficiency.
+          {/* 6. Social Proof Section */}
+          <section className="py-16 bg-[#f9fafb]">
+            <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+              <div className="max-w-3xl mx-auto mb-12">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                  Don&apos;t Just Take Our Word For It.
+                </h2>
+                <p className="text-lg sm:text-xl text-gray-600">
+                  See why 100+ DFW homeowners trust us with their biggest investment.
                 </p>
+              </div>
+
+              {/* 2. THE "AI SENTIMENT SCANNER" */}
+              <div className="max-w-fit mx-auto mb-6">
+                <div className="inline-flex items-center gap-3 px-6 py-3 bg-white border border-blue-100 rounded-full shadow-[0_0_15px_rgba(4,155,242,0.15)] animate-fade-in">
+                  <div className="relative">
+                    <Brain className="w-5 h-5 text-blue-500 animate-pulse" />
+                    <div className="absolute inset-0 bg-blue-400/20 blur-lg rounded-full animate-pulse" />
+                  </div>
+                  <span className="text-sm sm:text-base font-semibold text-gray-700 tracking-wide uppercase">
+                    AI KEYWORD DETECTION: <span className="text-blue-600">&apos;Polite&apos;</span> | <span className="text-blue-600">&apos;Clean&apos;</span> | <span className="text-blue-600">&apos;On Time&apos;</span> | <span className="text-blue-600">&apos;No Pressure&apos;</span>
+                  </span>
+                </div>
+              </div>
+
+              {/* 3. THE VISUAL CONNECTOR (Arrow) */}
+              <div className="flex justify-center mb-12 animate-bounce">
+                <ArrowDown className="w-8 h-8 text-blue-500" />
+              </div>
+
+              <div className="max-w-6xl mx-auto rounded-2xl border shadow-sm bg-white text-left mb-12 relative overflow-hidden">
+                <div className="p-4 sm:p-6 pb-0">
+                  {/* Visual Review Banner (The "Cartoon Section") */}
+                  <div className="w-full bg-[#049BF2] rounded-t-xl overflow-hidden relative z-10">
+                    <Image 
+                      src="/images/customer-quotes-banner.png" 
+                      alt="Customer reviews summary with 5-star rating" 
+                      width={1200} 
+                      height={400}
+                      className="w-full h-auto object-cover block"
+                    />
+                  </div>
+                </div>
+                
+                {/* Live Review Widget - Pulled up to blend and overlap with the mascot */}
+                <div className="relative z-0">
+                  <div className="px-4 sm:px-6 pb-4 sm:pb-6 -mt-10">
+                    <div className="rounded-b-xl overflow-hidden">
+                      <iframe 
+                        className="lc_reviews_widget w-full border-0" 
+                        src="https://go.dallaswindowbutler.com/reputation/widgets/review_widget/9Kg5geu4xzsAgIVkpkA8?widgetId=69542e32364d509d10e45748" 
+                        scrolling="no" 
+                        style={{ minWidth: "100%", width: "100%", minHeight: "600px" }}
+                        title="Customer Reviews"
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
@@ -250,56 +432,6 @@ export default function HomePage() {
           <div id="comparison">
             <ComparisonTable />
           </div>
-
-          <section className="w-full bg-[#049BF2] py-0" aria-label="Customer Testimonial Highlights">
-            <img
-              src="/images/customer-quotes-banner.png"
-              alt="Customer testimonials highlighting Dallas Window Butler's punctual, professional service with 5-star Google reviews"
-              className="w-full h-auto object-cover block"
-            />
-          </section>
-
-          {/* 5. Testimonials / Reviews */}
-          <section id="testimonials" className="w-full" aria-label="Customer Reviews">
-            <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-              <div className="flex flex-wrap items-center justify-between gap-3 mb-4 sm:mb-6">
-                <h2 className="text-xl sm:text-2xl font-bold tracking-tight">What Dallas-Area Homeowners Are Saying</h2>
-                <a
-                  href="https://maps.app.goo.gl/ZmVJUtp4y1rEJQcp6"
-                  className="inline-flex items-center rounded-lg px-3 py-2 text-sm font-semibold border border-gray-300 hover:bg-gray-50 transition-colors"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Write a review
-                </a>
-              </div>
-
-              <div className="rounded-2xl border shadow-sm bg-white/95 dark:bg-slate-900/70 p-2 sm:p-3">
-                <link rel="preconnect" href="https://go.dallaswindowbutler.com" />
-                <script
-                  type="text/javascript"
-                  src="https://go.dallaswindowbutler.com/reputation/assets/review-widget.js"
-                  defer
-                ></script>
-                <iframe
-                  className="lc_reviews_widget block w-full"
-                  src="https://go.dallaswindowbutler.com/reputation/widgets/review_widget/9Kg5geu4xzsAgIVkpkA8"
-                  title="Customer Reviews Carousel"
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  frameBorder="0"
-                  scrolling="no"
-                  style={{
-                    width: "100%",
-                    minHeight: "560px",
-                    border: "0",
-                    display: "block",
-                    overflow: "hidden",
-                  }}
-                />
-              </div>
-            </div>
-          </section>
 
           <ImageBridge />
 

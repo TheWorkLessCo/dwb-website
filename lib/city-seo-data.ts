@@ -14,6 +14,7 @@ export interface CityData {
     hero: string
     alt: string
   }
+  subheadline?: string
   uniqueContent?: {
     localizedText: string
     geoTaggedImage?: {
@@ -28,6 +29,7 @@ export const cityData: Record<string, CityData> = {
     name: "Rockwall",
     slug: "rockwall",
     state: "TX",
+    subheadline: "Energy-efficient window replacement and expert glass repair for lakeside homes. No pressure, just professional results.",
     neighborhoods: ["The Shores", "Chandlers Landing", "Heath Golf & Yacht Club", "Rockwall Commons", "Buffalo Creek"],
     landmarks: ["Lake Ray Hubbard", "The Harbor District", "Rockwall Square"],
     localIssues: ["Intense summer heat", "UV damage", "Lake humidity causing fogged glass"],
@@ -57,6 +59,7 @@ export const cityData: Record<string, CityData> = {
     name: "McKinney",
     slug: "mckinney",
     state: "TX",
+    subheadline: "Specializing in historic-appropriate upgrades and HOA-compliant window replacement for McKinney families.",
     neighborhoods: [
       "Historic Downtown McKinney",
       "Stonebridge Ranch",
@@ -104,6 +107,7 @@ export const cityData: Record<string, CityData> = {
     name: "Allen",
     slug: "allen",
     state: "TX",
+    subheadline: "Premium energy-efficient windows tailored for Allen's modern master-planned communities and families.",
     neighborhoods: [
       "Watters Creek",
       "Twin Creeks",
@@ -151,6 +155,7 @@ export const cityData: Record<string, CityData> = {
     name: "Plano",
     slug: "plano",
     state: "TX",
+    subheadline: "Luxury window solutions and efficient glass repair for Plano's upscale residences and established subdivisions.",
     neighborhoods: ["West Plano", "East Plano", "Legacy West", "Willow Bend", "Preston Ridge", "Plano ISD area"],
     landmarks: [
       "Legacy West",
@@ -191,6 +196,7 @@ export const cityData: Record<string, CityData> = {
     name: "North Richardson",
     slug: "north-richardson",
     state: "TX",
+    subheadline: "High-performance window replacement featuring urban noise reduction and modern efficiency for Richardson homes.",
     neighborhoods: [
       "Canyon Creek",
       "Northrich",
