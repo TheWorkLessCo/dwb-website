@@ -367,49 +367,120 @@ export default function HomePage() {
             </div>
           </section>
 
-          {/* 2. Why Choose Us */}
-          <div id="why-choose-us">
-            <WhyChooseUsV2 />
-          </div>
-
-          {/* 3. How It Works */}
-          <section id="how-it-works" className="py-16 bg-gray-50">
+          {/* 7. How It Works - Image-Based Layout */}
+          <section id="how-it-works" className="py-20 bg-white">
             <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">How It Works</h2>
-                <p className="text-lg text-gray-600">Simple, professional window replacement in 3 easy steps</p>
+              {/* Section Headline */}
+              <div className="text-center mb-16">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
+                  Simple, Professional Window Replacement in 3 Easy Steps
+                </h2>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-[#049BF2] text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                    1
+              {/* 3-Column Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mb-16">
+                {/* STEP 1 */}
+                <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                  <div className="relative">
+                    {/* Image Placeholder */}
+                    <div className="aspect-[4/3] bg-gradient-to-br from-blue-50 to-blue-100 relative overflow-hidden">
+                      <Image 
+                        src="/images/how-it-works-consult.jpg" 
+                        alt="Friendly consultation with homeowner"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
+                      {/* Fallback overlay */}
+                      <div className="absolute inset-0 flex items-center justify-center -z-10">
+                        <span className="text-blue-300 font-medium italic text-center px-4">Friendly Consult Image</span>
+                      </div>
+                    </div>
+                    {/* Step Badge */}
+                    <div className="absolute -bottom-5 left-6 w-12 h-12 bg-[#049BF2] text-white rounded-full flex items-center justify-center text-xl font-bold shadow-lg border-4 border-white">
+                      1
+                    </div>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">Book my free consult</h3>
-                  <p className="text-gray-600">Tell us your goals and window count.</p>
+                  <div className="p-6 pt-10">
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
+                      Book My Free Consult
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      Tell us your goals and window count. We give you a firm price in 30 minutes with zero sales pressure.
+                    </p>
+                  </div>
                 </div>
 
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-[#049BF2] text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                    2
+                {/* STEP 2 */}
+                <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                  <div className="relative">
+                    {/* Image Placeholder */}
+                    <div className="aspect-[4/3] bg-gradient-to-br from-blue-50 to-blue-100 relative overflow-hidden">
+                      <Image 
+                        src="/images/how-it-works-measure.jpg" 
+                        alt="Precise window measurements being taken"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
+                      {/* Fallback overlay */}
+                      <div className="absolute inset-0 flex items-center justify-center -z-10">
+                        <span className="text-blue-300 font-medium italic text-center px-4">Measuring / Precision Image</span>
+                      </div>
+                    </div>
+                    {/* Step Badge */}
+                    <div className="absolute -bottom-5 left-6 w-12 h-12 bg-[#049BF2] text-white rounded-full flex items-center justify-center text-xl font-bold shadow-lg border-4 border-white">
+                      2
+                    </div>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">Measure & custom order</h3>
-                  <p className="text-gray-600">Exact sizing, brand options, clear quote.</p>
+                  <div className="p-6 pt-10">
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
+                      Measure & Custom Order
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      We take exact measurements to ensure an airtight fit, then custom order your premium vinyl windows.
+                    </p>
+                  </div>
                 </div>
 
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-[#049BF2] text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                    3
+                {/* STEP 3 */}
+                <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                  <div className="relative">
+                    {/* Image Placeholder */}
+                    <div className="aspect-[4/3] bg-gradient-to-br from-blue-50 to-blue-100 relative overflow-hidden">
+                      <Image 
+                        src="/images/how-it-works-install.jpg" 
+                        alt="Clean room after professional window installation"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
+                      {/* Fallback overlay */}
+                      <div className="absolute inset-0 flex items-center justify-center -z-10">
+                        <span className="text-blue-300 font-medium italic text-center px-4">Clean Room / Finished Job Image</span>
+                      </div>
+                    </div>
+                    {/* Step Badge */}
+                    <div className="absolute -bottom-5 left-6 w-12 h-12 bg-[#049BF2] text-white rounded-full flex items-center justify-center text-xl font-bold shadow-lg border-4 border-white">
+                      3
+                    </div>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">1-day install & cleanup</h3>
-                  <p className="text-gray-600">Leak-free finish, spotless job site.</p>
+                  <div className="p-6 pt-10">
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
+                      1-Day Install & Cleanup
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      Our &quot;White Glove&quot; team handles the install and the cleanup. We leave your home spotless.
+                    </p>
+                  </div>
                 </div>
               </div>
 
+              {/* CTA Button */}
               <div className="text-center">
                 <a
                   href="/book#form"
-                  className="inline-flex items-center px-8 py-3 bg-[#049BF2] text-white font-semibold rounded-lg hover:bg-[#049BF2]/90 transition-colors"
+                  className="inline-flex items-center px-10 py-4 bg-[#049BF2] text-white text-lg font-bold rounded-xl hover:bg-[#0389d5] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
                   {...howItWorksTrackingAttrs}
                 >
                   Get My Free Quote
@@ -417,6 +488,11 @@ export default function HomePage() {
               </div>
             </div>
           </section>
+
+          {/* Why Choose Us */}
+          <div id="why-choose-us">
+            <WhyChooseUsV2 />
+          </div>
 
           <section className="w-full py-16 bg-white" aria-label="Certifications and Partnerships">
             <div className="w-full">
