@@ -1,6 +1,7 @@
 "use client"
 
 import type React from "react"
+
 import Link from "next/link"
 import Image from "next/image"
 import { Phone, Menu, X, ChevronDown } from "lucide-react"
@@ -16,8 +17,8 @@ export function Header() {
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false)
   const [isMobileServiceAreasOpen, setIsMobileServiceAreasOpen] = useState(false)
 
-  const servicesTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
-  const serviceAreasTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const servicesTimeoutRef = useRef<NodeJS.Timeout>()
+  const serviceAreasTimeoutRef = useRef<NodeJS.Timeout>()
 
   const servicesItems = [
     { name: "Window Replacement", href: "/services/window-replacement" },
@@ -31,251 +32,521 @@ export function Header() {
   ]
 
   const handleServicesMouseEnter = () => {
-    if (servicesTimeoutRef.current) clearTimeout(servicesTimeoutRef.current)
+    if (servicesTimeoutRef.current) {
+      clearTimeout(servicesTimeoutRef.current)
+    }
     setIsServicesOpen(true)
   }
 
   const handleServicesMouseLeave = () => {
-    servicesTimeoutRef.current = setTimeout(() => setIsServicesOpen(false), 150)
+    servicesTimeoutRef.current = setTimeout(() => {
+      setIsServicesOpen(false)
+    }, 150)
   }
 
   const handleServiceAreasMouseEnter = () => {
-    if (serviceAreasTimeoutRef.current) clearTimeout(serviceAreasTimeoutRef.current)
+    if (serviceAreasTimeoutRef.current) {
+      clearTimeout(serviceAreasTimeoutRef.current)
+    }
     setIsServiceAreasOpen(true)
   }
 
   const handleServiceAreasMouseLeave = () => {
-    serviceAreasTimeoutRef.current = setTimeout(() => setIsServiceAreasOpen(false), 150)
+    serviceAreasTimeoutRef.current = setTimeout(() => {
+      setIsServiceAreasOpen(false)
+    }, 150)
   }
 
-  const { phoneDisplay, phoneHref, quoteHref } = CTA_CONFIG
+  const handleServicesClick = () => {
+    if (window.innerWidth < 1024) {
+      setIsServicesOpen(!isServicesOpen)
+    }
+  }
 
-  return (
-    <header className="w-full bg-white border-b border-gray-200 sticky top-0 z-50">
-      <div className="container mx-auto px-4 h-32 lg:h-44 flex items-center justify-between">
-        {/* LOGO (Left) */}
-        <div className="flex-shrink-0">
-          <Link href="/">
-            <Image
-              src="/images/dwb-primary-logo.png"
-              alt="Dallas Window Butler"
-              width={220}
-              height={90}
-              className="h-20 lg:h-32 w-auto object-contain"
-              priority
-            />
-          </Link>
-        </div>
+  const handleServiceAreasClick = () => {
+    if (window.innerWidth < 1024) {
+      setIsServiceAreasOpen(!isServiceAreasOpen)
+    }
+  }
 
-        {/* VERTICAL STACKED NAVIGATION (Center) */}
-        <nav className="hidden lg:flex flex-col items-start justify-center gap-1 px-12">
-          <Link 
-            href="/" 
-            className="text-[14px] font-black uppercase text-[#00152e] hover:text-[#049bf2] leading-none tracking-widest py-0.5"
-          >
-            HOME
-          </Link>
+  const handleKeyDown = (e: React.KeyboardEvent, setter: (value: boolean) => void) => {
+    if (e.key === "Escape") {
+      setter(false)
+    }
+  }
+
+    const { phoneDisplay, phoneHref, quoteHref, primaryLabel, secondaryLabel } = CTA_CONFIG
+
+    return (
+      <>
+        <style jsx>{`
+          /* Simplified header styles with proper mobile breakpoint */
+          .primary-header {
+            height: auto !important;
+            min-height: 95px !important;
+            padding: 14px 0 !important;
+            margin: 0 !important;
+            box-shadow: none !important;
+            border-bottom: 1px solid #e2e8f0 !important;
+          }
           
-          <div 
-            className="relative" 
-            onMouseEnter={handleServicesMouseEnter} 
-            onMouseLeave={handleServicesMouseLeave}
-          >
-            <button 
-              className="text-[14px] font-black uppercase text-[#00152e] hover:text-[#049bf2] flex items-center gap-1 leading-none tracking-widest py-1"
-            >
-              SERVICES <ChevronDown className="w-3 h-3" />
-            </button>
-            <div 
-              className={`absolute left-0 top-full pt-2 z-[60] transition-all duration-200 ${
-                isServicesOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible translate-y-1"
-              }`}
-            >
-              <div className="w-[280px] bg-white border border-gray-100 rounded-xl shadow-2xl p-2">
-                {servicesItems.map((item) => (
-                  <Link 
-                    key={item.href} 
-                    href={item.href} 
-                    className="block px-4 py-3 text-sm text-[#00152e] hover:bg-[#049bf2] hover:text-white rounded-lg font-bold transition-all duration-150 whitespace-nowrap"
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
+          .primary-header .container {
+            height: auto !important;
+            display: flex !important;
+            align-items: center !important;
+            padding: 0 16px !important;
+          }
 
-          <div 
-            className="relative" 
-            onMouseEnter={handleServiceAreasMouseEnter} 
-            onMouseLeave={handleServiceAreasMouseLeave}
-          >
-            <button 
-              className="text-[14px] font-black uppercase text-[#00152e] hover:text-[#049bf2] flex items-center gap-1 leading-none tracking-widest py-1"
-            >
-              LOCATIONS <ChevronDown className="w-3 h-3" />
-            </button>
-            <div 
-              className={`absolute left-0 top-full pt-2 z-[60] transition-all duration-200 ${
-                isServiceAreasOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible translate-y-1"
-              }`}
-            >
-              <div className="w-[220px] bg-white border border-gray-100 rounded-xl shadow-2xl p-2 max-h-[400px] overflow-y-auto">
-                <div className="px-4 py-2 text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">Cities</div>
-                {cityLinks.map((area) => (
-                  <Link 
-                    key={area.href} 
-                    href={area.href} 
-                    className="block px-4 py-3 text-sm text-[#00152e] hover:bg-[#049bf2] hover:text-white rounded-lg font-bold transition-all duration-150 whitespace-nowrap"
-                  >
-                    {area.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
+          /* Desktop navigation - shown only at 1024px and above */
+          @media (min-width: 1024px) {
+            .desktop-nav {
+              display: flex !important;
+            }
+            
+            .mobile-hamburger {
+              display: none !important;
+            }
+            
+            .primary-header .flex.items-center.justify-between {
+              display: flex !important;
+              align-items: center !important;
+              width: 100% !important;
+              gap: 16px !important;
+            }
+            
+            .primary-header .nav-menu {
+              margin-left: 20px !important;
+              margin-right: 16px !important;
+            }
 
-          {/* Bottom horizontal row of links */}
-          <div className="flex items-center gap-6 mt-1.5">
-            <Link 
-              href="/testimonials" 
-              className="text-[14px] font-black uppercase text-[#00152e] hover:text-[#049bf2] tracking-widest"
-            >
-              TESTIMONIALS
-            </Link>
-            <Link 
-              href="/blog" 
-              className="text-[14px] font-black uppercase text-[#00152e] hover:text-[#049bf2] tracking-widest"
-            >
-              BLOG
-            </Link>
-            <Link 
-              href="/about" 
-              className="text-[14px] font-black uppercase text-[#00152e] hover:text-[#049bf2] tracking-widest"
-            >
-              OUR TEAM
-            </Link>
-          </div>
-        </nav>
+            .primary-header .logo img,
+            .primary-header img {
+              display: block !important;
+              height: 85px !important;
+              width: auto !important;
+              max-height: none !important;
+              object-fit: contain !important;
+              margin-right: 20px !important;
+              min-height: unset !important;
+            }
 
-        {/* CTA BUTTONS (Right) */}
-        <div className="hidden lg:flex items-center gap-4 flex-shrink-0">
-          <Button
-            variant="outline"
-            className="border-2 border-[#049bf2] text-[#00152e] hover:bg-[#049bf2] hover:text-white px-6 py-3 h-auto rounded-2xl shadow-none font-bold transition-all duration-300 group"
-            asChild
-          >
-            <a href={phoneHref} className="flex items-center gap-3">
-              <div className="bg-[#049bf2] text-white p-2.5 rounded-xl group-hover:bg-white group-hover:text-[#049bf2] transition-colors">
-                <Phone className="w-5 h-5 fill-current" />
-              </div>
-              <div className="flex flex-col items-start">
-                <span className="text-[10px] uppercase font-black opacity-80 leading-none mb-1">Free Estimate</span>
-                <span className="text-lg font-black tracking-tight leading-none whitespace-nowrap">{phoneDisplay}</span>
-              </div>
-            </a>
-          </Button>
+            .primary-header a[href="/"] {
+              height: auto !important;
+              max-height: none !important;
+              overflow: visible !important;
+              display: flex !important;
+              align-items: center !important;
+              margin-left: -10px !important;
+            }
+          }
 
-          <a href={quoteHref} target="_blank" rel="noopener noreferrer">
-            <Button className="bg-[#049bf2] hover:bg-[#0389d5] text-white px-8 py-6 h-auto text-base font-black rounded-2xl whitespace-nowrap shadow-none border-none transition-all duration-300">
-              Check Pricing
-            </Button>
-          </a>
-        </div>
+          /* Mobile navigation - hidden on desktop, shown below 1024px */
+          @media (max-width: 1023px) {
+            .desktop-nav {
+              display: none !important;
+            }
+            
+            .mobile-hamburger {
+              display: flex !important;
+              margin-left: auto !important;
+            }
+            
+            .primary-header {
+              height: auto !important;
+              min-height: 70px !important;
+              padding: 16px 0 !important;
+            }
+            
+            .primary-header .container {
+              height: auto !important;
+              padding: 0 16px !important;
+            }
+            
+            .primary-header img {
+              max-height: 48px !important;
+              height: auto !important;
+            }
+          }
 
-        {/* MOBILE MENU TOGGLE */}
-        <Button 
-          variant="ghost" 
-          size="sm" 
-          className="lg:hidden ml-auto hover:bg-transparent" 
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          {isMenuOpen ? (
-            <X className="h-8 w-8 text-[#00152e]" />
-          ) : (
-            <Menu className="h-8 w-8 text-[#00152e]" />
-          )}
-        </Button>
-      </div>
+        /* Full-screen mobile menu overlay styles */
+        .mobile-menu-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.5);
+          z-index: 9998;
+          animation: fadeIn 0.2s ease-out;
+        }
+        
+        .mobile-menu-panel {
+          position: fixed;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          width: 85%;
+          max-width: 400px;
+          background: white;
+          z-index: 9999;
+          overflow-y: auto;
+          animation: slideIn 0.3s ease-out;
+          box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        
+        @keyframes slideIn {
+          from { transform: translateX(100%); }
+          to { transform: translateX(0); }
+        }
+        
+        .mobile-menu-header {
+          display: flex;
+          justify-content: flex-end;
+          padding: 20px;
+          border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .mobile-menu-content {
+          padding: 24px 20px;
+        }
+        
+        .mobile-menu-footer {
+          padding: 20px;
+          border-top: 1px solid #e2e8f0;
+          background: #f8fafc;
+        }
+      `}</style>
 
-      {/* MOBILE MENU OVERLAY */}
-      {isMenuOpen && (
-        <div className="fixed inset-0 bg-white z-[100] flex flex-col overflow-y-auto">
-          <div className="flex justify-between items-center p-6 border-b">
-            <div className="flex-shrink-0">
+      <header
+        className="primary-header bg-background shadow-sm border-b border-border relative z-40"
+        role="navigation"
+        aria-label="Site navigation"
+      >
+        <div className="container mx-auto px-4 py-2">
+          <div className="flex items-center justify-between">
+            {/* Logo - always visible */}
+            <Link href="/" className="flex items-center flex-shrink-0">
               <Image
                 src="/images/dwb-primary-logo.png"
                 alt="Dallas Window Butler"
-                width={150}
-                height={60}
-                className="h-12 w-auto object-contain"
+                width={200}
+                height={85}
+                className="block"
               />
-            </div>
-            <Button variant="ghost" onClick={() => setIsMenuOpen(false)}>
-              <X className="h-8 w-8 text-[#00152e]" />
-            </Button>
-          </div>
-          <nav className="p-8 flex flex-col gap-6">
-            <Link href="/" className="text-xl font-black uppercase text-[#00152e]" onClick={() => setIsMenuOpen(false)}>HOME</Link>
-            
-            <div>
-              <button 
-                className="flex items-center justify-between w-full text-xl font-black uppercase text-[#00152e]"
-                onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-              >
-                SERVICES
-                <ChevronDown className={`w-6 h-6 transition-transform ${isMobileServicesOpen ? "rotate-180" : ""}`} />
-              </button>
-              {isMobileServicesOpen && (
-                <div className="mt-4 flex flex-col gap-4 pl-4 border-l-2 border-blue-500">
-                  {servicesItems.map((item) => (
-                    <Link key={item.href} href={item.href} className="text-lg font-bold text-gray-600" onClick={() => setIsMenuOpen(false)}>{item.name}</Link>
-                  ))}
-                </div>
-              )}
-            </div>
+            </Link>
 
-            <div>
-              <button 
-                className="flex items-center justify-between w-full text-xl font-black uppercase text-[#00152e]"
-                onClick={() => setIsMobileServiceAreasOpen(!isMobileServiceAreasOpen)}
+            <nav
+              className="desktop-nav items-center gap-8 nav-menu"
+              style={{ alignItems: "center", gap: "24px" }}
+            >
+              <Link
+                href="/"
+                className="hover:underline hover:text-shadow-md font-semibold transition-all duration-150 ease-out uppercase tracking-[0.02em] text-lg py-3 text-[var(--color-brand-navy)] text-shadow-lift"
               >
-                LOCATIONS
-                <ChevronDown className={`w-6 h-6 transition-transform ${isMobileServiceAreasOpen ? "rotate-180" : ""}`} />
-              </button>
-              {isMobileServiceAreasOpen && (
-                <div className="mt-4 flex flex-col gap-4 pl-4 border-l-2 border-blue-500">
-                  {cityLinks.map((area) => (
-                    <Link key={area.href} href={area.href} className="text-lg font-bold text-gray-600" onClick={() => setIsMenuOpen(false)}>{area.label}</Link>
-                  ))}
-                </div>
-              )}
-            </div>
+                Home
+              </Link>
 
-            <Link href="/testimonials" className="text-xl font-black uppercase text-[#00152e]" onClick={() => setIsMenuOpen(false)}>TESTIMONIALS</Link>
-            <Link href="/blog" className="text-xl font-black uppercase text-[#00152e]" onClick={() => setIsMenuOpen(false)}>BLOG</Link>
-            <Link href="/about" className="text-xl font-black uppercase text-[#00152e]" onClick={() => setIsMenuOpen(false)}>OUR TEAM</Link>
-            
-            <div className="mt-4 flex flex-col gap-4 w-full">
+              <div
+                className="relative group/nav"
+                data-dropdown
+                onMouseEnter={handleServicesMouseEnter}
+                onMouseLeave={handleServicesMouseLeave}
+              >
+                <button
+                  id="nav-services"
+                  className="hover:underline hover:text-shadow-md font-semibold transition-all duration-150 ease-out uppercase tracking-[0.02em] text-lg py-3 text-[var(--color-brand-navy)] text-shadow-lift"
+                  aria-haspopup="true"
+                  aria-expanded={isServicesOpen}
+                  aria-controls="menu-services"
+                  onClick={handleServicesClick}
+                  onKeyDown={(e) => handleKeyDown(e, setIsServicesOpen)}
+                >
+                  Services
+                  <ChevronDown
+                    className={`w-3.5 h-3.5 transition-transform lg:hidden text-[var(--color-brand-navy)] ${isServicesOpen ? "rotate-180" : ""}`}
+                  />
+                </button>
+
+                <div
+                  id="menu-services"
+                  role="menu"
+                  aria-labelledby="nav-services"
+                  className={`invisible opacity-0 pointer-events-none absolute left-0 top-full z-[200] w-72 max-w-[18rem] rounded-xl border border-border bg-background shadow-lg transform translate-y-1.5 transition-all duration-150 ease-out group-hover/nav:visible group-hover/nav:opacity-100 group-hover/nav:pointer-events-auto group-hover/nav:translate-y-0 group-focus-within/nav:visible group-focus-within/nav:opacity-100 group-focus-within/nav:pointer-events-auto group-focus-within/nav:translate-y-0 ${
+                    isServicesOpen ? "!visible !opacity-100 !pointer-events-auto !translate-y-0" : ""
+                  }`}
+                >
+                  <div className="absolute -top-[10px] left-0 right-0 h-[10px]"></div>
+
+                  <div className="p-2 space-y-1">
+                    {servicesItems.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        role="menuitem"
+                        className="block w-full rounded-lg px-3 py-3 text-sm leading-snug text-foreground hover:bg-[#049bf2] hover:text-white focus:bg-[#049bf2] focus:text-white focus:outline-none transition-all duration-150 min-h-[44px] flex items-center whitespace-nowrap font-semibold"
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div
+                className="relative group/nav"
+                data-dropdown
+                onMouseEnter={handleServiceAreasMouseEnter}
+                onMouseLeave={handleServiceAreasMouseLeave}
+              >
+                <button
+                  id="nav-areas"
+                  className="hover:underline hover:text-shadow-md font-semibold transition-all duration-150 ease-out uppercase tracking-[0.02em] text-lg py-3 text-[var(--color-brand-navy)] text-shadow-lift"
+                  aria-haspopup="true"
+                  aria-expanded={isServiceAreasOpen}
+                  aria-controls="menu-areas"
+                  onClick={handleServiceAreasClick}
+                  onKeyDown={(e) => handleKeyDown(e, setIsServiceAreasOpen)}
+                >
+                  Locations
+                  <ChevronDown
+                    className={`w-3.5 h-3.5 transition-transform lg:hidden text-[var(--color-brand-navy)] ${isServiceAreasOpen ? "rotate-180" : ""}`}
+                  />
+                </button>
+
+                <div
+                  id="menu-areas"
+                  role="menu"
+                  aria-labelledby="nav-areas"
+                  className={`invisible opacity-0 pointer-events-none absolute left-0 top-full z-[200] w-72 max-w-[18rem] rounded-xl border border-border bg-background shadow-lg transform translate-y-1.5 transition-all duration-150 ease-out group-hover/nav:visible group-hover/nav:opacity-100 group-hover/nav:pointer-events-auto group-hover/nav:translate-y-0 group-focus-within/nav:visible group-focus-within/nav:opacity-100 group-focus-within/nav:pointer-events-auto group-focus-within/nav:translate-y-0 ${
+                    isServiceAreasOpen ? "!visible !opacity-100 !pointer-events-auto !translate-y-0" : ""
+                  }`}
+                >
+                  <div className="absolute -top-[10px] left-0 right-0 h-[10px]"></div>
+
+                  <div className="p-2 space-y-1">
+                    <div className="px-3 pt-2 pb-1 text-[11px] uppercase tracking-wide text-muted-foreground">Cities</div>
+                    {cityLinks.map((area) => (
+                      <Link
+                        key={area.href}
+                        href={area.href}
+                        role="menuitem"
+                        className="block w-full rounded-lg px-3 py-3 text-sm leading-snug text-foreground hover:bg-[#049bf2] hover:text-white focus:bg-[#049bf2] focus:text-white focus:outline-none transition-all duration-150 min-h-[44px] flex items-center whitespace-nowrap font-semibold"
+                      >
+                        {area.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <Link
+                href="/testimonials"
+                className="hover:underline hover:text-shadow-md font-semibold transition-all duration-150 ease-out uppercase tracking-[0.02em] text-lg py-3 text-[var(--color-brand-navy)] text-shadow-lift"
+              >
+                Testimonials
+              </Link>
+              <Link
+                href="/blog"
+                className="hover:underline hover:text-shadow-md font-semibold transition-all duration-150 ease-out uppercase tracking-[0.02em] text-lg py-3 text-[var(--color-brand-navy)] text-shadow-lift"
+              >
+                Blog
+              </Link>
+              <Link
+                href="/about"
+                className="hover:underline hover:text-shadow-md font-semibold transition-all duration-150 ease-out uppercase tracking-[0.02em] text-lg py-3 text-[var(--color-brand-navy)] text-shadow-lift"
+              >
+                Our Team
+              </Link>
+            </nav>
+
+            <div className="desktop-nav items-center gap-4 ml-auto">
               <a 
                 href={phoneHref} 
-                className="w-full bg-[#049bf2] text-white py-5 rounded-xl font-black text-xl text-center shadow-lg"
+                className="flex flex-col items-end"
+                aria-label="Call Dallas Window Butler for a free estimate"
               >
-                {phoneDisplay}
+                <div className="flex items-center gap-1.5">
+                  <Phone className="w-4 h-4 text-[var(--color-brand-navy)]" />
+                  <span className="text-[var(--color-brand-navy)] font-semibold text-lg text-shadow-lift">
+                    {phoneDisplay}
+                  </span>
+                </div>
+                <span className="text-xs text-muted-foreground">
+                  Call for a free estimate!
+                </span>
               </a>
-              <a 
-                href={quoteHref} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="w-full border-2 border-[#049bf2] text-[#049bf2] py-5 rounded-xl font-black text-xl text-center"
+
+              <a
+                href={quoteHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open request form to schedule a free consultation"
               >
-                CHECK PRICING
+                <Button className="bg-[var(--color-brand-blue)] hover:bg-[var(--color-brand-blue-dark)] text-white px-4 py-2 transition-all duration-150 ease-out">
+                  {secondaryLabel}
+                </Button>
               </a>
             </div>
-          </nav>
+
+              <Button
+                variant="ghost"
+                size="sm"
+                className="mobile-hamburger transition-colors duration-150 ease-out"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+              >
+              {isMenuOpen ? (
+                <X className="h-6 w-6 text-[var(--color-brand-navy)]" />
+              ) : (
+                <Menu className="h-6 w-6 text-[var(--color-brand-navy)]" />
+              )}
+            </Button>
+          </div>
         </div>
+      </header>
+
+      {isMenuOpen && (
+        <>
+          <div 
+            className="mobile-menu-overlay" 
+            onClick={() => setIsMenuOpen(false)}
+            aria-hidden="true"
+          />
+          <div className="mobile-menu-panel">
+            <div className="mobile-menu-header">
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setIsMenuOpen(false)}
+                aria-label="Close menu"
+              >
+                <X className="h-6 w-6 text-[var(--color-brand-navy)]" />
+              </Button>
+            </div>
+
+            <nav className="mobile-menu-content">
+              <div className="flex flex-col gap-2">
+                <Link
+                  href="/"
+                  className="block py-3 px-4 text-lg font-semibold text-[var(--color-brand-navy)] hover:bg-muted rounded-lg transition-all duration-150"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Home
+                </Link>
+
+                {/* Services accordion */}
+                <div>
+                  <button
+                    className="flex items-center justify-between w-full py-3 px-4 text-lg font-semibold text-[var(--color-brand-navy)] hover:bg-muted rounded-lg transition-all duration-150"
+                    onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
+                    aria-expanded={isMobileServicesOpen}
+                  >
+                    Services
+                    <ChevronDown
+                      className={`w-4 h-4 transition-transform ${isMobileServicesOpen ? "rotate-180" : ""}`}
+                    />
+                  </button>
+
+                  {isMobileServicesOpen && (
+                    <div className="ml-4 mt-1 space-y-1">
+                      {servicesItems.map((item) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          className="block py-3 px-4 text-base text-foreground hover:bg-muted rounded-lg transition-all duration-150"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          {item.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                {/* Locations accordion */}
+                <div>
+                  <button
+                    className="flex items-center justify-between w-full py-3 px-4 text-lg font-semibold text-[var(--color-brand-navy)] hover:bg-muted rounded-lg transition-all duration-150"
+                    onClick={() => setIsMobileServiceAreasOpen(!isMobileServiceAreasOpen)}
+                    aria-expanded={isMobileServiceAreasOpen}
+                  >
+                    Locations
+                    <ChevronDown
+                      className={`w-4 h-4 transition-transform ${isMobileServiceAreasOpen ? "rotate-180" : ""}`}
+                    />
+                  </button>
+
+                  {isMobileServiceAreasOpen && (
+                    <div className="ml-4 mt-1 space-y-1">
+                  {cityLinks.map((area) => (
+                        <Link
+                          key={area.href}
+                          href={area.href}
+                          className="block py-3 px-4 text-base text-foreground hover:bg-muted rounded-lg transition-all duration-150"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                      {area.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                <Link
+                  href="/testimonials"
+                  className="block py-3 px-4 text-lg font-semibold text-[var(--color-brand-navy)] hover:bg-muted rounded-lg transition-all duration-150"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Testimonials
+                </Link>
+
+                <Link
+                  href="/blog"
+                  className="block py-3 px-4 text-lg font-semibold text-[var(--color-brand-navy)] hover:bg-muted rounded-lg transition-all duration-150"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Blog
+                </Link>
+
+                <Link
+                  href="/about"
+                  className="block py-3 px-4 text-lg font-semibold text-[var(--color-brand-navy)] hover:bg-muted rounded-lg transition-all duration-150"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Our Team
+                </Link>
+              </div>
+            </nav>
+
+            {/* Mobile menu footer with CTA and phone */}
+            <div className="mobile-menu-footer">
+              <a
+                href={quoteHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block mb-4"
+              >
+                <Button className="w-full bg-[var(--color-brand-blue)] hover:bg-[var(--color-brand-blue-dark)] text-white py-3 text-base font-semibold transition-all duration-150 ease-out">
+                  {secondaryLabel}
+                </Button>
+              </a>
+
+              <a
+                href={phoneHref}
+                className="block text-center text-base text-[var(--color-brand-navy)] font-medium hover:underline"
+              >
+                Call {phoneDisplay}
+              </a>
+            </div>
+          </div>
+        </>
       )}
-    </header>
+    </>
   )
 }
 
