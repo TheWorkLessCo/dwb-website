@@ -388,7 +388,7 @@ export default function HomePage() {
                   <div className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-500 hover:scale-[1.02] hover:shadow-3xl">
                     <Image 
                       src="/images/how-it-works-consult.jpg" 
-                      alt="In-home consultation with homeowner"
+                      alt="In-home or virtual consultation with homeowner"
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
                       sizes="(max-width: 768px) 100vw, 33vw"
@@ -405,7 +405,7 @@ export default function HomePage() {
                     <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8 text-white z-10">
                       <span className="text-sm font-light italic opacity-90">Step 1</span>
                       <h3 className="text-2xl lg:text-3xl font-black uppercase tracking-wide mt-1">
-                        In-Home<br />Consultation
+                        In-Home or Virtual<br />Consultation
                       </h3>
                     </div>
                   </div>
@@ -416,7 +416,7 @@ export default function HomePage() {
                   <div className="relative h-[350px] lg:h-[420px] rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-500 hover:scale-[1.02] hover:shadow-3xl">
                     <Image 
                       src="/images/how-it-works-measure.jpg" 
-                      alt="Choosing windows and doors at showroom"
+                      alt="Choosing windows or glass options"
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
                       sizes="(max-width: 768px) 100vw, 33vw"
@@ -433,7 +433,7 @@ export default function HomePage() {
                     <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8 text-white z-10">
                       <span className="text-sm font-light italic opacity-90">Step 2</span>
                       <h3 className="text-2xl lg:text-3xl font-black uppercase tracking-wide mt-1">
-                        Choose Your<br />Windows or Doors
+                        Choose Your<br />Windows or Glass
                       </h3>
                     </div>
                   </div>
