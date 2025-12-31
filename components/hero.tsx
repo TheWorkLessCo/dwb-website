@@ -43,8 +43,8 @@ export function Hero() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               {/* Left Column - Copy */}
               <div className="text-white space-y-6 lg:space-y-8">
-                <div className="text-sm sm:text-base text-[#049BF2] font-medium uppercase tracking-wide">
-                  TIRED OF DRAFTS & PUSHY SALESPEOPLE?
+                <div className="text-sm sm:text-base text-[#049BF2] font-bold uppercase tracking-wide">
+                  FOR THE HOMEOWNER WHO WANTS RESPECT, NOT A SALES SCRIPT
                 </div>
 
                 <div className="space-y-4">
