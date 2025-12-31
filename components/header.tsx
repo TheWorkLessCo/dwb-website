@@ -371,8 +371,8 @@ export function Header() {
                 className="flex items-center gap-3 border-2 border-[#049bf2] rounded-2xl px-5 py-2.5 hover:bg-[#049bf2] hover:text-white transition-all duration-300 group"
                 aria-label="Call Dallas Window Butler for a free estimate"
               >
-                <div className="bg-[#049bf2] text-white p-2 rounded-xl group-hover:bg-white group-hover:text-[#049bf2] transition-colors">
-                  <Phone className="w-4 h-4 fill-current" />
+                <div className="bg-[#049bf2] text-white p-2.5 rounded-xl group-hover:bg-white group-hover:text-[#049bf2] transition-colors flex items-center justify-center">
+                  <Phone className="w-5 h-5" strokeWidth={2} />
                 </div>
                 <div className="flex flex-col items-start">
                   <span className="text-[10px] uppercase font-bold opacity-80 leading-none mb-1 text-[#00152e] group-hover:text-white">
@@ -542,8 +542,9 @@ export function Header() {
 
               <a
                 href={phoneHref}
-                className="block text-center text-base text-[var(--color-brand-navy)] font-medium hover:underline"
+                className="flex items-center justify-center gap-2 text-base text-[var(--color-brand-navy)] font-medium hover:underline"
               >
+                <Phone className="w-4 h-4" />
                 Call {phoneDisplay}
               </a>
             </div>
