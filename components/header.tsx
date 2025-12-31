@@ -26,8 +26,8 @@ export function Header() {
     { name: "Patio Doors", href: "/services/patio-doors" },
     { name: "Solar Screens", href: "/services/solar-screens" },
     { name: "Blinds & Shades", href: "/services/blinds-shades" },
-    { name: "Motorized Patio Shades", href: "/services/motorized-patio-shades" },
-    { name: "Motorized Awnings", href: "/services/motorized-awnings" },
+    { name: "Motorized Patio Shades", href: "/services/motorized-patio-shades", isNew: true },
+    { name: "Motorized Awnings", href: "/services/motorized-awnings", isNew: true },
     { name: "Waterproofing & Sealing", href: "/services/waterproofing-sealing" },
   ]
 
@@ -288,9 +288,14 @@ export function Header() {
                         key={item.href}
                         href={item.href}
                         role="menuitem"
-                        className="block w-full rounded-lg px-3 py-3 text-sm leading-snug text-foreground hover:bg-[#049bf2] hover:text-white focus:bg-[#049bf2] focus:text-white focus:outline-none transition-all duration-150 min-h-[44px] flex items-center whitespace-nowrap font-semibold"
+                        className="block w-full rounded-lg px-3 py-3 text-sm leading-snug text-foreground hover:bg-[#049bf2] hover:text-white focus:bg-[#049bf2] focus:text-white focus:outline-none transition-all duration-150 min-h-[44px] flex items-center justify-between whitespace-nowrap font-semibold"
                       >
                         {item.name}
+                        {item.isNew && (
+                          <span className="ml-2 px-1.5 py-0.5 text-[10px] font-bold bg-green-500 text-white rounded uppercase tracking-wide">
+                            NEW
+                          </span>
+                        )}
                       </Link>
                     ))}
                   </div>
@@ -464,10 +469,15 @@ export function Header() {
                         <Link
                           key={item.href}
                           href={item.href}
-                          className="block py-3 px-4 text-base text-foreground hover:bg-muted rounded-lg transition-all duration-150"
+                          className="flex items-center justify-between py-3 px-4 text-base text-foreground hover:bg-muted rounded-lg transition-all duration-150"
                           onClick={() => setIsMenuOpen(false)}
                         >
                           {item.name}
+                          {item.isNew && (
+                            <span className="ml-2 px-1.5 py-0.5 text-[10px] font-bold bg-green-500 text-white rounded uppercase tracking-wide">
+                              NEW
+                            </span>
+                          )}
                         </Link>
                       ))}
                     </div>
