@@ -7,4 +7,4 @@ dist/
 pnpm-lock.yaml
 yarn.lock
 npm-debug.log*
-.DS_Store
+.DS_Storetsconfig.tsbuildinfo
