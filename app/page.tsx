@@ -367,111 +367,103 @@ export default function HomePage() {
             </div>
           </section>
 
-          {/* 7. How It Works - Image-Based Layout */}
-          <section id="how-it-works" className="py-20 bg-white">
+          {/* 7. How It Works - Diagonal Staggered Layout */}
+          <section id="how-it-works" className="py-20 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
             <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               {/* Section Headline */}
-              <div className="text-center mb-16">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
-                  Simple, Professional Window Replacement in 3 Easy Steps
+              <div className="mb-16">
+                <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-[#049BF2] italic mb-4">
+                  It&apos;s as Easy 1, 2, 3
                 </h2>
+                <p className="text-xl text-gray-600 max-w-2xl">
+                  Our no-pressure representatives assess your current windows, offer expert recommendations, and ensure a delightful experience.
+                </p>
               </div>
 
-              {/* 3-Column Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mb-16">
-                {/* STEP 1 */}
-                <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                  <div className="relative">
-                    {/* Image Placeholder */}
-                    <div className="aspect-[4/3] bg-gradient-to-br from-blue-50 to-blue-100 relative overflow-hidden">
-                      <Image 
-                        src="/images/how-it-works-consult.jpg" 
-                        alt="Friendly consultation with homeowner"
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 100vw, 33vw"
-                      />
-                      {/* Fallback overlay */}
-                      <div className="absolute inset-0 flex items-center justify-center -z-10">
-                        <span className="text-blue-300 font-medium italic text-center px-4">Friendly Consult Image</span>
-                      </div>
+              {/* Diagonal Staggered Grid */}
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start mb-16">
+                
+                {/* STEP 1 - Left, taller */}
+                <div className="lg:col-span-4 lg:mt-0 group">
+                  <div className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-500 hover:scale-[1.02] hover:shadow-3xl">
+                    <Image 
+                      src="/images/how-it-works-consult.jpg" 
+                      alt="In-home consultation with homeowner"
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                    {/* Diagonal Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#049BF2]/90 via-[#049BF2]/40 to-transparent" />
+                    {/* Diagonal Accent Shape */}
+                    <div className="absolute bottom-0 left-0 right-0 h-1/2">
+                      <svg className="absolute bottom-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                        <polygon fill="rgba(4, 155, 242, 0.85)" points="0,40 100,20 100,100 0,100" />
+                      </svg>
                     </div>
-                    {/* Step Badge */}
-                    <div className="absolute -bottom-5 left-6 w-12 h-12 bg-[#049BF2] text-white rounded-full flex items-center justify-center text-xl font-bold shadow-lg border-4 border-white">
-                      1
+                    {/* Content */}
+                    <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8 text-white z-10">
+                      <span className="text-sm font-light italic opacity-90">Step 1</span>
+                      <h3 className="text-2xl lg:text-3xl font-black uppercase tracking-wide mt-1">
+                        In-Home<br />Consultation
+                      </h3>
                     </div>
-                  </div>
-                  <div className="p-6 pt-10">
-                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
-                      Book My Free Consult
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed">
-                      Tell us your goals and window count. We give you a firm price in 30 minutes with zero sales pressure.
-                    </p>
                   </div>
                 </div>
 
-                {/* STEP 2 */}
-                <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                  <div className="relative">
-                    {/* Image Placeholder */}
-                    <div className="aspect-[4/3] bg-gradient-to-br from-blue-50 to-blue-100 relative overflow-hidden">
-                      <Image 
-                        src="/images/how-it-works-measure.jpg" 
-                        alt="Precise window measurements being taken"
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 100vw, 33vw"
-                      />
-                      {/* Fallback overlay */}
-                      <div className="absolute inset-0 flex items-center justify-center -z-10">
-                        <span className="text-blue-300 font-medium italic text-center px-4">Measuring / Precision Image</span>
-                      </div>
+                {/* STEP 2 - Center, offset down */}
+                <div className="lg:col-span-4 lg:mt-24 group">
+                  <div className="relative h-[350px] lg:h-[420px] rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-500 hover:scale-[1.02] hover:shadow-3xl">
+                    <Image 
+                      src="/images/how-it-works-measure.jpg" 
+                      alt="Choosing windows and doors at showroom"
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                    {/* Diagonal Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#049BF2]/90 via-[#049BF2]/40 to-transparent" />
+                    {/* Diagonal Accent Shape */}
+                    <div className="absolute bottom-0 left-0 right-0 h-1/2">
+                      <svg className="absolute bottom-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                        <polygon fill="rgba(4, 155, 242, 0.85)" points="0,30 100,50 100,100 0,100" />
+                      </svg>
                     </div>
-                    {/* Step Badge */}
-                    <div className="absolute -bottom-5 left-6 w-12 h-12 bg-[#049BF2] text-white rounded-full flex items-center justify-center text-xl font-bold shadow-lg border-4 border-white">
-                      2
+                    {/* Content */}
+                    <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8 text-white z-10">
+                      <span className="text-sm font-light italic opacity-90">Step 2</span>
+                      <h3 className="text-2xl lg:text-3xl font-black uppercase tracking-wide mt-1">
+                        Choose Your<br />Windows or Doors
+                      </h3>
                     </div>
-                  </div>
-                  <div className="p-6 pt-10">
-                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
-                      Measure & Custom Order
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed">
-                      We take exact measurements to ensure an airtight fit, then custom order your premium vinyl windows.
-                    </p>
                   </div>
                 </div>
 
-                {/* STEP 3 */}
-                <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                  <div className="relative">
-                    {/* Image Placeholder */}
-                    <div className="aspect-[4/3] bg-gradient-to-br from-blue-50 to-blue-100 relative overflow-hidden">
-                      <Image 
-                        src="/images/how-it-works-install.jpg" 
-                        alt="Clean room after professional window installation"
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 100vw, 33vw"
-                      />
-                      {/* Fallback overlay */}
-                      <div className="absolute inset-0 flex items-center justify-center -z-10">
-                        <span className="text-blue-300 font-medium italic text-center px-4">Clean Room / Finished Job Image</span>
-                      </div>
+                {/* STEP 3 - Right, offset less */}
+                <div className="lg:col-span-4 lg:mt-8 group">
+                  <div className="relative h-[380px] lg:h-[460px] rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-500 hover:scale-[1.02] hover:shadow-3xl">
+                    <Image 
+                      src="/images/how-it-works-install.jpg" 
+                      alt="Beautiful finished window installation"
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                    {/* Diagonal Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#049BF2]/90 via-[#049BF2]/40 to-transparent" />
+                    {/* Diagonal Accent Shape */}
+                    <div className="absolute bottom-0 left-0 right-0 h-1/2">
+                      <svg className="absolute bottom-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                        <polygon fill="rgba(4, 155, 242, 0.85)" points="0,50 100,30 100,100 0,100" />
+                      </svg>
                     </div>
-                    {/* Step Badge */}
-                    <div className="absolute -bottom-5 left-6 w-12 h-12 bg-[#049BF2] text-white rounded-full flex items-center justify-center text-xl font-bold shadow-lg border-4 border-white">
-                      3
+                    {/* Content */}
+                    <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8 text-white z-10">
+                      <span className="text-sm font-light italic opacity-90">Step 3</span>
+                      <h3 className="text-2xl lg:text-3xl font-black uppercase tracking-wide mt-1">
+                        Installation<br />Celebration!
+                      </h3>
                     </div>
-                  </div>
-                  <div className="p-6 pt-10">
-                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
-                      1-Day Install & Cleanup
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed">
-                      Our &quot;White Glove&quot; team handles the install and the cleanup. We leave your home spotless.
-                    </p>
                   </div>
                 </div>
               </div>
@@ -480,7 +472,7 @@ export default function HomePage() {
               <div className="text-center">
                 <a
                   href="/book#form"
-                  className="inline-flex items-center px-10 py-4 bg-[#049BF2] text-white text-lg font-bold rounded-xl hover:bg-[#0389d5] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
+                  className="inline-flex items-center px-10 py-5 bg-[#049BF2] text-white text-lg font-bold rounded-xl hover:bg-[#0389d5] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
                   {...howItWorksTrackingAttrs}
                 >
                   Get My Free Quote
