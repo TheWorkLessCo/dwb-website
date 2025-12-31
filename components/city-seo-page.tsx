@@ -9,7 +9,6 @@ import FinalCTABanner from "@/components/final-cta-banner"
 import RockwallComparisonTable from "@/components/rockwall-comparison-table"
 import { McKinneyComparisonTable } from "@/components/mckinney-comparison-table"
 import { WarrantyCard } from "@/components/warranty-card"
-import { WhyChooseSix } from "@/components/why-choose-six"
 import ImageBridge from "@/components/ImageBridge"
 import { ResultsBar } from "@/components/results-bar"
 import { CTA_CONFIG, ALT_SECONDARY_LABEL } from "@/lib/cta"
@@ -402,11 +401,6 @@ export function CitySeoPage({ cityData, customHeadings }: CitySeoPageProps) {
           </div>
         </div>
       </section>
-
-      {/* City-Specific Why Choose Us Section */}
-      {[`Rockwall`, `McKinney`, `Allen`, `Plano`, `North Richardson`].includes(cityName) && (
-        <WhyChooseSix cityName={cityName} />
-      )}
 
       {/* 3-Step Process */}
       <section id="process" className="bg-slate-50 py-16">

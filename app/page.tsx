@@ -2,7 +2,6 @@
 
 import { Hero } from "@/components/hero"
 import { ResultsBar } from "@/components/results-bar"
-import WhyChooseUsV2 from "@/components/why-choose-us-v2"
 import ComparisonTable from "@/components/comparison-table"
 import FinalCTABanner from "@/components/final-cta-banner"
 import { getTrackingAttributes } from "@/lib/tracking"
@@ -483,11 +482,6 @@ export default function HomePage() {
               </div>
             </div>
           </section>
-
-          {/* Why Choose Us */}
-          <div id="why-choose-us">
-            <WhyChooseUsV2 />
-          </div>
 
           <section className="w-full py-16 bg-white" aria-label="Certifications and Partnerships">
             <div className="w-full">
