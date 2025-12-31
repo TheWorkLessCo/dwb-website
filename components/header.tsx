@@ -365,30 +365,34 @@ export function Header() {
             </nav>
 
             <div className="desktop-nav items-center gap-4 ml-auto">
+              {/* Phone Button with Icon */}
               <a 
                 href={phoneHref} 
-                className="flex flex-col items-end"
+                className="flex items-center gap-3 border-2 border-[#049bf2] rounded-2xl px-5 py-2.5 hover:bg-[#049bf2] hover:text-white transition-all duration-300 group"
                 aria-label="Call Dallas Window Butler for a free estimate"
               >
-                <div className="flex items-center gap-1.5">
-                  <Phone className="w-4 h-4 text-[var(--color-brand-navy)]" />
-                  <span className="text-[var(--color-brand-navy)] font-semibold text-lg text-shadow-lift">
+                <div className="bg-[#049bf2] text-white p-2 rounded-xl group-hover:bg-white group-hover:text-[#049bf2] transition-colors">
+                  <Phone className="w-4 h-4 fill-current" />
+                </div>
+                <div className="flex flex-col items-start">
+                  <span className="text-[10px] uppercase font-bold opacity-80 leading-none mb-1 text-[#00152e] group-hover:text-white">
+                    Free Estimate
+                  </span>
+                  <span className="text-base font-black tracking-tight leading-none whitespace-nowrap text-[#00152e] group-hover:text-white">
                     {phoneDisplay}
                   </span>
                 </div>
-                <span className="text-xs text-muted-foreground">
-                  Call for a free estimate!
-                </span>
               </a>
 
+              {/* Check Pricing Button */}
               <a
                 href={quoteHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Open request form to schedule a free consultation"
+                aria-label="Check pricing for window replacement"
               >
-                <Button className="bg-[var(--color-brand-blue)] hover:bg-[var(--color-brand-blue-dark)] text-white px-4 py-2 transition-all duration-150 ease-out">
-                  {secondaryLabel}
+                <Button className="bg-[#049bf2] hover:bg-[#0389d5] text-white px-6 py-5 h-auto text-base font-bold rounded-2xl whitespace-nowrap shadow-none transition-all duration-300">
+                  Check Pricing
                 </Button>
               </a>
             </div>
