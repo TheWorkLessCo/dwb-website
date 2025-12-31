@@ -390,7 +390,7 @@ export default function HomePage() {
                 <div className="lg:col-span-4 lg:mt-0 group">
                   <div className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-500 hover:scale-[1.02] hover:shadow-3xl">
                     <Image 
-                      src="/images/how-it-works-consult.jpg" 
+                      src="https://dallaswindowbutler.b-cdn.net/G'5%20Star.png" 
                       alt="In-home or virtual consultation with homeowner"
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -418,7 +418,7 @@ export default function HomePage() {
                 <div className="lg:col-span-4 lg:mt-24 group">
                   <div className="relative h-[350px] lg:h-[420px] rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-500 hover:scale-[1.02] hover:shadow-3xl">
                     <Image 
-                      src="/images/how-it-works-measure.jpg" 
+                      src="https://dallaswindowbutler.b-cdn.net/newer.png" 
                       alt="Choosing windows or glass options"
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -446,7 +446,7 @@ export default function HomePage() {
                 <div className="lg:col-span-4 lg:mt-8 group">
                   <div className="relative h-[380px] lg:h-[460px] rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-500 hover:scale-[1.02] hover:shadow-3xl">
                     <Image 
-                      src="/images/how-it-works-install.jpg" 
+                      src="https://dallaswindowbutler.b-cdn.net/new2.png" 
                       alt="Beautiful finished window installation"
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
