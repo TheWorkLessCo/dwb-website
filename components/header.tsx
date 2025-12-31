@@ -402,7 +402,7 @@ export function Header() {
               <Button
                 variant="ghost"
                 size="sm"
-                className="mobile-hamburger transition-colors duration-150 ease-out"
+                className="mobile-hamburger lg:!hidden transition-colors duration-150 ease-out"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 aria-label={isMenuOpen ? "Close menu" : "Open menu"}
               >
