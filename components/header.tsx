@@ -358,7 +358,7 @@ export function Header() {
               </Link>
               <Link
                 href="/about"
-                className="hover:underline hover:text-shadow-md font-semibold transition-all duration-150 ease-out uppercase tracking-[0.02em] text-lg py-3 text-[var(--color-brand-navy)] text-shadow-lift"
+                className="hover:underline hover:text-shadow-md font-semibold transition-all duration-150 ease-out uppercase tracking-[0.02em] text-lg py-3 text-[var(--color-brand-navy)] text-shadow-lift whitespace-nowrap"
               >
                 Our Team
               </Link>
