@@ -23,7 +23,7 @@ export function WarrantyCard() {
       ></div>
       
       {/* Main Card with Glassmorphism */}
-      <div className="bg-white/60 backdrop-blur-2xl rounded-[40px] md:rounded-[60px] p-6 md:p-10 shadow-[0_40px_100px_-15px_rgba(4,155,242,0.25)] border border-white/40 flex flex-col items-center text-center relative overflow-visible">
+      <div className="bg-white/80 backdrop-blur-xl rounded-[40px] md:rounded-[60px] p-6 md:p-10 shadow-[0_40px_100px_-15px_rgba(4,155,242,0.25)] border border-white/50 flex flex-col items-center text-center relative overflow-visible">
         
         {/* Header */}
         <div className="space-y-1 mb-6 md:mb-8">
@@ -51,7 +51,7 @@ export function WarrantyCard() {
         </div>
 
         {/* Benefit Box */}
-        <div className="w-full bg-white/50 backdrop-blur-xl border border-white/30 rounded-[30px] md:rounded-[40px] p-5 md:p-8 mb-8 md:mb-10 text-left">
+        <div className="w-full bg-slate-50/70 backdrop-blur-lg border border-slate-200/50 rounded-[30px] md:rounded-[40px] p-5 md:p-8 mb-8 md:mb-10 text-left">
           <h3 className="text-center font-black text-[13px] md:text-[15px] uppercase tracking-[0.2em] text-slate-800 mb-4 md:mb-6 border-b border-slate-300/40 pb-3 md:pb-4">
             Materials + Labor Included
           </h3>
