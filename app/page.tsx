@@ -759,6 +759,95 @@ export default function HomePage() {
             </div>
           </section>
 
+          {/* 9. The Features/Specs Section - "Engineered For Texas Heat" */}
+          <section className="py-20 bg-white">
+            <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+              {/* Section Headlines */}
+              <div className="text-center mb-16">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                  Engineered Specifically For The Texas Heat.
+                </h2>
+                <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+                  We don&apos;t just install windows. We install high-performance thermal barriers.
+                </p>
+              </div>
+
+              {/* 2x2 Feature Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                
+                {/* CARD 1 - The Heat Shield */}
+                <div className="bg-white border-2 border-gray-200 rounded-xl p-6 lg:p-8 hover:border-[#049BF2] hover:shadow-lg transition-all duration-300 group">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-orange-100 to-yellow-100 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <svg className="w-7 h-7 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold text-[#0a2540] mb-2">Low-E 366 Glass Coating</h3>
+                      <p className="text-gray-600 leading-relaxed">
+                        Think of this as transparent sunscreen for your house. It reflects 95% of the sun&apos;s damaging UV rays, keeping your rooms cool and preventing your furniture from fading.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* CARD 2 - The Insulation */}
+                <div className="bg-white border-2 border-gray-200 rounded-xl p-6 lg:p-8 hover:border-[#049BF2] hover:shadow-lg transition-all duration-300 group">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <svg className="w-7 h-7 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold text-[#0a2540] mb-2">Argon Gas Fill</h3>
+                      <p className="text-gray-600 leading-relaxed">
+                        We fill the space between the glass panes with Argon gas. Denser than air, it acts as an invisible thermal blanket that traps your expensive AC air inside.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* CARD 3 - The Durability */}
+                <div className="bg-white border-2 border-gray-200 rounded-xl p-6 lg:p-8 hover:border-[#049BF2] hover:shadow-lg transition-all duration-300 group">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-purple-100 to-violet-100 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <svg className="w-7 h-7 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold text-[#0a2540] mb-2">100% Virgin Vinyl</h3>
+                      <p className="text-gray-600 leading-relaxed">
+                        Unlike &ldquo;recycled&rdquo; vinyl that yellows and cracks over time, our frames are made from pure, virgin vinyl. They never need painting and won&apos;t warp in the Dallas summer.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* CARD 4 - The Quiet */}
+                <div className="bg-white border-2 border-gray-200 rounded-xl p-6 lg:p-8 hover:border-[#049BF2] hover:shadow-lg transition-all duration-300 group">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-gray-100 to-slate-200 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <svg className="w-7 h-7 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold text-[#0a2540] mb-2">Double-Strength Glass</h3>
+                      <p className="text-gray-600 leading-relaxed">
+                        Standard windows use single-strength glass. We upgrade you to double-strength, providing a significantly stronger barrier against hail, wind, and neighborhood noise.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </section>
+
           <section className="w-full py-16 bg-white" aria-label="Certifications and Partnerships">
             <div className="w-full">
               <img
