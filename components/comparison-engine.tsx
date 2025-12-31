@@ -10,6 +10,7 @@ const bigBoxData = {
   sales: "3-Hour High Pressure Pitch",
   install: "Lowest-Bid Subcontractors",
   warranty: "Manufacturer Only (Limited)",
+  serviceWarranty: "❌ No Service Warranty",
 };
 
 const handymanData = {
@@ -20,6 +21,7 @@ const handymanData = {
   sales: '"I\'ll text you a price"',
   install: "Day-Laborers (No Certs)",
   warranty: "Tail-Light Warranty (Gone tomorrow)",
+  serviceWarranty: "❌ No Service Warranty",
 };
 
 export function ComparisonEngine() {
@@ -35,7 +37,16 @@ export function ComparisonEngine() {
             SIDE-BY-SIDE
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-3 tracking-tight">
-            The Difference Is Clear.
+            The Difference Is{" "}
+            <span 
+              className="text-transparent bg-clip-text"
+              style={{
+                WebkitTextStroke: '2px #049BF2',
+                textShadow: '0 0 1px rgba(4, 155, 242, 0.3)',
+              }}
+            >
+              Clear
+            </span>.
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-xl mx-auto">
             Most DFW contractors sell windows. We provide the{" "}
@@ -101,8 +112,11 @@ export function ComparisonEngine() {
             <div className="h-[70px] flex items-center font-semibold text-gray-700 border-b border-gray-100">
               Installation Quality
             </div>
-            <div className="h-[70px] flex items-center font-semibold text-gray-700">
+            <div className="h-[70px] flex items-center font-semibold text-gray-700 border-b border-gray-100">
               The &ldquo;Butler&rdquo; Warranty
+            </div>
+            <div className="h-[70px] flex items-center font-semibold text-gray-700">
+              Lifetime Service Warranty
             </div>
           </div>
 
@@ -136,9 +150,13 @@ export function ComparisonEngine() {
               <span className="text-emerald-600 font-extrabold mr-2">✓</span>
               <span className="font-medium">Certified White-Glove Crew</span>
             </div>
-            <div className="h-[70px] flex items-center justify-center text-center">
+            <div className="h-[70px] flex items-center justify-center text-center border-b border-gray-100">
               <span className="text-emerald-600 font-extrabold mr-2">✓</span>
               <span className="font-medium">Lifetime Leak-Free + Glass Breakage</span>
+            </div>
+            <div className="h-[70px] flex items-center justify-center text-center">
+              <span className="text-emerald-600 font-extrabold mr-2">✓</span>
+              <span className="font-medium">✅ LIFETIME Service Warranty</span>
             </div>
           </div>
 
@@ -165,8 +183,11 @@ export function ComparisonEngine() {
             <div className="h-[70px] flex items-center justify-center text-center border-b border-gray-100 text-gray-400 transition-all duration-300">
               {competitor.install}
             </div>
-            <div className="h-[70px] flex items-center justify-center text-center text-gray-400 transition-all duration-300">
+            <div className="h-[70px] flex items-center justify-center text-center border-b border-gray-100 text-gray-400 transition-all duration-300">
               {competitor.warranty}
+            </div>
+            <div className="h-[70px] flex items-center justify-center text-center text-red-400 transition-all duration-300 font-medium">
+              {competitor.serviceWarranty}
             </div>
           </div>
         </div>
@@ -189,6 +210,7 @@ export function ComparisonEngine() {
                 { label: "Sales", value: "30-Min Educational Consult" },
                 { label: "Install", value: "Certified White-Glove Crew" },
                 { label: "Warranty", value: "Lifetime Leak-Free + Glass Breakage" },
+                { label: "Service Warranty", value: "✅ LIFETIME Service Warranty" },
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3 p-3 bg-emerald-50 rounded-xl">
                   <span className="text-emerald-600 font-extrabold text-lg">✓</span>
@@ -237,12 +259,13 @@ export function ComparisonEngine() {
                 { label: "Sales", value: competitor.sales },
                 { label: "Install", value: competitor.install },
                 { label: "Warranty", value: competitor.warranty },
+                { label: "Service Warranty", value: competitor.serviceWarranty, isRed: true },
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-3 p-3 bg-red-50/50 rounded-xl">
                   <span className="text-red-400 font-bold text-lg">✗</span>
                   <div>
                     <span className="font-bold text-gray-600 mr-2">{item.label}:</span>
-                    <span className="text-gray-500">{item.value}</span>
+                    <span className={item.isRed ? "text-red-500 font-semibold" : "text-gray-500"}>{item.value}</span>
                   </div>
                 </div>
               ))}
