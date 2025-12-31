@@ -372,9 +372,12 @@ export default function HomePage() {
             <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               {/* Section Headline */}
               <div className="mb-16">
-                <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-[#049BF2] italic mb-4">
+                <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-[#049BF2] italic mb-2">
                   It&apos;s as Easy 1, 2, 3
                 </h2>
+                <p className="text-lg sm:text-xl text-[#049BF2]/70 italic font-medium mb-4">
+                  (Easy Peasy Lemon Squeezy)
+                </p>
                 <p className="text-xl text-gray-600 max-w-2xl">
                   Our no-pressure representatives assess your current windows, offer expert recommendations, and ensure a delightful experience.
                 </p>
