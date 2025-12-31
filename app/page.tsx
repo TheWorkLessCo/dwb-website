@@ -406,8 +406,8 @@ export default function HomePage() {
                     </div>
                     {/* Content */}
                     <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8 text-white z-10">
-                      <span className="text-sm font-light italic opacity-90">Step 1</span>
-                      <h3 className="text-2xl lg:text-3xl font-black uppercase tracking-wide mt-1">
+                      <span className="text-lg lg:text-xl font-bold uppercase tracking-widest text-white/90 drop-shadow-lg">Step 1</span>
+                      <h3 className="text-2xl lg:text-3xl font-black uppercase tracking-wide mt-2">
                         In-Home or Virtual<br />Consultation
                       </h3>
                     </div>
@@ -434,8 +434,8 @@ export default function HomePage() {
                     </div>
                     {/* Content */}
                     <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8 text-white z-10">
-                      <span className="text-sm font-light italic opacity-90">Step 2</span>
-                      <h3 className="text-2xl lg:text-3xl font-black uppercase tracking-wide mt-1">
+                      <span className="text-lg lg:text-xl font-bold uppercase tracking-widest text-white/90 drop-shadow-lg">Step 2</span>
+                      <h3 className="text-2xl lg:text-3xl font-black uppercase tracking-wide mt-2">
                         Choose Your<br />Windows or Glass
                       </h3>
                     </div>
@@ -462,8 +462,8 @@ export default function HomePage() {
                     </div>
                     {/* Content */}
                     <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8 text-white z-10">
-                      <span className="text-sm font-light italic opacity-90">Step 3</span>
-                      <h3 className="text-2xl lg:text-3xl font-black uppercase tracking-wide mt-1">
+                      <span className="text-lg lg:text-xl font-bold uppercase tracking-widest text-white/90 drop-shadow-lg">Step 3</span>
+                      <h3 className="text-2xl lg:text-3xl font-black uppercase tracking-wide mt-2">
                         Installation<br />Celebration!
                       </h3>
                     </div>
