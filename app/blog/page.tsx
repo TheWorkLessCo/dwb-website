@@ -1,9 +1,10 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { ArrowRight } from "lucide-react"
 import Link from "next/link"
-import Image from "next/image"
+import { CTA_CONFIG } from "@/lib/cta"
 
 export const metadata: Metadata = {
   title: "Dallas Window Butler Blog | Expert Window Tips & Home Insights",
@@ -23,6 +24,7 @@ export const metadata: Metadata = {
 }
 
 export default function BlogPage() {
+  const { quoteHref, secondaryLabel } = CTA_CONFIG
   const blogPosts = [
     {
       slug: "5-signs-replace-windows",
@@ -151,13 +153,13 @@ export default function BlogPage() {
             Get expert advice and a free consultation from Dallas Window Butler today.
           </p>
           <a
-            href="https://clienthub.getjobber.com/client_hubs/765818e4-20d7-4c73-8ea5-113760712b29/public/work_request/new?source=social_media"
+            href={quoteHref}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Schedule free consultation with Dallas Window Butler"
           >
             <Button size="lg" className="bg-white text-brand-blue hover:bg-white/90 px-8" data-source="blog-final">
-              Schedule Free Consultation
+              {secondaryLabel}
             </Button>
           </a>
         </div>

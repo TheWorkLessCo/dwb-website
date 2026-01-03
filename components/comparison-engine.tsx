@@ -10,19 +10,19 @@ const bigBoxData = {
   sales: "3-Hour High Pressure Pitch",
   install: "Lowest-Bid Subcontractors",
   warranty: "Manufacturer Only (Limited)",
-  serviceWarranty: "❌ No Service Warranty",
-};
+    serviceWarranty: "No Service Warranty",
+  };
 
-const handymanData = {
-  name: '"Chuck in a Truck"',
-  subtitle: "The Risky Route",
-  uFactor: "0.55+ (Drafty Single Pane)",
-  shgc: "No Coating (Baking Sun)",
-  sales: '"I\'ll text you a price"',
-  install: "Day-Laborers (No Certs)",
-  warranty: "Tail-Light Warranty (Gone tomorrow)",
-  serviceWarranty: "❌ No Service Warranty",
-};
+  const handymanData = {
+    name: '"Chuck in a Truck"',
+    subtitle: "The Risky Route",
+    uFactor: "0.55+ (Drafty Single Pane)",
+    shgc: "No Coating (Baking Sun)",
+    sales: '"I\'ll text you a price"',
+    install: "Day-Laborers (No Certs)",
+    warranty: "Tail-Light Warranty (Gone tomorrow)",
+    serviceWarranty: "No Service Warranty",
+  };
 
 export function ComparisonEngine() {
   const [isHandyman, setIsHandyman] = useState(false);
@@ -49,8 +49,8 @@ export function ComparisonEngine() {
             </span>.
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-xl mx-auto">
-            Most DFW contractors sell windows. We provide the{" "}
-            <strong className="text-gray-900">Butler Standard</strong>.
+            Most DFW contractors sell windows. We provide an{" "}
+            <strong className="text-gray-900">outcome and keep it for life</strong>.
           </p>
 
           {/* Toggle Switch */}
@@ -65,7 +65,7 @@ export function ComparisonEngine() {
             <button
               onClick={() => setIsHandyman(!isHandyman)}
               className={`relative w-16 h-9 rounded-full transition-colors duration-300 ${
-                isHandyman ? "bg-[#1a365d]" : "bg-gray-300"
+                isHandyman ? "bg-[#049bf2]" : "bg-gray-300"
               }`}
               aria-label="Toggle competitor type"
             >
@@ -121,15 +121,15 @@ export function ComparisonEngine() {
           </div>
 
           {/* Butler Standard Column (Hero) */}
-          <div className="relative bg-white border-2 border-[#1a365d] rounded-2xl z-10 scale-[1.03] shadow-2xl p-8 pt-10">
+          <div className="relative bg-white border-2 border-[#049bf2] rounded-2xl z-10 scale-[1.03] shadow-2xl p-8 pt-10">
             {/* Recommended Tag */}
-            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#1a365d] text-white px-4 py-1 rounded-full text-xs font-extrabold tracking-wider">
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#049bf2] text-white px-4 py-1 rounded-full text-xs font-extrabold tracking-wider">
               RECOMMENDED
             </div>
             
             {/* Header */}
             <div className="h-24 text-center border-b-2 border-gray-100 mb-5 flex flex-col justify-end pb-4">
-              <h3 className="text-2xl font-bold text-[#1a365d]">The Butler Standard</h3>
+              <h3 className="text-2xl font-bold text-[#049bf2]">The Butler Standard</h3>
               <p className="text-sm text-gray-500 mt-1">White-Glove Professionalism</p>
             </div>
 
@@ -152,11 +152,11 @@ export function ComparisonEngine() {
             </div>
             <div className="h-[70px] flex items-center justify-center text-center border-b border-gray-100">
               <span className="text-emerald-600 font-extrabold mr-2">✓</span>
-              <span className="font-medium">Lifetime Leak-Free + Glass Breakage</span>
+              <span className="font-bold text-[#049bf2]">Lifetime Leak-Free + Glass Breakage</span>
             </div>
             <div className="h-[70px] flex items-center justify-center text-center">
               <span className="text-emerald-600 font-extrabold mr-2">✓</span>
-              <span className="font-medium">✅ LIFETIME Service Warranty</span>
+              <span className="font-bold text-[#049bf2]">LIFETIME Service Warranty</span>
             </div>
           </div>
 
@@ -195,12 +195,12 @@ export function ComparisonEngine() {
         {/* Mobile Comparison Cards */}
         <div className="lg:hidden space-y-8">
           {/* Butler Standard Card */}
-          <div className="bg-white border-2 border-[#1a365d] rounded-2xl p-6 shadow-xl relative">
-            <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#1a365d] text-white px-4 py-1 rounded-full text-xs font-extrabold tracking-wider">
+          <div className="bg-white border-2 border-[#049bf2] rounded-2xl p-6 shadow-xl relative">
+            <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#049bf2] text-white px-4 py-1 rounded-full text-xs font-extrabold tracking-wider">
               RECOMMENDED
             </div>
             <div className="text-center mb-6 pt-2">
-              <h3 className="text-xl font-bold text-[#1a365d]">The Butler Standard</h3>
+              <h3 className="text-xl font-bold text-[#049bf2]">The Butler Standard</h3>
               <p className="text-sm text-gray-500">White-Glove Professionalism</p>
             </div>
             <div className="space-y-4">
@@ -210,13 +210,19 @@ export function ComparisonEngine() {
                 { label: "Sales", value: "30-Min Educational Consult" },
                 { label: "Install", value: "Certified White-Glove Crew" },
                 { label: "Warranty", value: "Lifetime Leak-Free + Glass Breakage" },
-                { label: "Service Warranty", value: "✅ LIFETIME Service Warranty" },
+                { label: "Service Warranty", value: "LIFETIME Service Warranty" },
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3 p-3 bg-emerald-50 rounded-xl">
                   <span className="text-emerald-600 font-extrabold text-lg">✓</span>
                   <div>
                     <span className="font-bold text-gray-900 mr-2">{item.label}:</span>
-                    <span className="text-gray-700">{item.value}</span>
+                    <span className={`font-semibold ${
+                      item.label === "Warranty" || item.label === "Service Warranty" 
+                        ? "text-[#049bf2]" 
+                        : "text-gray-700"
+                    }`}>
+                      {item.value}
+                    </span>
                   </div>
                 </div>
               ))}
@@ -233,7 +239,7 @@ export function ComparisonEngine() {
               <button
                 onClick={() => setIsHandyman(!isHandyman)}
                 className={`relative w-12 h-7 rounded-full transition-colors duration-300 ${
-                  isHandyman ? "bg-[#1a365d]" : "bg-gray-300"
+                  isHandyman ? "bg-[#049bf2]" : "bg-gray-300"
                 }`}
                 aria-label="Toggle competitor type"
               >
@@ -276,13 +282,13 @@ export function ComparisonEngine() {
         {/* CTA */}
         <div className="text-center mt-12">
           <p className="text-gray-500 text-sm mb-5">
-            *All Butler ratings exceed Energy Star® 2025 North Texas Requirements.
+            *All Dallas Window Butler ratings exceed Energy Star® 2025 North Texas Requirements.
           </p>
           <a
             href="/book#form"
-            className="inline-block bg-[#1a365d] text-white px-10 py-5 rounded-lg font-bold text-lg hover:bg-[#2d4a7c] transition-all duration-200 hover:-translate-y-0.5 shadow-lg"
+            className="inline-block bg-[#049bf2] text-white px-10 py-5 rounded-lg font-bold text-lg hover:bg-[#0389d5] transition-all duration-200 hover:-translate-y-0.5 shadow-lg"
           >
-            GET MY BUTLER-GRADE QUOTE
+            GET MY DALLAS WINDOW BUTLER-GRADE QUOTE
           </a>
         </div>
       </div>

@@ -2,7 +2,8 @@ import type { Metadata } from "next"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Star, Award, Shield, CheckCircle, Quote } from "lucide-react"
+import { Star, Quote, CheckCircle, Shield, Award } from "lucide-react"
+import { CTA_CONFIG } from "@/lib/cta"
 
 export const metadata: Metadata = {
   title: "Customer Testimonials | Dallas Window Butler",
@@ -23,6 +24,7 @@ export const metadata: Metadata = {
 }
 
 export default function TestimonialsPage() {
+  const { quoteHref, secondaryLabel } = CTA_CONFIG
   const testimonials = [
     {
       name: "Sarah M.",
@@ -236,7 +238,7 @@ export default function TestimonialsPage() {
               className="bg-white text-brand-blue hover:bg-white/90 px-8"
               data-source="testimonials-final"
             >
-              Schedule Free Consultation
+              {secondaryLabel}
             </Button>
           </a>
         </div>

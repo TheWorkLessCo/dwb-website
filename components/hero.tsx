@@ -85,14 +85,14 @@ export function Hero() {
                 </div>
 
                 <div className="flex flex-col gap-3 pt-2">
-                  {/* Primary CTA - Book Your Free No-Pressure Consult */}
+                  {/* Primary CTA - Get a Quote For My Home */}
                   <Button
                     size="lg"
                     className="bg-[#049BF2] hover:bg-[#049BF2]/90 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto"
                     asChild
                   >
-                    <a href={quoteHref} aria-label="Book Your Free No-Pressure Consult" {...trackingAttrs}>
-                      Book Your Free No-Pressure Consult
+                    <a href={quoteHref} aria-label={secondaryLabel} {...trackingAttrs}>
+                      {secondaryLabel}
                     </a>
                   </Button>
                   <p className="text-sm sm:text-base text-gray-300 font-medium">

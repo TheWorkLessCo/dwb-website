@@ -2,15 +2,14 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Star, Check, Shield, Award, CheckCircle, Phone, Clock, DollarSign } from "lucide-react"
+import { Star, Check, Shield, Award, CheckCircle, Phone, Clock, DollarSign, MapPin, Tooltip, Wrench, DoorClosed, Calendar, Ruler, Sparkles } from "lucide-react"
 import { ModernFAQ } from "@/components/modern-faq"
-import ComparisonTable from "@/components/comparison-table"
+import { ComparisonEngine } from "@/components/comparison-engine"
 import FinalCTABanner from "@/components/final-cta-banner"
-import RockwallComparisonTable from "@/components/rockwall-comparison-table"
-import { McKinneyComparisonTable } from "@/components/mckinney-comparison-table"
 import { WarrantyCard } from "@/components/warranty-card"
 import ImageBridge from "@/components/ImageBridge"
 import { ResultsBar } from "@/components/results-bar"
+import { TransformationFramework } from "@/components/transformation-framework"
 import { CTA_CONFIG, ALT_SECONDARY_LABEL } from "@/lib/cta"
 
 interface CityData {
@@ -51,7 +50,7 @@ export function CitySeoPage({ cityData, customHeadings }: CitySeoPageProps) {
 
   const getH1 = () => {
     if (customHeadings?.h1) return customHeadings.h1
-    return `Window Replacement in ${cityName}, ${state}`
+    return `Window & Glass Replacement in ${cityName}, ${state}`
   }
 
   const getSubheadline = () => {
@@ -70,28 +69,28 @@ export function CitySeoPage({ cityData, customHeadings }: CitySeoPageProps) {
     }
     if (cityName === "McKinney") {
       return [
-        "Professional Window Replacement in McKinney",
+        "Professional Window & Glass Services in McKinney",
         `What ${cityName} Homeowners Say`,
         "Why Choose Dallas Window Butler?",
       ]
     }
     if (cityName === "Allen") {
       return [
-        "Professional Window Replacement in Allen",
+        "Professional Window & Glass Services in Allen",
         `What ${cityName} Homeowners Say`,
         "Why Choose Dallas Window Butler?",
       ]
     }
     if (cityName === "Plano") {
       return [
-        "Professional Window Replacement in Plano",
+        "Professional Window & Glass Services in Plano",
         `What ${cityName} Homeowners Say`,
         "Why Choose Dallas Window Butler?",
       ]
     }
     if (cityName === "North Richardson") {
       return [
-        "Professional Window Replacement in North Richardson",
+        "Professional Window & Glass Services in North Richardson",
         `What ${cityName} Homeowners Say`,
         "Why Choose Dallas Window Butler?",
       ]
@@ -181,11 +180,11 @@ export function CitySeoPage({ cityData, customHeadings }: CitySeoPageProps) {
     "@context": "https://schema.org",
     "@type": "Service",
     "@id": `https://dallaswindowbutler.com/${cityData.slug}-windows#service`,
-    name: `Window Replacement & Glass Repair in ${cityName}`,
-    serviceType: "Window Installation",
+    name: `Window Replacement & Expert Glass Repair in ${cityName}`,
+    serviceType: "Window Installation & Glass Repair",
     provider: { "@id": `https://dallaswindowbutler.com/${cityData.slug}-windows#business` },
     areaServed: { "@type": "Place", name: `${cityName}, TX` },
-    description: `Professional window replacement, energy-efficient upgrades, and expert glass repair services for homeowners in ${cityName}, Texas.`,
+    description: `Professional window replacement, energy-efficient upgrades, and expert glass/IG unit repair services for homeowners in ${cityName}, Texas.`,
     offers: {
       "@type": "Offer",
       priceCurrency: "USD",
@@ -213,6 +212,34 @@ export function CitySeoPage({ cityData, customHeadings }: CitySeoPageProps) {
     reviewBody: testimonial.text,
     datePublished: new Date(Date.now() - index * 30 * 24 * 60 * 60 * 1000).toISOString().split("T")[0], // Stagger dates
   }))
+
+  const jsonLdHowTo = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": `How Our Window and Glass Process Works in ${cityName}`,
+    "description": `Our simple 3-step process for getting energy-efficient windows or glass repair in your ${cityName} home.`,
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": `Book Your ${cityName} Consult`,
+        "text": `Tell us your goals, window count, or glass repair needs for your ${cityName} property to get started.`,
+        "url": `https://dallaswindowbutler.com/${cityData.slug}-windows#step-1`
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Measurement & Diagnosis",
+        "text": "We take exact measurements for your windows or diagnose your glass failure, then provide a crystal-clear quote.",
+        "url": `https://dallaswindowbutler.com/${cityData.slug}-windows#step-2`
+      },
+      {
+        "@type": "HowToStep",
+        "name": `White-Glove ${cityName} Install`,
+        "text": "Our in-house team ensures a leak-free finish for your new windows or glass units and leaves your job site spotless.",
+        "url": `https://dallaswindowbutler.com/${cityData.slug}-windows#step-3`
+      }
+    ],
+    "totalTime": "P2D"
+  }
 
   return (
     <>
@@ -338,117 +365,227 @@ export function CitySeoPage({ cityData, customHeadings }: CitySeoPageProps) {
 
       <ResultsBar cityName={cityName} />
 
+      {/* Transformation Framework */}
+      <TransformationFramework />
+
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdLocalBusiness) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdService) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdHowTo) }} />
       {jsonLdReviews.map((review, index) => (
         <script key={index} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(review) }} />
       ))}
 
 
-      {/* Localized Intro */}
-      <section className="py-16">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="prose prose-lg mx-auto text-center">
-            {cityData.uniqueContent?.localizedText ? (
-              <p className="text-gray-700 leading-relaxed text-lg mb-8">
-                {cityData.uniqueContent.localizedText}
-              </p>
-            ) : (
-              <p className="text-gray-700 leading-relaxed mb-8">
-                From {neighborhoods.slice(0, 2).join(" to ")} and throughout {cityName}, homeowners trust Dallas Window
-                Butler for professional window and door replacement. Whether you're near {landmarks[0]} or in the heart of{" "}
-                {neighborhoods[2]}, we understand the unique challenges Texas weather brings to your home.
-              </p>
-            )}
+      {/* Localized Intro - Redesigned for Impact */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-50 text-[#049BF2] rounded-full text-sm font-black uppercase tracking-widest mb-6">
+              <MapPin className="w-4 h-4" />
+              <span>Local {cityName} Experts</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#00152e] leading-tight mb-6">
+              The Trusted Window Butler for <br className="hidden md:block" />
+              <span className="text-[#049BF2]">{cityName}</span> Neighborhoods.
+            </h2>
+          </div>
 
-            {/* Featured Services section */}
-            <section aria-label={`Featured Services in ${cityName}`} className="mt-6">
-              <h2 className="text-lg font-semibold">Featured Services in {cityName}</h2>
-              <ul className="mt-2 list-disc pl-5 space-y-1">
-                <li>
-                  <a
-                    href="https://dallaswindowbutler.com/services/window-replacement"
-                    className="text-brand-blue hover:text-brand-blue-dark transition-colors"
-                  >
-                    Window Replacement in {cityName}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://dallaswindowbutler.com/services/glass-repair"
-                    className="text-brand-blue hover:text-brand-blue-dark transition-colors"
-                  >
-                    Fogged Glass / IG Unit Replacement in {cityName}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://dallaswindowbutler.com/services/door-replacement"
-                    className="text-brand-blue hover:text-brand-blue-dark transition-colors"
-                  >
-                    Door Replacement in {cityName}
-                  </a>
-                </li>
-              </ul>
-            </section>
+          <div className="grid md:grid-cols-12 gap-12 items-start">
+            {/* The Story/Context */}
+            <div className="md:col-span-7 space-y-6">
+              <div className="prose prose-lg text-gray-700 leading-relaxed max-w-none">
+                {cityData.uniqueContent?.localizedText ? (
+                  <p className="text-xl font-medium text-gray-900 border-l-4 border-[#049BF2] pl-6 py-2">
+                    {cityData.uniqueContent.localizedText}
+                  </p>
+                ) : (
+                  <p className="text-xl font-medium text-gray-900 border-l-4 border-[#049BF2] pl-6 py-2">
+                    From {neighborhoods.slice(0, 2).join(" to ")} and throughout {cityName}, homeowners trust Dallas Window
+                    Butler for professional window replacement and expert glass repair.
+                  </p>
+                )}
+                
+                <p>
+                  Whether you're near {landmarks[0]} or in the heart of {neighborhoods[2]}, we understand the unique 
+                  challenges Texas weather brings to your home. We've helped hundreds of {cityName} families 
+                  upgrade their comfort while lowering their energy bills.
+                </p>
+              </div>
 
-            <p className="text-gray-700 leading-relaxed">
-              {localIssues.join(", ")} are common issues we solve daily. Our energy-efficient windows and expert
-              installation help {cityName} families reduce energy costs, eliminate drafts, and enhance their home's
-              comfort and value.
-            </p>
+              {/* Local Issues Tags */}
+              <div className="pt-6">
+                <h3 className="text-xs font-black text-gray-400 uppercase tracking-[0.2em] mb-4">Common Issues We Solve Daily in {cityName}</h3>
+                <div className="flex flex-wrap gap-2">
+                  {localIssues.map((issue, idx) => (
+                    <span key={idx} className="px-4 py-2 bg-slate-50 border border-slate-100 rounded-lg text-sm font-bold text-slate-600 flex items-center gap-2">
+                      <CheckCircle className="w-3.5 h-3.5 text-green-500" />
+                      {issue}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Featured Services Card */}
+            <div className="md:col-span-5">
+              <div className="bg-[#00152e] rounded-[2rem] p-8 text-white shadow-2xl relative overflow-hidden group">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#049BF2] opacity-10 rounded-full -mr-16 -mt-16 blur-3xl transition-all duration-500 group-hover:scale-150" />
+                
+                <h3 className="text-xl font-black uppercase tracking-wider mb-8 flex items-center gap-3">
+                  <div className="w-8 h-8 bg-[#049BF2] rounded-lg flex items-center justify-center">
+                    <Star className="w-4 h-4 fill-white text-white" />
+                  </div>
+                  Featured Services
+                </h3>
+
+                <nav className="space-y-4 relative z-10">
+                  <Link 
+                    href="/services/window-replacement" 
+                    className="flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-[#049BF2] hover:border-[#049BF2] transition-all duration-300 group/item"
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center group-hover/item:bg-white/20">
+                        <Wrench className="w-5 h-5" />
+                      </div>
+                      <span className="font-bold">Window Replacement</span>
+                    </div>
+                    <Check className="w-5 h-5 opacity-0 group-hover/item:opacity-100 transition-opacity" />
+                  </Link>
+
+                  <Link 
+                    href="/services/glass-repair" 
+                    className="flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-[#049BF2] hover:border-[#049BF2] transition-all duration-300 group/item"
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center group-hover/item:bg-white/20">
+                        <Star className="w-5 h-5" />
+                      </div>
+                      <span className="font-bold">IG Unit Replacement</span>
+                    </div>
+                    <Check className="w-5 h-5 opacity-0 group-hover/item:opacity-100 transition-opacity" />
+                  </Link>
+
+                  <Link 
+                    href="/services/patio-doors" 
+                    className="flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-[#049BF2] hover:border-[#049BF2] transition-all duration-300 group/item"
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center group-hover/item:bg-white/20">
+                        <DoorClosed className="w-5 h-5" />
+                      </div>
+                      <span className="font-bold">Door Replacement</span>
+                    </div>
+                    <Check className="w-5 h-5 opacity-0 group-hover/item:opacity-100 transition-opacity" />
+                  </Link>
+                </nav>
+
+                <div className="mt-8 pt-8 border-t border-white/10">
+                  <p className="text-white/60 text-sm leading-relaxed italic">
+                    "Our energy-efficient windows and expert installation help {cityName} families reduce energy costs and enhance their home's value."
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* 3-Step Process */}
-      <section id="process" className="bg-slate-50 py-16">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">{h2Headings[0]}</h2>
-            <p className="text-gray-600 text-lg">
+      {/* 3-Step Process - Redesigned for Impact and SEO */}
+      <section id="process" className="bg-slate-50 py-24 relative overflow-hidden">
+        {/* Decorative background element */}
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-blue-50/50 -skew-x-12 transform origin-top translate-x-1/2" />
+        
+        <div className="container mx-auto px-4 max-w-7xl relative z-10">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white border border-blue-100 text-[#049BF2] rounded-full text-sm font-black uppercase tracking-widest mb-6 shadow-sm">
+              <Sparkles className="w-4 h-4" />
+              <span>Simple 3-Step Journey</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#00152e] mb-6">
+              {h2Headings[0]}
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               {cityName === "Rockwall" || customHeadings?.h2s?.[0]?.includes("Energy-Efficient")
-                ? "Professional installation with lifetime-backed workmanship"
-                : "Simple process, professional results"}
+                ? "Professional installation with lifetime-backed workmanship."
+                : "From initial consult to a cooler, quieter home in just 3 steps."}
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-brand-blue text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                1
+          <div className="grid md:grid-cols-3 gap-12 lg:gap-16 relative">
+            {/* Connecting lines for desktop */}
+            <div className="hidden md:block absolute top-1/4 left-1/4 right-1/4 h-0.5 bg-blue-100 -z-10" />
+
+            {/* STEP 1 */}
+            <div id="step-1" className="group flex flex-col items-center text-center">
+              <div className="relative mb-8">
+                <div className="w-20 h-20 bg-[#049BF2] text-white rounded-2xl flex items-center justify-center text-3xl font-black shadow-xl transform transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
+                  1
+                </div>
+                <div className="absolute -bottom-2 -right-2 w-10 h-10 bg-white rounded-xl shadow-lg flex items-center justify-center text-[#049BF2]">
+                  <Calendar className="w-5 h-5" />
+                </div>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Book Your {cityName} Consult</h3>
-              <p className="text-gray-600">Tell us your goals & window count for your {cityName} property.</p>
+              <h3 className="text-2xl font-black text-[#00152e] mb-4 uppercase tracking-tight">Book Your {cityName} Consult</h3>
+              <p className="text-gray-600 leading-relaxed text-lg">
+                Tell us your goals, window count, or glass repair needs. We provide a firm quote in 30 minutes.
+              </p>
             </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-brand-blue text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                2
+
+            {/* STEP 2 */}
+            <div id="step-2" className="group flex flex-col items-center text-center">
+              <div className="relative mb-8">
+                <div className="w-20 h-20 bg-[#049BF2] text-white rounded-2xl flex items-center justify-center text-3xl font-black shadow-xl transform transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3">
+                  2
+                </div>
+                <div className="absolute -bottom-2 -right-2 w-10 h-10 bg-white rounded-xl shadow-lg flex items-center justify-center text-[#049BF2]">
+                  <Ruler className="w-5 h-5" />
+                </div>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Local Measurement & Ordering</h3>
-              <p className="text-gray-600">Exact sizing for your home, brand options, and a crystal-clear quote.</p>
+              <h3 className="text-2xl font-black text-[#00152e] mb-4 uppercase tracking-tight">Precision Measurement</h3>
+              <p className="text-gray-600 leading-relaxed text-lg">
+                We take exact laser measurements for your windows or replacement glass to ensure an airtight fit.
+              </p>
             </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-brand-blue text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                3
+
+            {/* STEP 3 */}
+            <div id="step-3" className="group flex flex-col items-center text-center">
+              <div className="relative mb-8">
+                <div className="w-20 h-20 bg-[#049BF2] text-white rounded-2xl flex items-center justify-center text-3xl font-black shadow-xl transform transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
+                  3
+                </div>
+                <div className="absolute -bottom-2 -right-2 w-10 h-10 bg-white rounded-xl shadow-lg flex items-center justify-center text-[#049BF2]">
+                  <CheckCircle className="w-5 h-5" />
+                </div>
               </div>
-              <h3 className="text-xl font-semibold mb-2">White-Glove {cityName} Install</h3>
-              <p className="text-gray-600">Leak-free finish and a spotless job site in your neighborhood.</p>
+              <h3 className="text-2xl font-black text-[#00152e] mb-4 uppercase tracking-tight">White-Glove {cityName} Install</h3>
+              <p className="text-gray-600 leading-relaxed text-lg">
+                Our in-house team installs your windows or glass and leaves your home cleaner than we found it.
+              </p>
             </div>
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-20">
             <Button
               asChild
               size="lg"
-              className="bg-brand-blue hover:bg-brand-blue-dark"
+              className="bg-[#049BF2] hover:bg-[#0389d5] text-white px-10 py-6 text-xl font-black rounded-2xl shadow-2xl transform transition-all hover:scale-105 hover:-translate-y-1"
               data-source={`${cityData.slug}-process`}
               data-offer="100off-per-window"
               data-city={cityData.slug}
             >
-              <Link href={quoteHref}>{secondaryLabel}</Link>
+              <Link href={quoteHref}>
+                {secondaryLabel}
+                <Check className="ml-3 w-6 h-6" />
+              </Link>
             </Button>
+            <div className="mt-6 flex items-center justify-center gap-4 text-sm font-bold text-gray-400 uppercase tracking-widest">
+              <span>Fast Quotes</span>
+              <span className="w-1 h-1 bg-gray-300 rounded-full" />
+              <span>In-House Crews</span>
+              <span className="w-1 h-1 bg-gray-300 rounded-full" />
+              <span>Lifetime Warranty</span>
+            </div>
           </div>
         </div>
       </section>
@@ -464,14 +601,8 @@ export function CitySeoPage({ cityData, customHeadings }: CitySeoPageProps) {
         </div>
       </section>
 
-      {/* City-Specific Comparison Tables */}
-      {cityName === "Rockwall" ? (
-        <RockwallComparisonTable />
-      ) : cityName === "McKinney" ? (
-        <McKinneyComparisonTable />
-      ) : (
-        <ComparisonTable />
-      )}
+      {/* Comparison Engine */}
+      <ComparisonEngine />
 
       {/* Testimonials */}
       <section className="py-16">

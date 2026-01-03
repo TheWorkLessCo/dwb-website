@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Star, Check, Shield, Award, CheckCircle, Phone, Home, Palette, Wind } from "lucide-react"
 import { WarrantyCard } from "@/components/warranty-card"
 import ServiceFAQ from "@/components/ServiceFAQ"
-import { ProofPoints } from "@/components/ProofPoints"
+import { TransformationFramework } from "@/components/transformation-framework"
 import { ResultsBar } from "@/components/results-bar"
 import { CTA_CONFIG } from "@/lib/cta"
 
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 }
 
 export default function MotorizedAwningsPage() {
-  const { quoteHref } = CTA_CONFIG
+  const { quoteHref, secondaryLabel } = CTA_CONFIG
   const serviceJsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -118,8 +118,8 @@ export default function MotorizedAwningsPage() {
                   className="bg-[#049BF2] hover:bg-[#049BF2]/90 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto h-auto"
                   asChild
                 >
-                  <a href={quoteHref} aria-label="Book Your Free No-Pressure Consult" data-source="motorized-awnings-hero" data-offer="design-consult">
-                    Book Your Free No-Pressure Consult
+                  <a href={quoteHref} aria-label={secondaryLabel} data-source="motorized-awnings-hero" data-offer="design-consult">
+                    {secondaryLabel}
                   </a>
                 </Button>
                 <p className="text-sm sm:text-base text-gray-300 font-medium">
@@ -162,8 +162,8 @@ export default function MotorizedAwningsPage() {
 
       <ResultsBar />
 
-      {/* ProofPoints Section */}
-      <ProofPoints />
+      {/* Transformation Framework */}
+      <TransformationFramework />
 
       {/* Services Grid */}
       <section className="py-16">
@@ -313,7 +313,7 @@ export default function MotorizedAwningsPage() {
               data-source="motorized-awnings-final"
               data-offer="design-consult"
             >
-              Schedule Free Consultation
+              {secondaryLabel}
             </Button>
           </a>
         </div>

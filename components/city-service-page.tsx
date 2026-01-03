@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { Star, Shield, Award, CheckCircle, Phone, Check } from "lucide-react"
 import { ModernFAQ } from "@/components/modern-faq"
 import { ResultsBar } from "@/components/results-bar"
+import { TransformationFramework } from "@/components/transformation-framework"
 import { CTA_CONFIG, ALT_SECONDARY_LABEL } from "@/lib/cta"
 import { getTrackingAttributes } from "@/lib/tracking"
 
@@ -118,8 +119,8 @@ export function CityServicePage({ cityData }: CityServicePageProps) {
                     className="bg-[#049BF2] hover:bg-[#049BF2]/90 text-white px-8 sm:px-10 py-4 sm:py-6 text-lg sm:text-xl font-bold w-full sm:w-auto shadow-xl transform transition-transform hover:scale-[1.02]"
                     asChild
                   >
-                    <a href={quoteHref} aria-label="Book Your Free No-Pressure Consult" {...trackingAttrs}>
-                      Book Your Free No-Pressure Consult
+                    <a href={quoteHref} aria-label={secondaryLabel} {...trackingAttrs}>
+                      {secondaryLabel}
                     </a>
                   </Button>
                   <p className="text-sm sm:text-base text-gray-300 font-medium">
@@ -165,6 +166,9 @@ export function CityServicePage({ cityData }: CityServicePageProps) {
 
       {/* Results Bar (Outcomes) */}
       <ResultsBar cityName={name} variant="primary" />
+
+      {/* Transformation Framework */}
+      <TransformationFramework />
 
       {/* Mini Social Proof Row */}
       <section className="bg-gray-50 py-6">

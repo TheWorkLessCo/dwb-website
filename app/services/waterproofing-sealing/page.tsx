@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Star, Check, Shield, Award, CheckCircle, Phone, Droplets, Wrench, TestTube } from "lucide-react"
 import { WarrantyCard } from "@/components/warranty-card"
 import ServiceFAQ from "@/components/ServiceFAQ"
+import { TransformationFramework } from "@/components/transformation-framework"
 import { ResultsBar } from "@/components/results-bar"
 import { CTA_CONFIG } from "@/lib/cta"
 
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
 }
 
 export default function WaterproofingSealingPage() {
-  const { quoteHref } = CTA_CONFIG
+  const { quoteHref, secondaryLabel } = CTA_CONFIG
   const serviceJsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -120,8 +121,8 @@ export default function WaterproofingSealingPage() {
                   className="bg-[#049BF2] hover:bg-[#049BF2]/90 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto h-auto"
                   asChild
                 >
-                  <a href={quoteHref} aria-label="Get Free Inspection" data-source="waterproofing-sealing-hero" data-offer="leak-inspection">
-                    Get Free Inspection
+                  <a href={quoteHref} aria-label={secondaryLabel} data-source="waterproofing-sealing-hero" data-offer="leak-inspection">
+                    {secondaryLabel}
                   </a>
                 </Button>
                 <p className="text-sm sm:text-base text-gray-300 font-medium">
@@ -162,6 +163,9 @@ export default function WaterproofingSealingPage() {
       </section>
 
       <ResultsBar />
+
+      {/* Transformation Framework */}
+      <TransformationFramework />
 
       {/* Services Grid */}
       <section className="py-16">
@@ -315,7 +319,7 @@ export default function WaterproofingSealingPage() {
               data-source="waterproofing-sealing-final"
               data-offer="leak-inspection"
             >
-              Schedule Free Inspection
+              {secondaryLabel}
             </Button>
           </a>
         </div>

@@ -2,7 +2,7 @@
 
 import { Hero } from "@/components/hero"
 import { ResultsBar } from "@/components/results-bar"
-import ComparisonTable from "@/components/comparison-table"
+import { TransformationFramework } from "@/components/transformation-framework"
 import { ComparisonEngine } from "@/components/comparison-engine"
 import FinalCTABanner from "@/components/final-cta-banner"
 import { getTrackingAttributes } from "@/lib/tracking"
@@ -117,6 +117,9 @@ export default function HomePage() {
 
           {/* 2. Results Bar */}
           <ResultsBar />
+
+          {/* Transformation Framework */}
+          <TransformationFramework />
 
           {/* 3. Problem/Agitation Section */}
           <section className="py-20 bg-white">
@@ -586,9 +589,9 @@ export default function HomePage() {
             </div>
           </section>
 
-          {/* 4. Comparison Table */}
+          {/* 4. Comparison Engine */}
           <div id="comparison">
-            <ComparisonTable />
+            <ComparisonEngine />
           </div>
 
           <ImageBridge />

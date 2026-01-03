@@ -4,8 +4,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Star, Check, Shield, Award, CheckCircle, Phone, Home, Wrench, Clock, DoorClosed } from "lucide-react"
 import { WarrantyCard } from "@/components/warranty-card"
 import ServiceFAQ from "@/components/ServiceFAQ"
-import { ProofPoints } from "@/components/ProofPoints"
-import OutcomeSection from "@/components/OutcomeSection"
+import { TransformationFramework } from "@/components/transformation-framework"
 import { ResultsBar } from "@/components/results-bar"
 import { CTA_CONFIG } from "@/lib/cta"
 
@@ -187,8 +186,8 @@ export default function PatioDoorPage() {
                   className="bg-[#049BF2] hover:bg-[#049BF2]/90 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto h-auto"
                   asChild
                 >
-                  <a href={quoteHref} aria-label="Book Your Free No-Pressure Consult" data-source="patio-doors-hero" data-offer="100off-per-window">
-                    Book Your Free No-Pressure Consult
+                  <a href={quoteHref} aria-label={secondaryLabel} data-source="patio-doors-hero" data-offer="100off-per-window">
+                    {secondaryLabel}
                   </a>
                 </Button>
                 <p className="text-sm sm:text-base text-gray-300 font-medium">
@@ -231,11 +230,8 @@ export default function PatioDoorPage() {
 
       <ResultsBar />
 
-      {/* Outcome Section */}
-      <OutcomeSection />
-
-      {/* ProofPoints Section */}
-      <ProofPoints />
+      {/* Transformation Framework */}
+      <TransformationFramework />
 
       {/* Services Grid */}
       <section className="py-16">

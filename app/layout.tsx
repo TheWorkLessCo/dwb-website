@@ -63,7 +63,7 @@ export default function RootLayout({
               aggregateRating: {
                 "@type": "AggregateRating",
                 ratingValue: "5.0",
-                reviewCount: "70",
+                reviewCount: "112",
               },
               address: {
                 "@type": "PostalAddress",

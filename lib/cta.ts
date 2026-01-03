@@ -3,7 +3,7 @@ export const CTA_CONFIG = {
   phoneHref: "tel:+14696408551",
   quoteHref: "/book#form",
   primaryLabel: "Call Now",
-  secondaryLabel: "Book Your Free No-Pressure Consult",
+  secondaryLabel: "Get a Quote For My Home",
 }
 
 export const ALT_SECONDARY_LABEL = "Get Free Estimate"
