@@ -6,7 +6,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Phone, Menu, X, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import { cityLinks } from "@/lib/cities"
 import { CTA_CONFIG } from "@/lib/cta"
 
@@ -39,6 +39,9 @@ export function Header() {
   }
 
   const handleServicesMouseLeave = () => {
+    if (servicesTimeoutRef.current) {
+      clearTimeout(servicesTimeoutRef.current)
+    }
     servicesTimeoutRef.current = setTimeout(() => {
       setIsServicesOpen(false)
     }, 150)
@@ -52,10 +55,25 @@ export function Header() {
   }
 
   const handleServiceAreasMouseLeave = () => {
+    if (serviceAreasTimeoutRef.current) {
+      clearTimeout(serviceAreasTimeoutRef.current)
+    }
     serviceAreasTimeoutRef.current = setTimeout(() => {
       setIsServiceAreasOpen(false)
     }, 150)
   }
+
+  // Clean up timeouts on unmount to prevent memory leaks
+  useEffect(() => {
+    return () => {
+      if (servicesTimeoutRef.current) {
+        clearTimeout(servicesTimeoutRef.current)
+      }
+      if (serviceAreasTimeoutRef.current) {
+        clearTimeout(serviceAreasTimeoutRef.current)
+      }
+    }
+  }, [])
 
   const handleServicesClick = () => {
     if (window.innerWidth < 1024) {
