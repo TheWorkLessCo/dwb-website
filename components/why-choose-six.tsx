@@ -16,7 +16,6 @@ export function WhyChooseSix({ cityName }: WhyChooseSixProps) {
       nodes.forEach((n) => {
         if (n !== keep) n.remove()
       })
-      console.warn("[WhyChoose] Duplicate removed; kept one instance.")
     }
   }, [])
 

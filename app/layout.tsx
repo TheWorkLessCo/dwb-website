@@ -214,15 +214,6 @@ export default function RootLayout({
           src="https://go.dallaswindowbutler.com/reputation/assets/review-widget.js"
           strategy="afterInteractive"
         />
-        <Script
-          id="lc-debug"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              console.log('[LeadConnector] script tag injected (debug)');
-            `,
-          }}
-        />
         <LinkAuditProvider>
           <ScrollToTopOnRoute />
           <div id="site-chrome">

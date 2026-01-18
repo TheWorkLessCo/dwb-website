@@ -10,7 +10,7 @@ interface LinkAuditConfig {
 const config: LinkAuditConfig = {
   productionDomain: "https://dallaswindowbutler.com",
   phoneNumber: "+14696408551",
-  enableLogging: true, // Set to false after verification
+  enableLogging: false, // Disabled for production
 }
 
 // Patterns to detect and replace

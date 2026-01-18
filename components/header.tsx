@@ -76,13 +76,13 @@ export function Header() {
   }, [])
 
   const handleServicesClick = () => {
-    if (window.innerWidth < 1024) {
+    if (typeof window !== 'undefined' && window.innerWidth < 1024) {
       setIsServicesOpen(!isServicesOpen)
     }
   }
 
   const handleServiceAreasClick = () => {
-    if (window.innerWidth < 1024) {
+    if (typeof window !== 'undefined' && window.innerWidth < 1024) {
       setIsServiceAreasOpen(!isServiceAreasOpen)
     }
   }
