@@ -38,6 +38,7 @@ git push origin main
 14. **Added gradient utilities** - bg-mesh-subtle, bg-gradient-section, bg-gradient-cta classes
 15. **Applied gradient** - Benefits section now uses bg-mesh-subtle
 16. **Enhanced FAQ section** - Dynamic animations, glassmorphism cards, animated icons, gradient background
+17. **Unified FAQ styling** - ServiceFAQ component updated to match ModernFAQ (all service/city pages now consistent)
 
 ### Next Up (Phase 3)
 - Apply glass Card variant to other appropriate components
@@ -135,7 +136,8 @@ git push origin main
 | `components/ui/card.tsx` | Card with glass/elevated/subtle/ghost variants |
 | `components/ui/button.tsx` | Button with micro-lift, brand variant, hover effects |
 | `components/animate-on-scroll.tsx` | **NEW** - Scroll-triggered animation wrapper |
-| `components/modern-faq.tsx` | FAQ accordion with glassmorphism and animations |
+| `components/modern-faq.tsx` | FAQ accordion with glassmorphism and animations (home page) |
+| `components/ServiceFAQ.tsx` | Service-specific FAQ with matching dynamic styling |
 | `hooks/use-intersection-observer.ts` | **NEW** - Intersection Observer hook |
 | `hooks/use-focus-trap.ts` | **NEW** - Focus trap hook for accessibility |
 | `components/header.tsx` | Navigation with mobile menu + focus trap applied |
