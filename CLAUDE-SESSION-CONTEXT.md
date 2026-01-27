@@ -34,11 +34,14 @@ git push origin main
 10. **Applied scroll animations** - AnimateOnScroll on Benefits section (staggered)
 11. **Created focus trap** - useFocusTrap hook for mobile menu accessibility
 12. **Applied focus trap** - Mobile nav menu now has proper focus trapping + ARIA
+13. **Upgraded buttons** - micro-lift, shadow transitions, active press feedback, new 'brand' variant
+14. **Added gradient utilities** - bg-mesh-subtle, bg-gradient-section, bg-gradient-cta classes
+15. **Applied gradient** - Benefits section now uses bg-mesh-subtle
 
-### Next Up (Phase 2 Remaining)
-- Upgrade button hover states in button.tsx (add micro-lift, shadow transitions)
-- Apply gradient backgrounds to sections (bg-mesh-subtle)
+### Next Up (Phase 3)
 - Apply glass Card variant to appropriate components
+- Add skeleton loading states
+- Create bento grid layouts
 
 ---
 
