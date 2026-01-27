@@ -338,11 +338,7 @@ export function CityServicePage({ cityData }: CityServicePageProps) {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <ModernFAQ title="Frequently Asked Questions" subtitle={`Common questions from ${name} homeowners`} />
-        </div>
-      </section>
+      <ModernFAQ title="Frequently Asked Questions" subtitle={`Common questions from ${name} homeowners`} />
 
       {/* Guarantee Section */}
       <section className="py-16">
