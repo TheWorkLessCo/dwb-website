@@ -30,12 +30,15 @@ git push origin main
 6. **Added accessibility** - skip link, prefers-reduced-motion, semantic main element
 7. **Created scroll animations** - useIntersectionObserver hook + AnimateOnScroll component
 8. **Added Card variants** - glass, elevated, subtle, ghost variants in card.tsx
+9. **Applied scroll animations** - AnimateOnScroll on Transformation Framework (staggered)
+10. **Applied scroll animations** - AnimateOnScroll on Benefits section (staggered)
+11. **Created focus trap** - useFocusTrap hook for mobile menu accessibility
+12. **Applied focus trap** - Mobile nav menu now has proper focus trapping + ARIA
 
 ### Next Up (Phase 2 Remaining)
-- Apply AnimateOnScroll to homepage sections
-- Add focus trap to mobile menu (hooks/use-focus-trap.ts)
-- Upgrade button hover states in button.tsx
-- Apply gradient backgrounds to sections
+- Upgrade button hover states in button.tsx (add micro-lift, shadow transitions)
+- Apply gradient backgrounds to sections (bg-mesh-subtle)
+- Apply glass Card variant to appropriate components
 
 ---
 
@@ -129,7 +132,8 @@ git push origin main
 | `components/ui/button.tsx` | Base button component (needs hover upgrade) |
 | `components/animate-on-scroll.tsx` | **NEW** - Scroll-triggered animation wrapper |
 | `hooks/use-intersection-observer.ts` | **NEW** - Intersection Observer hook |
-| `components/header.tsx` | Navigation with mobile menu (needs focus trap) |
+| `hooks/use-focus-trap.ts` | **NEW** - Focus trap hook for accessibility |
+| `components/header.tsx` | Navigation with mobile menu + focus trap applied |
 | `components/hero.tsx` | Homepage hero with video |
 | `components/warranty-card.tsx` | Glassmorphism example |
 | `components/transformation-framework.tsx` | 5-card methodology section |
