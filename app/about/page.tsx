@@ -231,7 +231,7 @@ export default function AboutPage() {
           </AnimateOnScroll>
 
           <div className="flex flex-wrap justify-center gap-4">
-            {["Rockwall", "McKinney", "Allen", "Plano", "North Richardson", "Forney", "Garland", "Wylie"].map((city, index) => (
+            {["Rockwall", "McKinney", "Allen", "Plano", "North Richardson"].map((city, index) => (
               <AnimateOnScroll key={city} animation="fade-up" delay={index * 50}>
                 <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-slate-200 shadow-sm">
                   <MapPin className="w-4 h-4 text-[#049bf2]" />
