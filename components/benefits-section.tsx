@@ -1,4 +1,5 @@
 import { Wallet, Sparkles, VolumeX } from "lucide-react"
+import { AnimateOnScroll } from "@/components/animate-on-scroll"
 
 export function BenefitsSection() {
   const benefits = [
@@ -25,28 +26,31 @@ export function BenefitsSection() {
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Experience The &quot;White Glove&quot; Difference.
-          </h2>
-        </div>
+        <AnimateOnScroll animation="fade-up">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Experience The &quot;White Glove&quot; Difference.
+            </h2>
+          </div>
+        </AnimateOnScroll>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {benefits.map((benefit, index) => (
-            <div 
-              key={index} 
-              className="group flex flex-col items-center text-center p-8 rounded-2xl hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-gray-100"
-            >
-              <div className={`w-20 h-20 ${benefit.accentColor} rounded-2xl flex items-center justify-center mb-8`}>
-                {benefit.icon}
+            <AnimateOnScroll key={index} animation="fade-up" delay={index * 150}>
+              <div
+                className="group flex flex-col items-center text-center p-8 rounded-2xl hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-gray-100 h-full"
+              >
+                <div className={`w-20 h-20 ${benefit.accentColor} rounded-2xl flex items-center justify-center mb-8`}>
+                  {benefit.icon}
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  {benefit.headline}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {benefit.body}
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">
-                {benefit.headline}
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                {benefit.body}
-              </p>
-            </div>
+            </AnimateOnScroll>
           ))}
         </div>
       </div>

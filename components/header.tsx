@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button"
 import { useState, useRef, useEffect } from "react"
 import { cityLinks } from "@/lib/cities"
 import { CTA_CONFIG } from "@/lib/cta"
+import { useFocusTrap } from "@/hooks/use-focus-trap"
 
 export function Header() {
   const pathname = usePathname()
@@ -23,6 +24,13 @@ export function Header() {
   const serviceAreasTimeoutRef = useRef<NodeJS.Timeout>()
   const servicesDropdownRef = useRef<HTMLDivElement>(null)
   const locationsDropdownRef = useRef<HTMLDivElement>(null)
+
+  // Focus trap for mobile menu accessibility
+  const mobileMenuRef = useFocusTrap({
+    isActive: isMenuOpen,
+    onEscape: () => setIsMenuOpen(false),
+    restoreFocus: true,
+  })
 
   // Close all dropdowns when route changes
   useEffect(() => {
@@ -373,7 +381,7 @@ export function Header() {
             onClick={() => setIsMenuOpen(false)}
             aria-hidden="true"
           />
-          <div className="mobile-menu-panel">
+          <div ref={mobileMenuRef} className="mobile-menu-panel" role="dialog" aria-modal="true" aria-label="Navigation menu">
             <div className="mobile-menu-header">
               <Button
                 variant="ghost"
