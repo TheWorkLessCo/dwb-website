@@ -37,9 +37,10 @@ git push origin main
 13. **Upgraded buttons** - micro-lift, shadow transitions, active press feedback, new 'brand' variant
 14. **Added gradient utilities** - bg-mesh-subtle, bg-gradient-section, bg-gradient-cta classes
 15. **Applied gradient** - Benefits section now uses bg-mesh-subtle
+16. **Enhanced FAQ section** - Dynamic animations, glassmorphism cards, animated icons, gradient background
 
 ### Next Up (Phase 3)
-- Apply glass Card variant to appropriate components
+- Apply glass Card variant to other appropriate components
 - Add skeleton loading states
 - Create bento grid layouts
 
@@ -132,8 +133,9 @@ git push origin main
 | `app/layout.tsx` | Root layout with skip link and semantic main |
 | `app/page.tsx` | Homepage with all sections |
 | `components/ui/card.tsx` | Card with glass/elevated/subtle/ghost variants |
-| `components/ui/button.tsx` | Base button component (needs hover upgrade) |
+| `components/ui/button.tsx` | Button with micro-lift, brand variant, hover effects |
 | `components/animate-on-scroll.tsx` | **NEW** - Scroll-triggered animation wrapper |
+| `components/modern-faq.tsx` | FAQ accordion with glassmorphism and animations |
 | `hooks/use-intersection-observer.ts` | **NEW** - Intersection Observer hook |
 | `hooks/use-focus-trap.ts` | **NEW** - Focus trap hook for accessibility |
 | `components/header.tsx` | Navigation with mobile menu + focus trap applied |
