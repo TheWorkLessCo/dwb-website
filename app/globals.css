@@ -529,36 +529,31 @@
     margin-top: .75rem;
   }
 
-  /* Icon states */
-  [data-faq-item] .faq-icon {
-    background: white;
-  }
-
-  [data-faq-item] [aria-expanded="true"]~.faq-icon,
-  [data-faq-item][data-open="true"] .faq-icon {}
-
-  /* Rotate icon when open (JS toggles aria-expanded) */
+  /* Icon animation when open (JS toggles aria-expanded) */
   [data-faq-item] button[aria-expanded="true"] .faq-icon {
+    background: linear-gradient(135deg, #049bf2, #0389d5);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 4px 12px rgba(4, 155, 242, 0.3);
+  }
+
+  [data-faq-item] button[aria-expanded="true"] .faq-icon svg {
     transform: rotate(45deg);
-    /* + becomes × */
   }
 
-  /* Hover/active polish */
-  [data-faq-item]:hover {
-    box-shadow: 0 6px 18px rgba(2, 6, 23, 0.06);
-    border-color: #e2e8f0;
+  /* Chevron rotation when open */
+  [data-faq-item] button[aria-expanded="true"] .faq-chevron {
+    transform: rotate(180deg);
   }
 
-  [data-faq-item] button:hover .faq-icon {
-    border-color: #cbd5e1;
-  }
-
-  /* Answer animation: smooth height + fade; hidden by default (JS sets hidden=true) */
+  /* Answer animation: smooth height + fade; hidden by default */
   .faq-answer {
     max-height: 0;
     opacity: 0;
     overflow: hidden;
-    transition: max-height .32s ease, opacity .24s ease;
+    transition: max-height .4s cubic-bezier(0.16, 1, 0.3, 1), opacity .3s ease, padding .3s ease;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   /* Added shaking animation for the phone icon */
@@ -611,13 +606,25 @@
     max-height: 800px;
     /* large enough for long answers */
     opacity: 1;
+    padding-bottom: 1.5rem;
   }
 
-  /* Dark mode support */
+  /* Active/open state for the card itself */
+  [data-faq-item]:has(button[aria-expanded="true"]) {
+    border-color: rgba(4, 155, 242, 0.3);
+    box-shadow: 0 8px 30px rgba(4, 155, 242, 0.12);
+  }
+
+  /* Dark mode support for FAQ */
   @media (prefers-color-scheme: dark) {
     [data-faq-item] {
-      background: rgba(15, 23, 42, 0.7);
-      border-color: #1f2937;
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(8px);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    [data-faq-item]:hover {
+      border-color: rgba(4, 155, 242, 0.3);
     }
 
     [data-faq] p,
@@ -630,9 +637,22 @@
     }
 
     [data-faq-item] .faq-icon {
-      background: transparent;
-      border-color: #334155;
-      color: #e2e8f0;
+      background: rgba(4, 155, 242, 0.1);
+      border-color: rgba(4, 155, 242, 0.3);
+      color: #049bf2;
+    }
+
+    [data-faq-item] button[aria-expanded="true"] .faq-icon {
+      background: linear-gradient(135deg, #049bf2, #0389d5);
+      color: white;
+    }
+
+    [data-faq] [data-faq-item] button span:not(.faq-icon) {
+      color: #e5e7eb;
+    }
+
+    [data-faq] .faq-chevron {
+      color: #64748b;
     }
   }
 
