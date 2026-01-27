@@ -26,9 +26,16 @@ git push origin main
 2. Committed and pushed previous unsaved changes
 3. Increased ImageBridge photo height (h-72/h-80/h-96)
 4. Removed Transformation Framework from Services and City pages (kept on Home only)
+5. **Added design tokens** - modern shadows, gradients, custom easing in globals.css
+6. **Added accessibility** - skip link, prefers-reduced-motion, semantic main element
+7. **Created scroll animations** - useIntersectionObserver hook + AnimateOnScroll component
+8. **Added Card variants** - glass, elevated, subtle, ghost variants in card.tsx
 
-### In Progress
-- UI/UX modernization plan created (see below)
+### Next Up (Phase 2 Remaining)
+- Apply AnimateOnScroll to homepage sections
+- Add focus trap to mobile menu (hooks/use-focus-trap.ts)
+- Upgrade button hover states in button.tsx
+- Apply gradient backgrounds to sections
 
 ---
 
@@ -115,12 +122,14 @@ git push origin main
 
 | File | Purpose |
 |------|---------|
-| `app/globals.css` | Design tokens, animations, utilities |
-| `app/layout.tsx` | Root layout, skip link goes here |
+| `app/globals.css` | Design tokens, shadows, gradients, easing, accessibility |
+| `app/layout.tsx` | Root layout with skip link and semantic main |
 | `app/page.tsx` | Homepage with all sections |
-| `components/ui/card.tsx` | Base card component |
-| `components/ui/button.tsx` | Base button component |
-| `components/header.tsx` | Navigation with mobile menu |
+| `components/ui/card.tsx` | Card with glass/elevated/subtle/ghost variants |
+| `components/ui/button.tsx` | Base button component (needs hover upgrade) |
+| `components/animate-on-scroll.tsx` | **NEW** - Scroll-triggered animation wrapper |
+| `hooks/use-intersection-observer.ts` | **NEW** - Intersection Observer hook |
+| `components/header.tsx` | Navigation with mobile menu (needs focus trap) |
 | `components/hero.tsx` | Homepage hero with video |
 | `components/warranty-card.tsx` | Glassmorphism example |
 | `components/transformation-framework.tsx` | 5-card methodology section |
