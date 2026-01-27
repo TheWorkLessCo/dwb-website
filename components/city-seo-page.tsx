@@ -9,7 +9,6 @@ import FinalCTABanner from "@/components/final-cta-banner"
 import { WarrantyCard } from "@/components/warranty-card"
 import ImageBridge from "@/components/ImageBridge"
 import { ResultsBar } from "@/components/results-bar"
-import { TransformationFramework } from "@/components/transformation-framework"
 import { CTA_CONFIG, ALT_SECONDARY_LABEL } from "@/lib/cta"
 
 interface CityData {
@@ -364,9 +363,6 @@ export function CitySeoPage({ cityData, customHeadings }: CitySeoPageProps) {
       </section>
 
       <ResultsBar cityName={cityName} />
-
-      {/* Transformation Framework */}
-      <TransformationFramework />
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdLocalBusiness) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdService) }} />

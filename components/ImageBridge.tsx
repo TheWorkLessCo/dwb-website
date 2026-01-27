@@ -8,7 +8,7 @@ export default function ImageBridge() {
       className="w-full bg-transparent mt-12 sm:mt-16 lg:mt-20"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-2xl shadow-lg ring-1 ring-black/5 h-48 md:h-56 lg:h-64">
+        <div className="relative overflow-hidden rounded-2xl shadow-lg ring-1 ring-black/5 h-72 md:h-80 lg:h-96">
           <Image
             src="/img/reviews-bridge.jpg"
             alt="Dallas Window Butler project gallery — real install example"

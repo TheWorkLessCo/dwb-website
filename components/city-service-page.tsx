@@ -5,7 +5,6 @@ import { Badge } from "@/components/ui/badge"
 import { Star, Shield, Award, CheckCircle, Phone, Check } from "lucide-react"
 import { ModernFAQ } from "@/components/modern-faq"
 import { ResultsBar } from "@/components/results-bar"
-import { TransformationFramework } from "@/components/transformation-framework"
 import { CTA_CONFIG, ALT_SECONDARY_LABEL } from "@/lib/cta"
 import { getTrackingAttributes } from "@/lib/tracking"
 
@@ -166,9 +165,6 @@ export function CityServicePage({ cityData }: CityServicePageProps) {
 
       {/* Results Bar (Outcomes) */}
       <ResultsBar cityName={name} variant="primary" />
-
-      {/* Transformation Framework */}
-      <TransformationFramework />
 
       {/* Mini Social Proof Row */}
       <section className="bg-gray-50 py-6">

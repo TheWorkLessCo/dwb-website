@@ -217,6 +217,11 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans">
+        {/* Skip link for accessibility - allows keyboard users to skip navigation */}
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
+
         {/* LeadConnector chat widget - single global injection */}
         <Script
           src="https://beta.leadconnectorhq.com/loader.js"
@@ -243,7 +248,9 @@ export default function RootLayout({
             <UtilityBar />
             <Header />
           </div>
-          <Suspense fallback={null}>{children}</Suspense>
+          <main id="main-content">
+            <Suspense fallback={null}>{children}</Suspense>
+          </main>
           <PreFooterStrip />
           <LandingFooter />
         </LinkAuditProvider>

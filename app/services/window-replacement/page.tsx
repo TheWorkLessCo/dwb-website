@@ -4,7 +4,6 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Star, Check, Shield, Award, CheckCircle, Phone, Home, Wrench, Clock } from "lucide-react"
 import { WarrantyCard } from "@/components/warranty-card"
 import ServiceFAQ from "@/components/ServiceFAQ"
-import { TransformationFramework } from "@/components/transformation-framework"
 import { ResultsBar } from "@/components/results-bar"
 import { CTA_CONFIG } from "@/lib/cta"
 
@@ -234,9 +233,6 @@ export default function WindowReplacementPage() {
       </section>
 
       <ResultsBar />
-
-      {/* Transformation Framework */}
-      <TransformationFramework />
 
       {/* Services Grid */}
       <section className="py-16">
