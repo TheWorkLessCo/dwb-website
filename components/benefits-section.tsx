@@ -24,7 +24,7 @@ export function BenefitsSection() {
   ]
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-mesh-subtle">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll animation="fade-up">
           <div className="text-center mb-16">
