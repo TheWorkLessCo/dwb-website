@@ -150,9 +150,11 @@
     max-width: 100%;
     box-sizing: border-box;
   }
+
   html {
     overflow-x: hidden;
   }
+
   body {
     @apply bg-background text-foreground font-sans;
     overflow-x: hidden;
@@ -412,19 +414,19 @@
   /* Ensure the iframe can expand and isn't clipped by parents */
   .lc_reviews_widget {
     width: 100% !important;
-    min-height: 560px !important;
+    min-height: 400px !important;
     display: block !important;
   }
 
   @media (min-width: 640px) {
     .lc_reviews_widget {
-      min-height: 600px !important;
+      min-height: 420px !important;
     }
   }
 
   @media (min-width: 1024px) {
     .lc_reviews_widget {
-      min-height: 660px !important;
+      min-height: 460px !important;
     }
   }
 
@@ -455,7 +457,7 @@
   }
 
   /* Container spacing */
-  [data-faq] .group + .group {
+  [data-faq] .group+.group {
     margin-top: .75rem;
   }
 
@@ -463,13 +465,14 @@
   [data-faq-item] .faq-icon {
     background: white;
   }
-  [data-faq-item] [aria-expanded="true"] ~ .faq-icon,
-  [data-faq-item][data-open="true"] .faq-icon {
-  }
+
+  [data-faq-item] [aria-expanded="true"]~.faq-icon,
+  [data-faq-item][data-open="true"] .faq-icon {}
 
   /* Rotate icon when open (JS toggles aria-expanded) */
   [data-faq-item] button[aria-expanded="true"] .faq-icon {
-    transform: rotate(45deg); /* + becomes × */
+    transform: rotate(45deg);
+    /* + becomes × */
   }
 
   /* Hover/active polish */
@@ -477,6 +480,7 @@
     box-shadow: 0 6px 18px rgba(2, 6, 23, 0.06);
     border-color: #e2e8f0;
   }
+
   [data-faq-item] button:hover .faq-icon {
     border-color: #cbd5e1;
   }
@@ -491,13 +495,23 @@
 
   /* Added shaking animation for the phone icon */
   @keyframes shake {
-    0%, 100% { transform: rotate(0deg); }
-    25% { transform: rotate(-10deg); }
-    75% { transform: rotate(10deg); }
+
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+
+    25% {
+      transform: rotate(-10deg);
+    }
+
+    75% {
+      transform: rotate(10deg);
+    }
   }
 
   .animate-shake {
-    animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) infinite;
+    animation: shake 0.5s cubic-bezier(.36, .07, .19, .97) infinite;
     animation-play-state: paused;
   }
 
@@ -507,8 +521,17 @@
 
   /* Added pulse-slow animation for the warranty card */
   @keyframes pulse-slow {
-    0%, 100% { opacity: 0.2; transform: scale(1); }
-    50% { opacity: 0.4; transform: scale(1.1); }
+
+    0%,
+    100% {
+      opacity: 0.2;
+      transform: scale(1);
+    }
+
+    50% {
+      opacity: 0.4;
+      transform: scale(1.1);
+    }
   }
 
   .animate-pulse-slow {
@@ -516,8 +539,9 @@
   }
 
   /* When open (JS removes hidden and sets aria-expanded=true), unlock height */
-  [data-faq-item] button[aria-expanded="true"] + .faq-answer {
-    max-height: 800px; /* large enough for long answers */
+  [data-faq-item] button[aria-expanded="true"]+.faq-answer {
+    max-height: 800px;
+    /* large enough for long answers */
     opacity: 1;
   }
 
@@ -527,13 +551,16 @@
       background: rgba(15, 23, 42, 0.7);
       border-color: #1f2937;
     }
+
     [data-faq] p,
     [data-faq] .faq-answer {
       color: #cbd5e1;
     }
+
     [data-faq] h2 {
       color: #e5e7eb;
     }
+
     [data-faq-item] .faq-icon {
       background: transparent;
       border-color: #334155;
@@ -541,42 +568,50 @@
     }
   }
 
-      @keyframes pulse-orange {
-        0%,
-        100% {
-          box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.4);
-        }
-        50% {
-          box-shadow: 0 0 20px 10px rgba(249, 115, 22, 0.2);
-        }
-      }
-      .animate-pulse-orange {
-        animation: pulse-orange 2s infinite;
-      }
+  @keyframes pulse-orange {
 
-      @keyframes pulse-blue {
-        0%,
-        100% {
-          box-shadow: 0 0 0 0 rgba(4, 155, 242, 0.4);
-        }
-        50% {
-          box-shadow: 0 0 20px 10px rgba(4, 155, 242, 0.2);
-        }
-      }
-      .animate-pulse-blue {
-        animation: pulse-blue 2s infinite;
-      }
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.4);
+    }
+
+    50% {
+      box-shadow: 0 0 20px 10px rgba(249, 115, 22, 0.2);
+    }
+  }
+
+  .animate-pulse-orange {
+    animation: pulse-orange 2s infinite;
+  }
+
+  @keyframes pulse-blue {
+
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 rgba(4, 155, 242, 0.4);
+    }
+
+    50% {
+      box-shadow: 0 0 20px 10px rgba(4, 155, 242, 0.2);
+    }
+  }
+
+  .animate-pulse-blue {
+    animation: pulse-blue 2s infinite;
+  }
 
   @keyframes fade-in {
     from {
       opacity: 0;
       transform: translateY(10px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
     }
   }
+
   .animate-fade-in {
     animation: fade-in 0.8s ease-out forwards;
   }

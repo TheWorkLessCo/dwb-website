@@ -1,0 +1,281 @@
+/* Header styles - loaded synchronously to prevent flash */
+
+/* Base header styles */
+.primary-header {
+  height: auto !important;
+  min-height: 95px !important;
+  padding: 14px 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+
+.primary-header .container {
+  height: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 0 16px !important;
+}
+
+/* Mobile-first: hamburger visible, desktop nav hidden */
+.header-desktop-nav {
+  display: none !important;
+}
+
+.header-hamburger {
+  display: flex !important;
+  margin-left: auto !important;
+}
+
+/* Desktop: 1024px and above - show desktop nav, hide hamburger */
+@media (min-width: 1024px) {
+  .header-desktop-nav {
+    display: flex !important;
+  }
+  
+  .header-hamburger {
+    display: none !important;
+  }
+  
+  .primary-header .flex.items-center.justify-between {
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    gap: 8px !important;
+  }
+  
+  .primary-header .nav-menu {
+    margin-left: 12px !important;
+    margin-right: 8px !important;
+  }
+
+  .primary-header .logo img,
+  .primary-header img {
+    display: block !important;
+    height: 85px !important;
+    width: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    margin-right: 12px !important;
+    min-height: unset !important;
+  }
+
+  .primary-header a[href="/"] {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    display: flex !important;
+    align-items: center !important;
+    margin-left: -10px !important;
+  }
+}
+
+/* Laptop screens (1024px to 1280px) - tighter spacing */
+@media (min-width: 1024px) and (max-width: 1280px) {
+  .primary-header .container {
+    padding: 0 12px !important;
+  }
+
+  .primary-header .nav-menu {
+    gap: 12px !important;
+    margin-left: 8px !important;
+    margin-right: 4px !important;
+  }
+
+  .primary-header .logo img,
+  .primary-header img {
+    height: 70px !important;
+    margin-right: 8px !important;
+  }
+
+  .primary-header .nav-menu a,
+  .primary-header .nav-menu button {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+
+  /* Smaller CTA buttons for laptop screens */
+  .header-desktop-nav.header-cta-container {
+    gap: 8px !important;
+  }
+
+  .header-desktop-nav a[href*="tel"] {
+    padding: 0.4rem 0.75rem !important;
+  }
+
+  .header-desktop-nav a[href*="tel"] > div:first-child {
+    padding: 0.5rem !important;
+    min-width: 36px !important;
+    min-height: 36px !important;
+  }
+
+  .header-desktop-nav a[href*="tel"] svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  .header-desktop-nav a[href*="tel"] .flex.flex-col span:first-child {
+    font-size: 8px !important;
+  }
+
+  .header-desktop-nav a[href*="tel"] .flex.flex-col span:last-child {
+    font-size: 0.875rem !important;
+  }
+
+  .header-desktop-nav.header-cta-container button,
+  .header-desktop-nav.header-cta-container > a > button {
+    padding: 0.625rem 1rem !important;
+    font-size: 0.875rem !important;
+  }
+}
+
+/* Larger desktop screens (1280px+) - more comfortable spacing */
+@media (min-width: 1280px) {
+  .primary-header .nav-menu {
+    gap: 24px !important;
+    margin-left: 20px !important;
+    margin-right: 16px !important;
+  }
+
+  .primary-header .logo img,
+  .primary-header img {
+    height: 85px !important;
+  }
+
+  .header-desktop-nav.header-cta-container {
+    gap: 16px !important;
+  }
+}
+
+/* Mobile navigation styles (below 1024px) */
+@media (max-width: 1023px) {
+  .primary-header {
+    height: auto !important;
+    min-height: 70px !important;
+    padding: 16px 0 !important;
+  }
+  
+  .primary-header .container {
+    height: auto !important;
+    padding: 0 16px !important;
+  }
+  
+  .primary-header img {
+    max-height: 48px !important;
+    height: auto !important;
+  }
+}
+
+/* Mobile menu overlay */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.mobile-menu-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 85%;
+  max-width: 320px;
+  background: white;
+  z-index: 9999;
+  overflow-y: auto;
+  animation: slideIn 0.25s ease-out;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.mobile-menu-panel .mobile-menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.mobile-menu-panel .mobile-menu-content {
+  padding: 16px 0;
+}
+
+.mobile-menu-panel .mobile-nav-item {
+  display: block;
+  padding: 14px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #00152e;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  transition: background-color 0.15s ease;
+}
+
+.mobile-menu-panel .mobile-nav-item:hover,
+.mobile-menu-panel .mobile-nav-item:focus {
+  background-color: #f1f5f9;
+}
+
+.mobile-menu-panel .mobile-dropdown-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 14px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #00152e;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.mobile-menu-panel .mobile-dropdown-btn:hover,
+.mobile-menu-panel .mobile-dropdown-btn:focus {
+  background-color: #f1f5f9;
+}
+
+.mobile-menu-panel .mobile-dropdown-content {
+  background-color: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.mobile-menu-panel .mobile-dropdown-item {
+  display: block;
+  padding: 12px 20px 12px 32px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #374151;
+  transition: all 0.15s ease;
+}
+
+.mobile-menu-panel .mobile-dropdown-item:hover,
+.mobile-menu-panel .mobile-dropdown-item:focus {
+  background-color: #049bf2;
+  color: white;
+}
+
+.mobile-menu-panel .mobile-cta-section {
+  padding: 20px;
+  border-top: 1px solid #e2e8f0;
+  margin-top: 8px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}

@@ -8,6 +8,7 @@ import { ScrollToTopOnRoute } from "@/components/scroll-to-top-on-route"
 import PreFooterStrip from "@/components/PreFooterStrip"
 import { LandingFooter } from "@/components/landing-footer"
 import "./globals.css"
+import "@/styles/header.css"
 
 export const metadata = {
   title: "Best Window Replacement Company | Dallas Window Butler",

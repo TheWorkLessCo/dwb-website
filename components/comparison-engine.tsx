@@ -161,32 +161,48 @@ export function ComparisonEngine() {
           </div>
 
           {/* Competitor Column */}
-          <div className="p-8 pt-10 bg-[#fafafa] rounded-r-3xl">
+          <div className="relative p-8 pt-14 bg-gradient-to-b from-red-50/80 to-orange-50/50 rounded-r-3xl border-l-2 border-red-200/60">
+            {/* Not Recommended Tag */}
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-red-100 text-red-600 px-4 py-1 rounded-full text-xs font-bold tracking-wider border border-red-200">
+              NOT RECOMMENDED
+            </div>
+
             {/* Header */}
-            <div className="h-24 text-center border-b-2 border-gray-100 mb-5 flex flex-col justify-end pb-4">
-              <h3 className="text-2xl font-bold text-gray-500 transition-all duration-300">
+            <div className="h-28 text-center border-b-2 border-red-100 mb-5 flex flex-col justify-end pb-4">
+              <h3 className="text-2xl font-bold text-red-400 transition-all duration-300">
                 {competitor.name}
               </h3>
-              <p className="text-sm text-gray-400 mt-1">{competitor.subtitle}</p>
+              <p className="text-sm text-red-300 mt-1">{competitor.subtitle}</p>
+              {!isHandyman ? (
+                <p className="text-xs text-red-300 mt-1 italic">e.g., Home Depot, Lowe&apos;s</p>
+              ) : (
+                <p className="text-xs text-red-300 mt-1 italic">e.g., local handyman, Craigslist</p>
+              )}
             </div>
 
             {/* Rows with fade animation */}
-            <div className="h-[70px] flex items-center justify-center text-center border-b border-gray-100 text-gray-400 transition-all duration-300">
+            <div className="h-[70px] flex items-center justify-center text-center border-b border-red-100 text-red-400/80 transition-all duration-300">
+              <span className="text-red-400 font-bold mr-2">✗</span>
               {competitor.uFactor}
             </div>
-            <div className="h-[70px] flex items-center justify-center text-center border-b border-gray-100 text-gray-400 transition-all duration-300">
+            <div className="h-[70px] flex items-center justify-center text-center border-b border-red-100 text-red-400/80 transition-all duration-300">
+              <span className="text-red-400 font-bold mr-2">✗</span>
               {competitor.shgc}
             </div>
-            <div className="h-[70px] flex items-center justify-center text-center border-b border-gray-100 text-gray-400 transition-all duration-300">
+            <div className="h-[70px] flex items-center justify-center text-center border-b border-red-100 text-red-400/80 transition-all duration-300">
+              <span className="text-red-400 font-bold mr-2">✗</span>
               {competitor.sales}
             </div>
-            <div className="h-[70px] flex items-center justify-center text-center border-b border-gray-100 text-gray-400 transition-all duration-300">
+            <div className="h-[70px] flex items-center justify-center text-center border-b border-red-100 text-red-400/80 transition-all duration-300">
+              <span className="text-red-400 font-bold mr-2">✗</span>
               {competitor.install}
             </div>
-            <div className="h-[70px] flex items-center justify-center text-center border-b border-gray-100 text-gray-400 transition-all duration-300">
+            <div className="h-[70px] flex items-center justify-center text-center border-b border-red-100 text-red-400/80 transition-all duration-300">
+              <span className="text-red-400 font-bold mr-2">✗</span>
               {competitor.warranty}
             </div>
-            <div className="h-[70px] flex items-center justify-center text-center text-red-400 transition-all duration-300 font-medium">
+            <div className="h-[70px] flex items-center justify-center text-center text-red-500 transition-all duration-300 font-semibold">
+              <span className="text-red-500 font-bold mr-2">✗</span>
               {competitor.serviceWarranty}
             </div>
           </div>
@@ -230,16 +246,21 @@ export function ComparisonEngine() {
           </div>
 
           {/* Competitor Card */}
-          <div className="bg-white border border-gray-200 rounded-2xl p-6">
+          <div className="relative bg-gradient-to-b from-red-50 to-orange-50/50 border-2 border-red-200 rounded-2xl p-6 pt-8">
+            {/* Not Recommended Tag */}
+            <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-red-100 text-red-600 px-4 py-1 rounded-full text-xs font-bold tracking-wider border border-red-200">
+              NOT RECOMMENDED
+            </div>
+
             {/* Mobile Toggle */}
-            <div className="flex items-center justify-center gap-3 mb-6">
-              <span className={`text-sm font-semibold ${!isHandyman ? "text-gray-900" : "text-gray-400"}`}>
+            <div className="flex items-center justify-center gap-3 mb-6 pt-4">
+              <span className={`text-sm font-semibold ${!isHandyman ? "text-red-500" : "text-gray-400"}`}>
                 Big Box
               </span>
               <button
                 onClick={() => setIsHandyman(!isHandyman)}
                 className={`relative w-12 h-7 rounded-full transition-colors duration-300 ${
-                  isHandyman ? "bg-[#049bf2]" : "bg-gray-300"
+                  isHandyman ? "bg-red-400" : "bg-red-300"
                 }`}
                 aria-label="Toggle competitor type"
               >
@@ -249,14 +270,19 @@ export function ComparisonEngine() {
                   }`}
                 />
               </button>
-              <span className={`text-sm font-semibold ${isHandyman ? "text-gray-900" : "text-gray-400"}`}>
+              <span className={`text-sm font-semibold ${isHandyman ? "text-red-500" : "text-gray-400"}`}>
                 Handyman
               </span>
             </div>
-            
+
             <div className="text-center mb-6">
-              <h3 className="text-xl font-bold text-gray-500">{competitor.name}</h3>
-              <p className="text-sm text-gray-400">{competitor.subtitle}</p>
+              <h3 className="text-xl font-bold text-red-400">{competitor.name}</h3>
+              <p className="text-sm text-red-300">{competitor.subtitle}</p>
+              {!isHandyman ? (
+                <p className="text-xs text-red-300 mt-1 italic">e.g., Home Depot, Lowe&apos;s</p>
+              ) : (
+                <p className="text-xs text-red-300 mt-1 italic">e.g., local handyman, Craigslist</p>
+              )}
             </div>
             <div className="space-y-4">
               {[
@@ -267,11 +293,11 @@ export function ComparisonEngine() {
                 { label: "Warranty", value: competitor.warranty },
                 { label: "Service Warranty", value: competitor.serviceWarranty, isRed: true },
               ].map((item, i) => (
-                <div key={i} className="flex items-start gap-3 p-3 bg-red-50/50 rounded-xl">
+                <div key={i} className="flex items-start gap-3 p-3 bg-white/60 border border-red-100 rounded-xl">
                   <span className="text-red-400 font-bold text-lg">✗</span>
                   <div>
-                    <span className="font-bold text-gray-600 mr-2">{item.label}:</span>
-                    <span className={item.isRed ? "text-red-500 font-semibold" : "text-gray-500"}>{item.value}</span>
+                    <span className="font-bold text-red-400 mr-2">{item.label}:</span>
+                    <span className={item.isRed ? "text-red-500 font-semibold" : "text-red-400/80"}>{item.value}</span>
                   </div>
                 </div>
               ))}

@@ -226,24 +226,24 @@ export default function HomePage() {
                       MEET DALLAS WINDOW BUTLER
                     </span>
                     <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                        You Deserve Respect, Not a Sales Pitch.
-                      </h2>
-                    </div>
+                      You Deserve Respect, Not a Sales Pitch.
+                    </h2>
+                  </div>
 
-                    <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
-                      <p>
-                        I built this company because I watched DFW homeowners get treated like transactions by the big guys—just another number on a quota sheet. You shouldn&apos;t have to fight off a <strong className="font-semibold text-gray-900">high-pressure closer</strong> just to get a fair price on your own home.
-                      </p>
-                      <p>
-                        That&apos;s why we operate as the <strong className="font-semibold text-gray-900">Window Butler</strong>. We bring a white-glove standard to construction. From the first step inside your home to the final walkthrough, we treat your property the way a butler would—with precision, respect, and care.
-                      </p>
-                      <p>
-                        But premium service shouldn&apos;t require a premium budget. By eliminating commissioned salespeople, we deliver <strong className="font-semibold text-gray-900">distributor-priced windows</strong> and glass with craftsman-grade installation. You pay for the materials and the labor—not the bloat.
-                      </p>
-                      <p>
-                        And because a window is only as good as the install, we back every job with a <strong className="font-semibold text-gray-900">Lifetime Warranty</strong> and our exclusive <strong className="font-semibold text-gray-900">Leak-Free Extended Service Agreement</strong>. Premium quality. No premium price tag. That&apos;s the standard.
-                      </p>
-                    </div>
+                  <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
+                    <p>
+                      I built this company because I watched DFW homeowners get treated like transactions by the big guys—just another number on a quota sheet. You shouldn&apos;t have to fight off a <strong className="font-semibold text-gray-900">high-pressure closer</strong> just to get a fair price on your own home.
+                    </p>
+                    <p>
+                      That&apos;s why we operate as the <strong className="font-semibold text-gray-900">Window Butler</strong>. We bring a white-glove standard to construction. From the first step inside your home to the final walkthrough, we treat your property the way a butler would—with precision, respect, and care.
+                    </p>
+                    <p>
+                      But premium service shouldn&apos;t require a premium budget. By eliminating commissioned salespeople, we deliver <strong className="font-semibold text-gray-900">distributor-priced windows</strong> and glass with craftsman-grade installation. You pay for the materials and the labor—not the bloat.
+                    </p>
+                    <p>
+                      And because a window is only as good as the install, we back every job with a <strong className="font-semibold text-gray-900">Lifetime Warranty</strong> and our exclusive <strong className="font-semibold text-gray-900">Leak-Free Extended Service Agreement</strong>. Premium quality. No premium price tag. That&apos;s the standard.
+                    </p>
+                  </div>
 
                   <div className="pt-4 lg:pt-6">
                     <div className="text-3xl sm:text-4xl font-serif italic text-gray-800 mb-2">
@@ -342,25 +342,25 @@ export default function HomePage() {
                 <div className="p-4 sm:p-6 pb-0">
                   {/* Visual Review Banner (The "Cartoon Section") */}
                   <div className="w-full bg-[#049BF2] rounded-t-xl overflow-hidden relative z-10">
-                    <Image 
-                      src="/images/customer-quotes-banner.png" 
-                      alt="Customer reviews summary with 5-star rating" 
-                      width={1200} 
+                    <Image
+                      src="/images/customer-quotes-banner.png"
+                      alt="Customer reviews summary with 5-star rating"
+                      width={1200}
                       height={400}
                       className="w-full h-auto object-cover block"
                     />
                   </div>
                 </div>
-                
+
                 {/* Live Review Widget - Pulled up to blend and overlap with the mascot */}
                 <div className="relative z-0">
                   <div className="px-4 sm:px-6 pb-4 sm:pb-6 -mt-10">
                     <div className="rounded-b-xl overflow-hidden">
-                      <iframe 
-                        className="lc_reviews_widget w-full border-0" 
-                        src="https://go.dallaswindowbutler.com/reputation/widgets/review_widget/9Kg5geu4xzsAgIVkpkA8?widgetId=69542e32364d509d10e45748" 
-                        scrolling="no" 
-                        style={{ minWidth: "100%", width: "100%", minHeight: "600px" }}
+                      <iframe
+                        className="lc_reviews_widget w-full border-0"
+                        src="https://go.dallaswindowbutler.com/reputation/widgets/review_widget/9Kg5geu4xzsAgIVkpkA8?widgetId=69542e32364d509d10e45748"
+                        scrolling="no"
+                        style={{ minWidth: "100%", width: "100%", minHeight: "400px" }}
                         title="Customer Reviews"
                       />
                     </div>
@@ -388,12 +388,12 @@ export default function HomePage() {
 
               {/* Diagonal Staggered Grid */}
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start mb-16">
-                
+
                 {/* STEP 1 - Left, taller */}
                 <div className="lg:col-span-4 lg:mt-0 group">
                   <div className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-500 hover:scale-[1.02] hover:shadow-3xl">
-                    <Image 
-                      src="https://dallaswindowbutler.b-cdn.net/G'5%20Star.png" 
+                    <Image
+                      src="https://dallaswindowbutler.b-cdn.net/G'5%20Star.png"
                       alt="In-home or virtual consultation with homeowner"
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -420,8 +420,8 @@ export default function HomePage() {
                 {/* STEP 2 - Center, offset down */}
                 <div className="lg:col-span-4 lg:mt-24 group">
                   <div className="relative h-[350px] lg:h-[420px] rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-500 hover:scale-[1.02] hover:shadow-3xl">
-                    <Image 
-                      src="https://dallaswindowbutler.b-cdn.net/newer.png" 
+                    <Image
+                      src="https://dallaswindowbutler.b-cdn.net/newer.png"
                       alt="Choosing windows or glass options"
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -448,8 +448,8 @@ export default function HomePage() {
                 {/* STEP 3 - Right, offset less */}
                 <div className="lg:col-span-4 lg:mt-8 group">
                   <div className="relative h-[380px] lg:h-[460px] rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-500 hover:scale-[1.02] hover:shadow-3xl">
-                    <Image 
-                      src="https://dallaswindowbutler.b-cdn.net/new2.png" 
+                    <Image
+                      src="https://dallaswindowbutler.b-cdn.net/new2.png"
                       alt="Beautiful finished window installation"
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -505,7 +505,7 @@ export default function HomePage() {
 
               {/* 2x2 Feature Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                
+
                 {/* CARD 1 - The Heat Shield */}
                 <div className="bg-white border-2 border-gray-200 rounded-xl p-6 lg:p-8 hover:border-[#049BF2] hover:shadow-lg transition-all duration-300 group">
                   <div className="flex items-start gap-4">

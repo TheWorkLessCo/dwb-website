@@ -4,13 +4,15 @@ import type React from "react"
 
 import Link from "next/link"
 import Image from "next/image"
-import { Phone, Menu, X, ChevronDown } from "lucide-react"
+import { usePathname } from "next/navigation"
+import { Menu, X, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import { cityLinks } from "@/lib/cities"
 import { CTA_CONFIG } from "@/lib/cta"
 
 export function Header() {
+  const pathname = usePathname()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isServicesOpen, setIsServicesOpen] = useState(false)
   const [isServiceAreasOpen, setIsServiceAreasOpen] = useState(false)
@@ -19,6 +21,40 @@ export function Header() {
 
   const servicesTimeoutRef = useRef<NodeJS.Timeout>()
   const serviceAreasTimeoutRef = useRef<NodeJS.Timeout>()
+  const servicesDropdownRef = useRef<HTMLDivElement>(null)
+  const locationsDropdownRef = useRef<HTMLDivElement>(null)
+
+  // Close all dropdowns when route changes
+  useEffect(() => {
+    setIsServicesOpen(false)
+    setIsServiceAreasOpen(false)
+    setIsMenuOpen(false)
+    setIsMobileServicesOpen(false)
+    setIsMobileServiceAreasOpen(false)
+  }, [pathname])
+
+  // Close dropdowns when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (servicesDropdownRef.current && !servicesDropdownRef.current.contains(event.target as Node)) {
+        setIsServicesOpen(false)
+      }
+      if (locationsDropdownRef.current && !locationsDropdownRef.current.contains(event.target as Node)) {
+        setIsServiceAreasOpen(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
+
+  // Cleanup timeouts on unmount
+  useEffect(() => {
+    return () => {
+      if (servicesTimeoutRef.current) clearTimeout(servicesTimeoutRef.current)
+      if (serviceAreasTimeoutRef.current) clearTimeout(serviceAreasTimeoutRef.current)
+    }
+  }, [])
 
   const servicesItems = [
     { name: "Window Replacement", href: "/services/window-replacement" },
@@ -58,15 +94,13 @@ export function Header() {
   }
 
   const handleServicesClick = () => {
-    if (window.innerWidth < 1024) {
-      setIsServicesOpen(!isServicesOpen)
-    }
+    setIsServicesOpen(!isServicesOpen)
+    setIsServiceAreasOpen(false)
   }
 
   const handleServiceAreasClick = () => {
-    if (window.innerWidth < 1024) {
-      setIsServiceAreasOpen(!isServiceAreasOpen)
-    }
+    setIsServiceAreasOpen(!isServiceAreasOpen)
+    setIsServicesOpen(false)
   }
 
   const handleKeyDown = (e: React.KeyboardEvent, setter: (value: boolean) => void) => {
@@ -75,99 +109,11 @@ export function Header() {
     }
   }
 
-    const { phoneDisplay, phoneHref, quoteHref, primaryLabel, secondaryLabel } = CTA_CONFIG
+  const { phoneDisplay, phoneHref, quoteHref, secondaryLabel } = CTA_CONFIG
 
-    return (
-      <>
-        <style jsx>{`
-          /* Simplified header styles with proper mobile breakpoint */
-          .primary-header {
-            height: auto !important;
-            min-height: 95px !important;
-            padding: 14px 0 !important;
-            margin: 0 !important;
-            box-shadow: none !important;
-            border-bottom: 1px solid #e2e8f0 !important;
-          }
-          
-          .primary-header .container {
-            height: auto !important;
-            display: flex !important;
-            align-items: center !important;
-            padding: 0 16px !important;
-          }
-
-          /* Desktop navigation - shown only at 1024px and above */
-          @media (min-width: 1024px) {
-            .desktop-nav {
-              display: flex !important;
-            }
-            
-            .mobile-hamburger {
-              display: none !important;
-            }
-            
-            .primary-header .flex.items-center.justify-between {
-              display: flex !important;
-              align-items: center !important;
-              width: 100% !important;
-              gap: 16px !important;
-            }
-            
-            .primary-header .nav-menu {
-              margin-left: 20px !important;
-              margin-right: 16px !important;
-            }
-
-            .primary-header .logo img,
-            .primary-header img {
-              display: block !important;
-              height: 85px !important;
-              width: auto !important;
-              max-height: none !important;
-              object-fit: contain !important;
-              margin-right: 20px !important;
-              min-height: unset !important;
-            }
-
-            .primary-header a[href="/"] {
-              height: auto !important;
-              max-height: none !important;
-              overflow: visible !important;
-              display: flex !important;
-              align-items: center !important;
-              margin-left: -10px !important;
-            }
-          }
-
-          /* Mobile navigation - hidden on desktop, shown below 1024px */
-          @media (max-width: 1023px) {
-            .desktop-nav {
-              display: none !important;
-            }
-            
-            .mobile-hamburger {
-              display: flex !important;
-              margin-left: auto !important;
-            }
-            
-            .primary-header {
-              height: auto !important;
-              min-height: 70px !important;
-              padding: 16px 0 !important;
-            }
-            
-            .primary-header .container {
-              height: auto !important;
-              padding: 0 16px !important;
-            }
-            
-            .primary-header img {
-              max-height: 48px !important;
-              height: auto !important;
-            }
-          }
-
+  return (
+    <>
+      <style jsx>{`
         /* Full-screen mobile menu overlay styles */
         .mobile-menu-overlay {
           position: fixed;
@@ -221,7 +167,6 @@ export function Header() {
           background: #f8fafc;
         }
       `}</style>
-
       <header
         className="primary-header bg-background shadow-sm border-b border-border relative z-40"
         role="navigation"
@@ -241,8 +186,8 @@ export function Header() {
             </Link>
 
             <nav
-              className="desktop-nav items-center gap-8 nav-menu"
-              style={{ alignItems: "center", gap: "24px" }}
+              className="header-desktop-nav items-center gap-8 nav-menu"
+              style={{ alignItems: "center", gap: "12px" }}
             >
               <Link
                 href="/"
@@ -252,6 +197,7 @@ export function Header() {
               </Link>
 
               <div
+                ref={servicesDropdownRef}
                 className="relative group/nav"
                 data-dropdown
                 onMouseEnter={handleServicesMouseEnter}
@@ -268,7 +214,7 @@ export function Header() {
                 >
                   Services
                   <ChevronDown
-                    className={`w-3.5 h-3.5 transition-transform lg:hidden text-[var(--color-brand-navy)] ${isServicesOpen ? "rotate-180" : ""}`}
+                    className={`w-3.5 h-3.5 transition-transform hidden text-[var(--color-brand-navy)] ${isServicesOpen ? "rotate-180" : ""}`}
                   />
                 </button>
 
@@ -276,9 +222,7 @@ export function Header() {
                   id="menu-services"
                   role="menu"
                   aria-labelledby="nav-services"
-                  className={`invisible opacity-0 pointer-events-none absolute left-0 top-full z-[200] w-72 max-w-[18rem] rounded-xl border border-border bg-background shadow-lg transform translate-y-1.5 transition-all duration-150 ease-out group-hover/nav:visible group-hover/nav:opacity-100 group-hover/nav:pointer-events-auto group-hover/nav:translate-y-0 group-focus-within/nav:visible group-focus-within/nav:opacity-100 group-focus-within/nav:pointer-events-auto group-focus-within/nav:translate-y-0 ${
-                    isServicesOpen ? "!visible !opacity-100 !pointer-events-auto !translate-y-0" : ""
-                  }`}
+                  className={`absolute left-0 top-full z-[200] w-72 max-w-[18rem] rounded-xl border border-border bg-background shadow-lg transform transition-all duration-150 ease-out ${isServicesOpen ? "visible opacity-100 pointer-events-auto translate-y-0" : "invisible opacity-0 pointer-events-none translate-y-1.5"}`}
                 >
                   <div className="absolute -top-[10px] left-0 right-0 h-[10px]"></div>
 
@@ -289,6 +233,7 @@ export function Header() {
                         href={item.href}
                         role="menuitem"
                         className="block w-full rounded-lg px-3 py-3 text-sm leading-snug text-foreground hover:bg-[#049bf2] hover:text-white focus:bg-[#049bf2] focus:text-white focus:outline-none transition-all duration-150 min-h-[44px] flex items-center justify-between whitespace-nowrap font-semibold"
+                        onClick={() => setIsServicesOpen(false)}
                       >
                         {item.name}
                         {item.isNew && (
@@ -303,6 +248,7 @@ export function Header() {
               </div>
 
               <div
+                ref={locationsDropdownRef}
                 className="relative group/nav"
                 data-dropdown
                 onMouseEnter={handleServiceAreasMouseEnter}
@@ -319,7 +265,7 @@ export function Header() {
                 >
                   Locations
                   <ChevronDown
-                    className={`w-3.5 h-3.5 transition-transform lg:hidden text-[var(--color-brand-navy)] ${isServiceAreasOpen ? "rotate-180" : ""}`}
+                    className={`w-3.5 h-3.5 transition-transform hidden text-[var(--color-brand-navy)] ${isServiceAreasOpen ? "rotate-180" : ""}`}
                   />
                 </button>
 
@@ -327,9 +273,7 @@ export function Header() {
                   id="menu-areas"
                   role="menu"
                   aria-labelledby="nav-areas"
-                  className={`invisible opacity-0 pointer-events-none absolute left-0 top-full z-[200] w-72 max-w-[18rem] rounded-xl border border-border bg-background shadow-lg transform translate-y-1.5 transition-all duration-150 ease-out group-hover/nav:visible group-hover/nav:opacity-100 group-hover/nav:pointer-events-auto group-hover/nav:translate-y-0 group-focus-within/nav:visible group-focus-within/nav:opacity-100 group-focus-within/nav:pointer-events-auto group-focus-within/nav:translate-y-0 ${
-                    isServiceAreasOpen ? "!visible !opacity-100 !pointer-events-auto !translate-y-0" : ""
-                  }`}
+                  className={`absolute left-0 top-full z-[200] w-72 max-w-[18rem] rounded-xl border border-border bg-background shadow-lg transform transition-all duration-150 ease-out ${isServiceAreasOpen ? "visible opacity-100 pointer-events-auto translate-y-0" : "invisible opacity-0 pointer-events-none translate-y-1.5"}`}
                 >
                   <div className="absolute -top-[10px] left-0 right-0 h-[10px]"></div>
 
@@ -341,6 +285,7 @@ export function Header() {
                         href={area.href}
                         role="menuitem"
                         className="block w-full rounded-lg px-3 py-3 text-sm leading-snug text-foreground hover:bg-[#049bf2] hover:text-white focus:bg-[#049bf2] focus:text-white focus:outline-none transition-all duration-150 min-h-[44px] flex items-center whitespace-nowrap font-semibold"
+                        onClick={() => setIsServiceAreasOpen(false)}
                       >
                         {area.label}
                       </Link>
@@ -369,16 +314,16 @@ export function Header() {
               </Link>
             </nav>
 
-            <div className="desktop-nav items-center gap-4 ml-auto">
+            <div className="header-desktop-nav header-cta-container items-center gap-4 ml-auto">
               {/* Phone Button with Icon */}
-              <a 
-                href={phoneHref} 
+              <a
+                href={phoneHref}
                 className="flex items-center gap-3 border-2 border-[#049bf2] rounded-2xl px-5 py-2.5 hover:bg-[#049bf2] hover:text-white transition-all duration-300 group"
                 aria-label="Call Dallas Window Butler for a free estimate"
               >
                 <div className="bg-[#049bf2] p-3 rounded-xl group-hover:bg-white transition-colors flex items-center justify-center" style={{ minWidth: '44px', minHeight: '44px' }}>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" style={{ fill: '#ffffff' }} className="group-hover:[&>path]:fill-[#049bf2]">
-                    <path fill="#ffffff" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                    <path fill="#ffffff" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
                   </svg>
                 </div>
                 <div className="flex flex-col items-start">
@@ -404,13 +349,13 @@ export function Header() {
               </a>
             </div>
 
-              <Button
-                variant="ghost"
-                size="sm"
-                className="mobile-hamburger lg:!hidden transition-colors duration-150 ease-out"
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-              >
+            <Button
+              variant="ghost"
+              size="sm"
+              className="header-hamburger transition-colors duration-150 ease-out"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            >
               {isMenuOpen ? (
                 <X className="h-6 w-6 text-[var(--color-brand-navy)]" />
               ) : (
@@ -423,8 +368,8 @@ export function Header() {
 
       {isMenuOpen && (
         <>
-          <div 
-            className="mobile-menu-overlay" 
+          <div
+            className="mobile-menu-overlay"
             onClick={() => setIsMenuOpen(false)}
             aria-hidden="true"
           />
@@ -499,14 +444,14 @@ export function Header() {
 
                   {isMobileServiceAreasOpen && (
                     <div className="ml-4 mt-1 space-y-1">
-                  {cityLinks.map((area) => (
+                      {cityLinks.map((area) => (
                         <Link
                           key={area.href}
                           href={area.href}
                           className="block py-3 px-4 text-base text-foreground hover:bg-muted rounded-lg transition-all duration-150"
                           onClick={() => setIsMenuOpen(false)}
                         >
-                      {area.label}
+                          {area.label}
                         </Link>
                       ))}
                     </div>
@@ -557,7 +502,7 @@ export function Header() {
                 className="flex items-center justify-center gap-2 text-base text-[var(--color-brand-navy)] font-medium hover:underline"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" className="w-4 h-4">
-                  <path fill="#00152e" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                  <path fill="#00152e" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
                 </svg>
                 Call {phoneDisplay}
               </a>

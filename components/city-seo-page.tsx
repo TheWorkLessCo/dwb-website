@@ -2,7 +2,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Star, Check, Shield, Award, CheckCircle, Phone, Clock, DollarSign, MapPin, Tooltip, Wrench, DoorClosed, Calendar, Ruler, Sparkles } from "lucide-react"
+import { Star, Check, Shield, Award, CheckCircle, Phone, Clock, DollarSign, MapPin, Wrench, DoorClosed, Calendar, Ruler, Sparkles } from "lucide-react"
 import { ModernFAQ } from "@/components/modern-faq"
 import { ComparisonEngine } from "@/components/comparison-engine"
 import FinalCTABanner from "@/components/final-cta-banner"
@@ -253,18 +253,18 @@ export function CitySeoPage({ cityData, customHeadings }: CitySeoPageProps) {
         style={
           cityName === "Rockwall"
             ? {
-                backgroundImage: "url('/images/rockwall-hero-bg.jpg')",
+              backgroundImage: "url('/images/rockwall-hero-bg.jpg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }
+            : cityName === "Allen"
+              ? {
+                backgroundImage: "url('/images/allen-hero-bg.png')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
               }
-            : cityName === "Allen"
-              ? {
-                  backgroundImage: "url('/images/allen-hero-bg.png')",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  backgroundRepeat: "no-repeat",
-                }
               : undefined
         }
       >
@@ -405,10 +405,10 @@ export function CitySeoPage({ cityData, customHeadings }: CitySeoPageProps) {
                     Butler for professional window replacement and expert glass repair.
                   </p>
                 )}
-                
+
                 <p>
-                  Whether you're near {landmarks[0]} or in the heart of {neighborhoods[2]}, we understand the unique 
-                  challenges Texas weather brings to your home. We've helped hundreds of {cityName} families 
+                  Whether you're near {landmarks[0]} or in the heart of {neighborhoods[2]}, we understand the unique
+                  challenges Texas weather brings to your home. We've helped hundreds of {cityName} families
                   upgrade their comfort while lowering their energy bills.
                 </p>
               </div>
@@ -431,7 +431,7 @@ export function CitySeoPage({ cityData, customHeadings }: CitySeoPageProps) {
             <div className="md:col-span-5">
               <div className="bg-[#00152e] rounded-[2rem] p-8 text-white shadow-2xl relative overflow-hidden group">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-[#049BF2] opacity-10 rounded-full -mr-16 -mt-16 blur-3xl transition-all duration-500 group-hover:scale-150" />
-                
+
                 <h3 className="text-xl font-black uppercase tracking-wider mb-8 flex items-center gap-3">
                   <div className="w-8 h-8 bg-[#049BF2] rounded-lg flex items-center justify-center">
                     <Star className="w-4 h-4 fill-white text-white" />
@@ -440,8 +440,8 @@ export function CitySeoPage({ cityData, customHeadings }: CitySeoPageProps) {
                 </h3>
 
                 <nav className="space-y-4 relative z-10">
-                  <Link 
-                    href="/services/window-replacement" 
+                  <Link
+                    href="/services/window-replacement"
                     className="flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-[#049BF2] hover:border-[#049BF2] transition-all duration-300 group/item"
                   >
                     <div className="flex items-center gap-4">
@@ -453,8 +453,8 @@ export function CitySeoPage({ cityData, customHeadings }: CitySeoPageProps) {
                     <Check className="w-5 h-5 opacity-0 group-hover/item:opacity-100 transition-opacity" />
                   </Link>
 
-                  <Link 
-                    href="/services/glass-repair" 
+                  <Link
+                    href="/services/glass-repair"
                     className="flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-[#049BF2] hover:border-[#049BF2] transition-all duration-300 group/item"
                   >
                     <div className="flex items-center gap-4">
@@ -466,8 +466,8 @@ export function CitySeoPage({ cityData, customHeadings }: CitySeoPageProps) {
                     <Check className="w-5 h-5 opacity-0 group-hover/item:opacity-100 transition-opacity" />
                   </Link>
 
-                  <Link 
-                    href="/services/patio-doors" 
+                  <Link
+                    href="/services/patio-doors"
                     className="flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-[#049BF2] hover:border-[#049BF2] transition-all duration-300 group/item"
                   >
                     <div className="flex items-center gap-4">
@@ -495,7 +495,7 @@ export function CitySeoPage({ cityData, customHeadings }: CitySeoPageProps) {
       <section id="process" className="bg-slate-50 py-24 relative overflow-hidden">
         {/* Decorative background element */}
         <div className="absolute top-0 right-0 w-1/3 h-full bg-blue-50/50 -skew-x-12 transform origin-top translate-x-1/2" />
-        
+
         <div className="container mx-auto px-4 max-w-7xl relative z-10">
           <div className="text-center mb-20">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white border border-blue-100 text-[#049BF2] rounded-full text-sm font-black uppercase tracking-widest mb-6 shadow-sm">
