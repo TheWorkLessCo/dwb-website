@@ -68,16 +68,16 @@ export default function RootLayout({
               },
               address: {
                 "@type": "PostalAddress",
-                streetAddress: "1422 Sebastian Dr.",
-                addressLocality: "Forney",
+                streetAddress: "112 Nathan Dr.",
+                addressLocality: "Princeton",
                 addressRegion: "TX",
-                postalCode: "75126",
+                postalCode: "75407",
                 addressCountry: "US",
               },
               geo: {
                 "@type": "GeoCoordinates",
-                latitude: 32.7485,
-                longitude: -96.4713,
+                latitude: 33.1818,
+                longitude: -96.4979,
               },
               openingHoursSpecification: [
                 {

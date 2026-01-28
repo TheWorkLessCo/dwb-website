@@ -22,8 +22,13 @@ export function LandingFooter() {
   ]
 
   return (
-    <footer className="bg-[#00152e] text-white py-8">
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <footer className="relative overflow-hidden bg-[#00152e] text-white py-8">
+      {/* Gradient background - matches About page hero */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#00152e] via-[#001a3a] to-[#00152e]" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#049bf2]/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#049bf2]/5 rounded-full blur-3xl" />
+
+      <div className="relative container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-x-12 mb-8">
           {/* Brand Block - Logo and Company Name */}
           <div className="flex flex-col items-start gap-2" aria-label="Dallas Window Butler brand">
@@ -44,9 +49,9 @@ export function LandingFooter() {
           <div className="space-y-2">
             <h3 className="font-semibold text-lg">Contact</h3>
             <p className="text-gray-300 text-sm">
-              1422 Sebastian Dr
+              112 Nathan Dr.
               <br />
-              Forney, TX 75126
+              Princeton, TX 75407
             </p>
             <p className="text-gray-300 text-sm">
               <a href="tel:+14696408551" className="hover:text-[#049BF2] transition-colors">

@@ -144,7 +144,7 @@ export default function PrivacyPage() {
                 <a href="tel:+14696408551">(469) 640-8551</a>
               </li>
               <li>
-                <strong>Address:</strong> 1422 Sebastian Dr, Forney, TX 75126
+                <strong>Address:</strong> 112 Nathan Dr., Princeton, TX 75407
               </li>
             </ul>
 

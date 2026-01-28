@@ -12,6 +12,7 @@ interface ModernFAQProps {
   title?: string
   subtitle?: string
   className?: string
+  cityFaqs?: FAQItem[]
 }
 
 const defaultFAQs: FAQItem[] = [
@@ -64,7 +65,10 @@ export function ModernFAQ({
   title = "Got Questions? We've Got Answers.",
   subtitle = "Everything you need to know about window replacement, glass/IG repair, and door services.",
   className = "",
+  cityFaqs = [],
 }: ModernFAQProps) {
+  // Combine city-specific FAQs with default FAQs
+  const allFaqs = [...cityFaqs, ...defaultFAQs]
   useEffect(() => {
     const handleFAQClick = (event: Event) => {
       const button = (event.target as Element).closest("button[data-faq-button]")
@@ -118,7 +122,7 @@ export function ModernFAQ({
           </AnimateOnScroll>
 
           <div className="space-y-4" data-faq-list>
-            {defaultFAQs.map((faq, index) => (
+            {allFaqs.map((faq, index) => (
               <AnimateOnScroll key={index} animation="fade-up" delay={index * 80}>
                 <div
                   data-faq-item

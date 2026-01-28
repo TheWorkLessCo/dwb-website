@@ -2,13 +2,14 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Star, Check, Shield, Award, CheckCircle, Phone, Clock, DollarSign, MapPin, Wrench, DoorClosed, Calendar, Ruler, Sparkles } from "lucide-react"
+import { Star, Check, Shield, Award, CheckCircle, Phone, Clock, DollarSign, MapPin, Wrench, DoorClosed, Calendar, Ruler, Sparkles, Car } from "lucide-react"
 import { ModernFAQ } from "@/components/modern-faq"
 import { ComparisonEngine } from "@/components/comparison-engine"
 import FinalCTABanner from "@/components/final-cta-banner"
 import { WarrantyCard } from "@/components/warranty-card"
 import ImageBridge from "@/components/ImageBridge"
 import { ResultsBar } from "@/components/results-bar"
+import { CityProjectShowcase } from "@/components/city-project-showcase"
 import { CTA_CONFIG, ALT_SECONDARY_LABEL } from "@/lib/cta"
 
 interface CityData {
@@ -31,6 +32,34 @@ interface CityData {
       alt?: string
     }
   }
+  // New fields for enhanced local SEO
+  distanceFromHQ: {
+    miles: number
+    drivingMinutes: number
+  }
+  rightForYouTiles?: {
+    tile1?: { title: string; description: string }
+    tile2?: { title: string; description: string }
+    tile3?: { title: string; description: string }
+  }
+  projectShowcases?: Array<{
+    neighborhood: string
+    projectType: "window-replacement" | "glass-repair" | "patio-door"
+    beforeImage: string
+    afterImage: string
+    caption: string
+    windowCount?: number
+  }>
+  assignedTech?: {
+    name: string
+    title: string
+    yearsExperience: number
+    livesIn?: string
+  }
+  cityFaqs?: Array<{
+    question: string
+    answer: string
+  }>
 }
 
 interface CustomHeadings {
@@ -136,16 +165,16 @@ export function CitySeoPage({ cityData, customHeadings }: CitySeoPageProps) {
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "1422 Sebastian Dr",
-      addressLocality: "Forney",
+      streetAddress: "112 Nathan Dr.",
+      addressLocality: "Princeton",
       addressRegion: "TX",
-      postalCode: "75126",
+      postalCode: "75407",
       addressCountry: "US",
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 32.7485,
-      longitude: -96.4713,
+      latitude: 33.1818,
+      longitude: -96.4979,
     },
     openingHoursSpecification: [
       {
@@ -377,9 +406,17 @@ export function CitySeoPage({ cityData, customHeadings }: CitySeoPageProps) {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-50 text-[#049BF2] rounded-full text-sm font-black uppercase tracking-widest mb-6">
-              <MapPin className="w-4 h-4" />
-              <span>Local {cityName} Experts</span>
+            <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-50 text-[#049BF2] rounded-full text-sm font-black uppercase tracking-widest">
+                <MapPin className="w-4 h-4" />
+                <span>Local {cityName} Experts</span>
+              </div>
+              {cityData.distanceFromHQ && (
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-green-50 text-green-700 rounded-full text-sm font-semibold">
+                  <Car className="w-4 h-4" />
+                  <span>Just {cityData.distanceFromHQ.drivingMinutes} min from our Princeton HQ</span>
+                </div>
+              )}
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#00152e] leading-tight mb-6">
               The Trusted Window Butler for <br className="hidden md:block" />
@@ -421,6 +458,26 @@ export function CitySeoPage({ cityData, customHeadings }: CitySeoPageProps) {
                   ))}
                 </div>
               </div>
+
+              {/* Team Member Intro */}
+              {cityData.assignedTech && (
+                <div className="pt-6">
+                  <div className="flex items-center gap-4 p-4 bg-gradient-to-r from-[#049BF2]/5 to-transparent rounded-xl border border-[#049BF2]/10">
+                    <div className="w-12 h-12 bg-[#049BF2] rounded-full flex items-center justify-center text-white font-bold text-lg">
+                      {cityData.assignedTech.name.charAt(0)}
+                    </div>
+                    <div>
+                      <p className="font-bold text-gray-900">
+                        Your {cityName} Expert: {cityData.assignedTech.name}
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        {cityData.assignedTech.title} · {cityData.assignedTech.yearsExperience} years experience
+                        {cityData.assignedTech.livesIn && ` · Lives in ${cityData.assignedTech.livesIn}`}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Featured Services Card */}
@@ -632,8 +689,13 @@ export function CitySeoPage({ cityData, customHeadings }: CitySeoPageProps) {
         </div>
       </section>
 
+      {/* Project Showcase - Before/After Gallery */}
+      {cityData.projectShowcases && cityData.projectShowcases.length > 0 && (
+        <CityProjectShowcase projects={cityData.projectShowcases} cityName={cityName} />
+      )}
+
       {/* ImageBridge between testimonials and FAQ */}
-      <ImageBridge />
+      <ImageBridge citySlug={cityData.slug} />
 
       {/* Right For You Tiles */}
       <section className="py-16">
@@ -648,9 +710,12 @@ export function CitySeoPage({ cityData, customHeadings }: CitySeoPageProps) {
                 <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Clock className="h-8 w-8 text-brand-blue" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">{cityName} Neighborhood Upgrades</h3>
+                <h3 className="text-xl font-semibold mb-2">
+                  {cityData.rightForYouTiles?.tile1?.title || `${cityName} Neighborhood Upgrades`}
+                </h3>
                 <p className="text-gray-600 mb-4">
-                  Original builder windows letting energy escape? We'll upgrade your home to modern efficiency standards.
+                  {cityData.rightForYouTiles?.tile1?.description ||
+                    "Original builder windows letting energy escape? We'll upgrade your home to modern efficiency standards."}
                 </p>
                 <Button
                   asChild
@@ -669,9 +734,12 @@ export function CitySeoPage({ cityData, customHeadings }: CitySeoPageProps) {
                 <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Shield className="h-8 w-8 text-brand-blue" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Cloudy or Fogged View?</h3>
+                <h3 className="text-xl font-semibold mb-2">
+                  {cityData.rightForYouTiles?.tile2?.title || "Cloudy or Fogged View?"}
+                </h3>
                 <p className="text-gray-600 mb-4">
-                  Failed seals blocking your {landmarks[0]} view? We replace just the glass or the entire window frame.
+                  {cityData.rightForYouTiles?.tile2?.description ||
+                    `Failed seals blocking your ${landmarks[0]} view? We replace just the glass or the entire window frame.`}
                 </p>
                 <Button
                   asChild
@@ -690,9 +758,12 @@ export function CitySeoPage({ cityData, customHeadings }: CitySeoPageProps) {
                 <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <DollarSign className="h-8 w-8 text-brand-blue" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">{state} Weather Protection</h3>
+                <h3 className="text-xl font-semibold mb-2">
+                  {cityData.rightForYouTiles?.tile3?.title || `${state} Weather Protection`}
+                </h3>
                 <p className="text-gray-600 mb-4">
-                  Old patio doors sticking or leaking? Modern replacements improve both security and {cityName} home comfort.
+                  {cityData.rightForYouTiles?.tile3?.description ||
+                    `Old patio doors sticking or leaking? Modern replacements improve both security and ${cityName} home comfort.`}
                 </p>
                 <Button
                   asChild
@@ -710,7 +781,7 @@ export function CitySeoPage({ cityData, customHeadings }: CitySeoPageProps) {
       </section>
 
       {/* FAQ Section */}
-      <ModernFAQ />
+      <ModernFAQ cityFaqs={cityData.cityFaqs} />
 
       {/* City-Specific Final CTA Banners */}
       <FinalCTABanner />

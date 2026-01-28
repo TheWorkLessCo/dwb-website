@@ -31,10 +31,10 @@ export default function HomePage() {
     url: "https://dallaswindowbutler.com",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "1422 Sebastian Dr",
-      addressLocality: "Forney",
+      streetAddress: "112 Nathan Dr.",
+      addressLocality: "Princeton",
       addressRegion: "TX",
-      postalCode: "75126",
+      postalCode: "75407",
       addressCountry: "US",
     },
     areaServed: [
@@ -118,9 +118,6 @@ export default function HomePage() {
           {/* 2. Results Bar */}
           <ResultsBar />
 
-          {/* Transformation Framework */}
-          <TransformationFramework />
-
           {/* 3. Problem/Agitation Section */}
           <section className="py-20 bg-white">
             <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
@@ -197,14 +194,14 @@ export default function HomePage() {
                     <div className="aspect-[4/5] relative rounded-2xl lg:rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white">
                       <Image
                         src="/images/owner-portrait.jpg"
-                        alt="Friendly photo of the founder smiling, no sunglasses, wearing branded shirt"
+                        alt="Dallas Window Butler team member in branded shirt"
                         fill
                         className="object-cover"
                         sizes="(max-width: 768px) 100vw, 50vw"
                       />
                       {/* Fallback overlay in case image is missing */}
                       <div className="absolute inset-0 bg-brand-navy/10 flex items-center justify-center -z-10">
-                        <span className="text-gray-400 font-medium italic">Owner Portrait Placeholder</span>
+                        <span className="text-gray-400 font-medium italic">Team Photo Placeholder</span>
                       </div>
                     </div>
                     {/* Dynamic Trust Badge */}
@@ -232,7 +229,7 @@ export default function HomePage() {
 
                   <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
                     <p>
-                      I built this company because I watched DFW homeowners get treated like transactions by the big guys—just another number on a quota sheet. You shouldn&apos;t have to fight off a <strong className="font-semibold text-gray-900">high-pressure closer</strong> just to get a fair price on your own home.
+                      We started Dallas Window Butler because we watched DFW homeowners get treated like transactions by the big guys—just another number on a quota sheet. You shouldn&apos;t have to fight off a <strong className="font-semibold text-gray-900">high-pressure closer</strong> just to get a fair price on your own home.
                     </p>
                     <p>
                       That&apos;s why we operate as the <strong className="font-semibold text-gray-900">Window Butler</strong>. We bring a white-glove standard to construction. From the first step inside your home to the final walkthrough, we treat your property the way a butler would—with precision, respect, and care.
@@ -246,17 +243,17 @@ export default function HomePage() {
                   </div>
 
                   <div className="pt-4 lg:pt-6">
-                    <div className="text-3xl sm:text-4xl font-serif italic text-gray-800 mb-2">
-                      Nathan B.
-                    </div>
-                    <p className="text-gray-500 font-medium">Founder, Dallas Window Butler</p>
+                    <p className="text-lg font-semibold text-[#049BF2]">— The Dallas Window Butler Team</p>
                   </div>
                 </div>
               </div>
             </div>
           </section>
 
-          {/* 5. Benefits Section */}
+          {/* 5. Transformation Framework */}
+          <TransformationFramework />
+
+          {/* 6. Benefits Section */}
           <section className="py-20 bg-white">
             <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-16">
@@ -487,10 +484,7 @@ export default function HomePage() {
             </div>
           </section>
 
-          {/* 8. The Comparison Engine - Interactive Toggle */}
-          <ComparisonEngine />
-
-          {/* 9. The Features/Specs Section - "Engineered For Texas Heat" */}
+          {/* 8. The Features/Specs Section - "Engineered For Texas Heat" */}
           <section className="py-20 bg-white">
             <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
               {/* Section Headlines */}

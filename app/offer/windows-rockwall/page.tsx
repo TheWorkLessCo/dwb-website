@@ -18,13 +18,13 @@ export default function WindowsRockwallOfferPage() {
     telephone: "(469) 640-8551",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "1422 Sebastian Dr",
-      addressLocality: "Forney",
+      streetAddress: "112 Nathan Dr.",
+      addressLocality: "Princeton",
       addressRegion: "TX",
-      postalCode: "75126",
+      postalCode: "75407",
       addressCountry: "US",
     },
-    areaServed: ["Rockwall", "Forney", "Fate", "Royse City", "Heath", "Rowlett", "Garland", "McKinney"],
+    areaServed: ["Rockwall", "Princeton", "Fate", "Royse City", "Heath", "Rowlett", "Garland", "McKinney"],
     url: "https://YOURDOMAIN.com/offer/windows-rockwall",
     sameAs: ["https://www.google.com/search?q=Dallas+Window+Butler"],
   }

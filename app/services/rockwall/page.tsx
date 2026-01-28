@@ -23,10 +23,10 @@ export default function RockwallServicePage() {
     telephone: "(469) 640-8551",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "1422 Sebastian Dr",
-      addressLocality: "Forney",
+      streetAddress: "112 Nathan Dr.",
+      addressLocality: "Princeton",
       addressRegion: "TX",
-      postalCode: "75126",
+      postalCode: "75407",
       addressCountry: "US",
     },
     areaServed: {

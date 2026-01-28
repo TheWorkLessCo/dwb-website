@@ -52,13 +52,13 @@ export default function TestimonialsPage() {
     },
     {
       name: "Jennifer L.",
-      city: "Wylie, TX",
+      city: "McKinney, TX",
       rating: 5,
       text: "The team was professional and respectful of our home. Windows are beautiful and energy-efficient!",
     },
     {
       name: "Michael D.",
-      city: "Garland, TX",
+      city: "North Richardson, TX",
       rating: 5,
       text: "Excellent work on our patio door replacement. No pressure sales, just honest service.",
     },
