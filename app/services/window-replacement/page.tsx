@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Star, Check, Shield, Home, Wrench, Clock, Sun, Droplets, XCircle, Quote, Thermometer, Wind, Volume2, Calendar, Ruler, CheckCircle, Sparkles } from "lucide-react"
+import { Star, Check, Shield, Sun, Droplets, XCircle, Quote, Thermometer, Wind, Volume2, Calendar, Ruler, CheckCircle, Sparkles } from "lucide-react"
 import Image from "next/image"
 import { WarrantyCard } from "@/components/warranty-card"
 import ServiceFAQ from "@/components/ServiceFAQ"
@@ -248,35 +248,40 @@ export default function WindowReplacementPage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {/* Pain Point 1: Energy Loss */}
-            <div className="group bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg hover:border-[#049BF2]/20 transition-all duration-300">
-              <div className="w-12 h-12 bg-orange-50 group-hover:bg-orange-100 rounded-xl flex items-center justify-center mb-6 transition-colors">
-                <Sun className="w-7 h-7 text-orange-500" />
+            {/* Pain Point 1: The Heat - Pulses orange, turns blue on hover */}
+            <div className="group bg-white p-8 rounded-2xl border border-gray-100 shadow-sm animate-pulse-orange hover:animate-pulse-blue transition-all duration-500">
+              <div className="w-12 h-12 bg-orange-50 group-hover:bg-blue-50 rounded-xl flex items-center justify-center mb-6 transition-colors duration-500">
+                <Sun className="w-7 h-7 text-orange-500 group-hover:text-blue-500 transition-colors duration-500" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Sky-High Energy Bills</h3>
-              <p className="text-gray-600 leading-relaxed">
+              <h3 className="text-xl font-bold text-gray-900 mb-3 transition-colors group-hover:text-blue-700">The &quot;Hot Rooms&quot;</h3>
+              <p className="text-gray-600 leading-relaxed group-hover:text-gray-900 transition-colors">
                 Your AC runs constantly but certain rooms are still unbearable. Old single-pane or aluminum windows leak conditioned air like a sieve—and you&apos;re paying for it every month.
               </p>
             </div>
 
-            {/* Pain Point 2: Foggy/Ugly */}
-            <div className="group bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg hover:border-[#049BF2]/20 transition-all duration-300">
-              <div className="w-12 h-12 bg-blue-50 group-hover:bg-blue-100 rounded-xl flex items-center justify-center mb-6 transition-colors">
-                <Droplets className="w-7 h-7 text-blue-500" />
+            {/* Pain Point 2: The Fog - Blurred content clears on hover */}
+            <div className="group bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">The Foggy View</h3>
+              <div className="transition-all duration-300 filter blur-[3px] group-hover:blur-none">
+                <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6">
+                  <Droplets className="w-7 h-7 text-blue-500" />
+                </div>
+                <p className="text-gray-600 leading-relaxed">
+                  That cloudy haze between the glass isn&apos;t going away—it&apos;s a failed seal. And those outdated frames? They&apos;re dragging down your home&apos;s curb appeal and resale value.
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Foggy, Dated Windows</h3>
-              <p className="text-gray-600 leading-relaxed">
-                That cloudy haze between the glass isn&apos;t going away—it&apos;s a failed seal. And those outdated frames? They&apos;re dragging down your home&apos;s curb appeal and resale value.
-              </p>
             </div>
 
-            {/* Pain Point 3: Dreading the Process */}
-            <div className="group bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg hover:border-[#049BF2]/20 transition-all duration-300">
-              <div className="w-12 h-12 bg-red-50 group-hover:bg-red-100 rounded-xl flex items-center justify-center mb-6 transition-colors">
-                <XCircle className="w-7 h-7 text-red-500" />
+            {/* Pain Point 3: The Dread - X turns to checkmark on hover */}
+            <div className="group bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300">
+              <div className="w-12 h-12 bg-gray-100 group-hover:bg-green-50 rounded-xl flex items-center justify-center mb-6 transition-colors duration-300">
+                <div className="relative w-7 h-7">
+                  <XCircle className="absolute inset-0 w-7 h-7 text-gray-400 group-hover:opacity-0 transition-opacity duration-300" />
+                  <CheckCircle className="absolute inset-0 w-7 h-7 text-green-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Dreading the Sales Pitch</h3>
-              <p className="text-gray-600 leading-relaxed">
+              <h3 className="text-xl font-bold text-gray-900 mb-3 transition-colors group-hover:text-green-700">The Sales Nightmare</h3>
+              <p className="text-gray-600 leading-relaxed group-hover:text-gray-900 transition-colors">
                 You&apos;ve put this off because you don&apos;t want a pushy salesperson camping out at your kitchen table for hours. We get it—and that&apos;s exactly why we do things differently.
               </p>
             </div>
@@ -285,45 +290,110 @@ export default function WindowReplacementPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-16 bg-slate-50">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Window Styles We Install</h2>
-            <p className="text-xl text-gray-600">Professional installation for every window type in your home</p>
+      <section className="py-20 relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
+        {/* Animated background glow orbs */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#049bf2]/10 rounded-full blur-3xl animate-pulse-slow" />
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[#049bf2]/8 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-[#049bf2]/5 to-transparent rounded-full" />
+        </div>
+
+        <div className="container mx-auto px-4 max-w-6xl relative z-10">
+          <div className="text-center mb-14">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/80 backdrop-blur-sm border border-[#049bf2]/20 text-[#049bf2] rounded-full text-sm font-semibold uppercase tracking-wider mb-4 shadow-sm">
+              <Sparkles className="w-4 h-4" />
+              <span>Premium Selection</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#00152e] mb-4">Window Styles We Install</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">Professional installation for every window type in your home</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="text-center">
-              <CardContent className="p-6">
-                <Home className="h-12 w-12 text-brand-blue mx-auto mb-4" />
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Single & Double Hung</h3>
-                <p className="text-gray-600">Classic window styles with modern energy efficiency</p>
-              </CardContent>
-            </Card>
+            {/* Single Hung Card */}
+            <div className="group relative">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-[#049bf2]/0 via-[#049bf2]/0 to-[#049bf2]/0 group-hover:from-[#049bf2]/20 group-hover:via-[#049bf2]/30 group-hover:to-[#049bf2]/20 rounded-2xl blur-lg transition-all duration-500 opacity-0 group-hover:opacity-100" />
+              <div className="relative bg-white/70 backdrop-blur-md border border-white/60 rounded-2xl p-6 shadow-lg shadow-gray-200/50 hover:shadow-xl hover:shadow-[#049bf2]/10 transition-all duration-500 hover:-translate-y-1 group-hover:border-[#049bf2]/30 group-hover:bg-white/90">
+                <div className="h-48 mb-4 flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
+                  <Image
+                    src="https://dallaswindowbutler.b-cdn.net/endure-double-hung-cutaway-AVL1azGy8Zfr5vaM.avif"
+                    alt="Single Hung Window"
+                    width={200}
+                    height={180}
+                    className="object-contain h-full w-auto drop-shadow-lg"
+                  />
+                </div>
+                <h3 className="text-lg font-bold text-[#00152e] mb-2 text-center">Single Hung</h3>
+                <p className="text-gray-600 text-center text-sm">Classic window styles with modern energy efficiency</p>
+              </div>
+            </div>
 
-            <Card className="text-center">
-              <CardContent className="p-6">
-                <Wrench className="h-12 w-12 text-brand-blue mx-auto mb-4" />
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Casement Windows</h3>
-                <p className="text-gray-600">Side-hinged windows for maximum ventilation</p>
-              </CardContent>
-            </Card>
+            {/* Casement Card */}
+            <div className="group relative">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-[#049bf2]/0 via-[#049bf2]/0 to-[#049bf2]/0 group-hover:from-[#049bf2]/20 group-hover:via-[#049bf2]/30 group-hover:to-[#049bf2]/20 rounded-2xl blur-lg transition-all duration-500 opacity-0 group-hover:opacity-100" />
+              <div className="relative bg-white/70 backdrop-blur-md border border-white/60 rounded-2xl p-6 shadow-lg shadow-gray-200/50 hover:shadow-xl hover:shadow-[#049bf2]/10 transition-all duration-500 hover:-translate-y-1 group-hover:border-[#049bf2]/30 group-hover:bg-white/90">
+                <div className="h-48 mb-4 flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
+                  <Image
+                    src="https://dallaswindowbutler.b-cdn.net/aeris-casement-cutaway-mk3vyqj284h5zlW3.avif"
+                    alt="Casement Window"
+                    width={200}
+                    height={180}
+                    className="object-contain h-full w-auto drop-shadow-lg"
+                  />
+                </div>
+                <h3 className="text-lg font-bold text-[#00152e] mb-2 text-center">Casement Window</h3>
+                <p className="text-gray-600 text-center text-sm">Side-hinged windows for maximum ventilation</p>
+              </div>
+            </div>
 
-            <Card className="text-center">
-              <CardContent className="p-6">
-                <Shield className="h-12 w-12 text-brand-blue mx-auto mb-4" />
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Bay & Bow Windows</h3>
-                <p className="text-gray-600">Specialty windows that add space and light</p>
-              </CardContent>
-            </Card>
+            {/* Picture Window Card */}
+            <div className="group relative">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-[#049bf2]/0 via-[#049bf2]/0 to-[#049bf2]/0 group-hover:from-[#049bf2]/20 group-hover:via-[#049bf2]/30 group-hover:to-[#049bf2]/20 rounded-2xl blur-lg transition-all duration-500 opacity-0 group-hover:opacity-100" />
+              <div className="relative bg-white/70 backdrop-blur-md border border-white/60 rounded-2xl p-6 shadow-lg shadow-gray-200/50 hover:shadow-xl hover:shadow-[#049bf2]/10 transition-all duration-500 hover:-translate-y-1 group-hover:border-[#049bf2]/30 group-hover:bg-white/90">
+                <div className="h-48 mb-4 flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
+                  <Image
+                    src="https://dallaswindowbutler.b-cdn.net/aeris-picture-window-cutaway-YBg78rEqDbIvzDaV.avif"
+                    alt="Picture Window"
+                    width={200}
+                    height={180}
+                    className="object-contain h-full w-auto drop-shadow-lg"
+                  />
+                </div>
+                <h3 className="text-lg font-bold text-[#00152e] mb-2 text-center">Picture Window</h3>
+                <p className="text-gray-600 text-center text-sm">Fixed windows that maximize light and views</p>
+              </div>
+            </div>
 
-            <Card className="text-center">
-              <CardContent className="p-6">
-                <Clock className="h-12 w-12 text-brand-blue mx-auto mb-4" />
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Sliding Windows</h3>
-                <p className="text-gray-600">Easy operation with contemporary styling</p>
-              </CardContent>
-            </Card>
+            {/* Sliding Window Card */}
+            <div className="group relative">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-[#049bf2]/0 via-[#049bf2]/0 to-[#049bf2]/0 group-hover:from-[#049bf2]/20 group-hover:via-[#049bf2]/30 group-hover:to-[#049bf2]/20 rounded-2xl blur-lg transition-all duration-500 opacity-0 group-hover:opacity-100" />
+              <div className="relative bg-white/70 backdrop-blur-md border border-white/60 rounded-2xl p-6 shadow-lg shadow-gray-200/50 hover:shadow-xl hover:shadow-[#049bf2]/10 transition-all duration-500 hover:-translate-y-1 group-hover:border-[#049bf2]/30 group-hover:bg-white/90">
+                <div className="h-48 mb-4 flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
+                  <Image
+                    src="https://dallaswindowbutler.b-cdn.net/endure-slider-window-cutaway-AVL73Kpj4LCEJ44N.avif"
+                    alt="Sliding Window"
+                    width={200}
+                    height={180}
+                    className="object-contain h-full w-auto drop-shadow-lg"
+                  />
+                </div>
+                <h3 className="text-lg font-bold text-[#00152e] mb-2 text-center">Sliding Window</h3>
+                <p className="text-gray-600 text-center text-sm">Easy operation with contemporary styling</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Custom Shapes Callout */}
+          <div className="mt-10 text-center">
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-white/80 backdrop-blur-sm border border-[#049bf2]/20 rounded-full shadow-sm hover:shadow-md hover:border-[#049bf2]/40 transition-all duration-300">
+              <div className="flex items-center justify-center w-8 h-8 bg-[#049bf2]/10 rounded-full">
+                <svg className="w-4 h-4 text-[#049bf2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                </svg>
+              </div>
+              <span className="text-[#00152e] font-medium">
+                Need a <span className="text-[#049bf2] font-semibold">custom shape</span>? We accommodate arches, circles, octagons & specialty designs.
+              </span>
+            </div>
           </div>
         </div>
       </section>
