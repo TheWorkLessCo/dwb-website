@@ -128,6 +128,14 @@ export const cityData: Record<string, CityData> = {
         caption: "IG unit replacement to restore crystal-clear lake views",
         windowCount: 4,
       },
+      {
+        neighborhood: "Heath",
+        projectType: "patio-door",
+        beforeImage: "/images/projects/rockwall-heath-before.jpg",
+        afterImage: "/images/projects/rockwall-heath-after.jpg",
+        caption: "Sliding patio door replacement with energy-efficient tempered glass",
+        windowCount: 2,
+      },
     ],
     // TODO: Update with actual team member info
     assignedTech: {
@@ -212,6 +220,39 @@ export const cityData: Record<string, CityData> = {
         answer: "We're familiar with Stonebridge Ranch's architectural review process. We can provide spec sheets, color samples, and any documentation your HOA requires before you submit for approval—saving you time and ensuring no surprises.",
       },
     ],
+    // TODO: Add actual before/after photos from McKinney jobs
+    projectShowcases: [
+      {
+        neighborhood: "Stonebridge Ranch",
+        projectType: "window-replacement",
+        beforeImage: "/images/projects/mckinney-stonebridge-before.jpg",
+        afterImage: "/images/projects/mckinney-stonebridge-after.jpg",
+        caption: "Full home window upgrade with HOA-compliant frames and premium efficiency glass",
+        windowCount: 14,
+      },
+      {
+        neighborhood: "Historic Downtown McKinney",
+        projectType: "window-replacement",
+        beforeImage: "/images/projects/mckinney-downtown-before.jpg",
+        afterImage: "/images/projects/mckinney-downtown-after.jpg",
+        caption: "Period-appropriate divided-light windows with modern Low-E performance",
+        windowCount: 8,
+      },
+      {
+        neighborhood: "Craig Ranch",
+        projectType: "glass-repair",
+        beforeImage: "/images/projects/mckinney-craigranch-before.jpg",
+        afterImage: "/images/projects/mckinney-craigranch-after.jpg",
+        caption: "IG unit replacement to eliminate foggy glass and restore clarity",
+        windowCount: 3,
+      },
+    ],
+    assignedTech: {
+      name: "Nate",
+      title: "Owner & Lead Installer",
+      yearsExperience: 10,
+      livesIn: "Princeton",
+    },
   },
   allen: {
     name: "Allen",
@@ -288,6 +329,39 @@ export const cityData: Record<string, CityData> = {
         answer: "Absolutely. Large picture windows and floor-to-ceiling glass are common in Allen's newer homes. We custom-order units to exact specifications and have the equipment and expertise to handle oversized installations safely.",
       },
     ],
+    // TODO: Add actual before/after photos from Allen jobs
+    projectShowcases: [
+      {
+        neighborhood: "Watters Creek",
+        projectType: "window-replacement",
+        beforeImage: "/images/projects/allen-watterscreek-before.jpg",
+        afterImage: "/images/projects/allen-watterscreek-after.jpg",
+        caption: "Oversized picture window replacement with solar-control Low-E glass",
+        windowCount: 16,
+      },
+      {
+        neighborhood: "Twin Creeks",
+        projectType: "window-replacement",
+        beforeImage: "/images/projects/allen-twincreeks-before.jpg",
+        afterImage: "/images/projects/allen-twincreeks-after.jpg",
+        caption: "Builder-grade window upgrade to premium vinyl with argon-filled glass",
+        windowCount: 10,
+      },
+      {
+        neighborhood: "Bethany Lakes",
+        projectType: "glass-repair",
+        beforeImage: "/images/projects/allen-bethanylakes-before.jpg",
+        afterImage: "/images/projects/allen-bethanylakes-after.jpg",
+        caption: "Foggy dual-pane glass replacement restoring clear views",
+        windowCount: 5,
+      },
+    ],
+    assignedTech: {
+      name: "Nate",
+      title: "Owner & Lead Installer",
+      yearsExperience: 10,
+      livesIn: "Princeton",
+    },
   },
   plano: {
     name: "Plano",
@@ -357,6 +431,39 @@ export const cityData: Record<string, CityData> = {
         answer: "Almost certainly yes. Windows from the 90s lack modern Low-E coatings and argon gas fills that dramatically improve energy efficiency. Most Plano homeowners see significant energy savings and improved comfort after replacement, plus you eliminate maintenance on aging wood or aluminum frames.",
       },
     ],
+    // TODO: Add actual before/after photos from Plano jobs
+    projectShowcases: [
+      {
+        neighborhood: "West Plano",
+        projectType: "window-replacement",
+        beforeImage: "/images/projects/plano-westplano-before.jpg",
+        afterImage: "/images/projects/plano-westplano-after.jpg",
+        caption: "1990s aluminum windows replaced with premium vinyl and Low-E glass",
+        windowCount: 18,
+      },
+      {
+        neighborhood: "Willow Bend",
+        projectType: "window-replacement",
+        beforeImage: "/images/projects/plano-willowbend-before.jpg",
+        afterImage: "/images/projects/plano-willowbend-after.jpg",
+        caption: "Luxury home window upgrade with custom bronze exterior finish",
+        windowCount: 22,
+      },
+      {
+        neighborhood: "Legacy West",
+        projectType: "glass-repair",
+        beforeImage: "/images/projects/plano-legacywest-before.jpg",
+        afterImage: "/images/projects/plano-legacywest-after.jpg",
+        caption: "Failed seal repair on newer construction—restored clarity without full replacement",
+        windowCount: 4,
+      },
+    ],
+    assignedTech: {
+      name: "Nate",
+      title: "Owner & Lead Installer",
+      yearsExperience: 10,
+      livesIn: "Princeton",
+    },
   },
   "north-richardson": {
     name: "North Richardson",
@@ -433,5 +540,38 @@ export const cityData: Record<string, CityData> = {
         answer: "Absolutely. We work with many townhome and condo owners in the CityLine area and throughout North Richardson. We coordinate with HOAs and property managers as needed, and our installation methods are designed to minimize disruption to neighboring units.",
       },
     ],
+    // TODO: Add actual before/after photos from North Richardson jobs
+    projectShowcases: [
+      {
+        neighborhood: "Canyon Creek",
+        projectType: "window-replacement",
+        beforeImage: "/images/projects/richardson-canyoncreek-before.jpg",
+        afterImage: "/images/projects/richardson-canyoncreek-after.jpg",
+        caption: "Classic 1980s home upgraded with efficient vinyl while preserving neighborhood character",
+        windowCount: 12,
+      },
+      {
+        neighborhood: "CityLine",
+        projectType: "window-replacement",
+        beforeImage: "/images/projects/richardson-cityline-before.jpg",
+        afterImage: "/images/projects/richardson-cityline-after.jpg",
+        caption: "Modern townhome windows with laminated glass for superior noise reduction",
+        windowCount: 8,
+      },
+      {
+        neighborhood: "Spring Valley",
+        projectType: "glass-repair",
+        beforeImage: "/images/projects/richardson-springvalley-before.jpg",
+        afterImage: "/images/projects/richardson-springvalley-after.jpg",
+        caption: "Roadside-facing windows upgraded to laminated noise-reducing glass",
+        windowCount: 6,
+      },
+    ],
+    assignedTech: {
+      name: "Nate",
+      title: "Owner & Lead Installer",
+      yearsExperience: 10,
+      livesIn: "Princeton",
+    },
   },
 }

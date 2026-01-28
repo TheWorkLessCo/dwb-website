@@ -48,19 +48,6 @@ const defaultFAQs: FAQItem[] = [
   },
 ]
 
-const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: defaultFAQs.map((faq) => ({
-    "@type": "Question",
-    name: faq.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: faq.answer,
-    },
-  })),
-}
-
 export function ModernFAQ({
   title = "Got Questions? We've Got Answers.",
   subtitle = "Everything you need to know about window replacement, glass/IG repair, and door services.",
@@ -69,6 +56,20 @@ export function ModernFAQ({
 }: ModernFAQProps) {
   // Combine city-specific FAQs with default FAQs
   const allFaqs = [...cityFaqs, ...defaultFAQs]
+
+  // Generate dynamic FAQ schema including city-specific FAQs
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: allFaqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  }
   useEffect(() => {
     const handleFAQClick = (event: Event) => {
       const button = (event.target as Element).closest("button[data-faq-button]")

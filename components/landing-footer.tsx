@@ -98,16 +98,19 @@ export function LandingFooter() {
             </div>
           </div>
 
-          {/* Legal Links */}
+          {/* Company Links */}
           <div className="space-y-2">
-            <h3 className="font-semibold text-lg">Legal</h3>
+            <h3 className="font-semibold text-lg">Company</h3>
             <div className="flex flex-col gap-2 text-sm">
-              <a href="/privacy" className="text-gray-300 hover:text-[#049BF2] transition-colors">
+              <Link href="/blog" className="text-gray-300 hover:text-[#049BF2] transition-colors">
+                Blog
+              </Link>
+              <Link href="/privacy" className="text-gray-300 hover:text-[#049BF2] transition-colors">
                 Privacy Policy
-              </a>
-              <a href="/terms" className="text-gray-300 hover:text-[#049BF2] transition-colors">
+              </Link>
+              <Link href="/terms" className="text-gray-300 hover:text-[#049BF2] transition-colors">
                 Terms of Service
-              </a>
+              </Link>
             </div>
           </div>
         </div>
