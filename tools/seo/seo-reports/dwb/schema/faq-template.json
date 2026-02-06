@@ -1,0 +1,38 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How often should I have my windows professionally cleaned?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For residential properties, we recommend professional window cleaning 2-4 times per year. Commercial properties may require more frequent cleaning depending on location and foot traffic."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer free estimates?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! We provide free, no-obligation estimates for all our window cleaning and door services. Contact us to schedule your estimate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What areas do you serve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We proudly serve the entire Dallas–Fort Worth, TX metropolitan area, including Dallas, Fort Worth, Arlington, Plano, Irving, and surrounding communities."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are you licensed and insured?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we are fully licensed and insured. We carry comprehensive liability insurance and workers' compensation coverage for your peace of mind."
+      }
+    }
+  ]
+}

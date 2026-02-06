@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Butler-Cam PDF Template - Dallas Window Butler</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f0f0;
+      padding: 20px;
+    }
+
+    .page {
+      width: 8.5in;
+      min-height: 11in;
+      background: white;
+      margin: 0 auto 30px auto;
+      padding: 0.5in;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      page-break-after: always;
+    }
+
+    .variable {
+      background: #fff3cd;
+      border: 1px dashed #ffc107;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: monospace;
+      font-size: 0.85em;
+      color: #856404;
+    }
+
+    .note {
+      background: #e7f3ff;
+      border-left: 4px solid #049bf2;
+      padding: 10px 15px;
+      margin: 15px 0;
+      font-size: 0.9em;
+      color: #004085;
+    }
+
+    /* Cover Page Styles */
+    .cover-header {
+      background: linear-gradient(135deg, #00152e 0%, #002855 100%);
+      margin: -0.5in -0.5in 0 -0.5in;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .cover-header img {
+      max-width: 200px;
+      margin-bottom: 20px;
+    }
+
+    .cover-header h1 {
+      color: white;
+      font-size: 32px;
+      font-weight: 300;
+      letter-spacing: 2px;
+    }
+
+    .cover-header .subtitle {
+      color: #049bf2;
+      font-size: 18px;
+      margin-top: 10px;
+      font-weight: 500;
+    }
+
+    .cover-content {
+      padding: 60px 40px;
+    }
+
+    .info-block {
+      margin-bottom: 30px;
+    }
+
+    .info-block label {
+      display: block;
+      color: #666;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+    }
+
+    .info-block .value {
+      font-size: 20px;
+      color: #00152e;
+      font-weight: 500;
+    }
+
+    .cover-footer {
+      position: absolute;
+      bottom: 0.5in;
+      left: 0.5in;
+      right: 0.5in;
+      border-top: 2px solid #049bf2;
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .badge {
+      background: #049bf2;
+      color: white;
+      padding: 10px 25px;
+      border-radius: 25px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    /* Photo Comparison Page Styles */
+    .page-header {
+      background: #00152e;
+      margin: -0.5in -0.5in 30px -0.5in;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .page-header img {
+      height: 40px;
+    }
+
+    .page-header .page-title {
+      color: white;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .window-comparison {
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      margin-bottom: 25px;
+      overflow: hidden;
+    }
+
+    .window-header {
+      background: #f8f9fa;
+      padding: 12px 20px;
+      border-bottom: 1px solid #e0e0e0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .window-header h3 {
+      color: #00152e;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .window-header .window-num {
+      background: #049bf2;
+      color: white;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    .photo-side {
+      padding: 20px;
+    }
+
+    .photo-side:first-child {
+      border-right: 1px solid #e0e0e0;
+      background: #fafafa;
+    }
+
+    .photo-side h4 {
+      text-align: center;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+      color: #666;
+    }
+
+    .photo-side:first-child h4 {
+      color: #dc3545;
+    }
+
+    .photo-side:last-child h4 {
+      color: #28a745;
+    }
+
+    .photo-placeholder {
+      background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+      height: 180px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #6c757d;
+      font-size: 12px;
+      border: 2px dashed #ced4da;
+      margin-bottom: 15px;
+    }
+
+    .photo-caption {
+      font-size: 13px;
+      color: #333;
+    }
+
+    .photo-caption strong {
+      color: #00152e;
+    }
+
+    .measurements {
+      margin-top: 10px;
+      padding: 8px 12px;
+      background: #e7f3ff;
+      border-radius: 4px;
+      font-size: 12px;
+      color: #004085;
+    }
+
+    /* Summary Page Styles */
+    .summary-section {
+      margin-bottom: 30px;
+    }
+
+    .summary-section h2 {
+      color: #00152e;
+      font-size: 18px;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #049bf2;
+    }
+
+    .summary-text {
+      line-height: 1.8;
+      color: #333;
+      font-size: 14px;
+    }
+
+    .checklist {
+      list-style: none;
+    }
+
+    .checklist li {
+      padding: 12px 15px;
+      background: #f8f9fa;
+      margin-bottom: 8px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    .checklist li::before {
+      content: "✓";
+      background: #28a745;
+      color: white;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 12px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #e0e0e0;
+      text-align: center;
+      color: #666;
+      font-size: 12px;
+    }
+
+    .footer strong {
+      color: #00152e;
+    }
+
+    /* Instructions overlay */
+    .instructions {
+      background: #1a1a2e;
+      color: white;
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      max-width: 8.5in;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .instructions h2 {
+      color: #049bf2;
+      margin-bottom: 15px;
+    }
+
+    .instructions ul {
+      margin-left: 20px;
+    }
+
+    .instructions li {
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+
+    .instructions code {
+      background: #2d2d44;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- INSTRUCTIONS FOR USER -->
+  <div class="instructions">
+    <h2>CraftMyPDF Template Guide</h2>
+    <p style="margin-bottom: 15px;">Use this HTML as a visual reference when building your template in CraftMyPDF. Yellow highlighted items are <span class="variable">{{variables}}</span> you'll add in the editor.</p>
+    <ul>
+      <li><code>{{customer_name}}</code> - Customer's full name</li>
+      <li><code>{{address}}</code> - Service address</li>
+      <li><code>{{completion_date}}</code> - Date of completion</li>
+      <li><code>{{job_type}}</code> - Type of service</li>
+      <li><code>{{#each windows}}...{{/each}}</code> - Loop for each window comparison</li>
+      <li><code>{{before_photo_url}}</code> / <code>{{after_photo_url}}</code> - Photo URLs</li>
+      <li><code>{{before_caption}}</code> / <code>{{after_caption}}</code> - Photo captions</li>
+      <li><code>{{before_measurements}}</code> - Window measurements</li>
+      <li><code>{{ai_summary}}</code> - AI-generated summary text</li>
+      <li><code>{{#each checklist_items}}{{this}}{{/each}}</code> - Work completed items</li>
+    </ul>
+  </div>
+
+  <!-- PAGE 1: COVER -->
+  <div class="page" style="position: relative;">
+    <div class="cover-header">
+      <img src="https://dallaswindowbutler.b-cdn.net/DWB%20Logo%20transparent.png" alt="Dallas Window Butler">
+      <h1>WINDOW SERVICE REPORT</h1>
+      <div class="subtitle">Before & After Documentation</div>
+    </div>
+
+    <div class="cover-content">
+      <div class="note">
+        In CraftMyPDF: Add your logo as an Image element, then add Text elements for each variable below.
+      </div>
+
+      <div class="info-block">
+        <label>Customer</label>
+        <div class="value"><span class="variable">{{customer_name}}</span></div>
+      </div>
+
+      <div class="info-block">
+        <label>Service Address</label>
+        <div class="value"><span class="variable">{{address}}</span></div>
+      </div>
+
+      <div class="info-block">
+        <label>Completion Date</label>
+        <div class="value"><span class="variable">{{completion_date}}</span></div>
+      </div>
+
+      <div class="info-block">
+        <label>Service Type</label>
+        <div class="value"><span class="variable">{{job_type}}</span></div>
+      </div>
+    </div>
+
+    <div class="cover-footer">
+      <div>
+        <strong style="color: #00152e;">Dallas Window Butler</strong><br>
+        <span style="color: #666; font-size: 12px;">Professional Window Services</span>
+      </div>
+      <div class="badge"><span class="variable">{{job_type}}</span></div>
+    </div>
+  </div>
+
+  <!-- PAGE 2: PHOTO COMPARISONS -->
+  <div class="page">
+    <div class="page-header">
+      <img src="https://dallaswindowbutler.b-cdn.net/DWB%20Logo%20transparent.png" alt="Logo">
+      <span class="page-title">Photo Documentation</span>
+    </div>
+
+    <div class="note">
+      In CraftMyPDF: Use a "Repeat Section" with <code>{{#each windows}}</code> to loop through all windows. Each iteration will create one comparison block.
+    </div>
+
+    <!-- Window 1 -->
+    <div class="window-comparison">
+      <div class="window-header">
+        <h3>Window <span class="variable">{{number}}</span></h3>
+        <div class="window-num"><span class="variable">{{number}}</span></div>
+      </div>
+      <div class="comparison-grid">
+        <div class="photo-side">
+          <h4>Before</h4>
+          <div class="photo-placeholder">
+            <span class="variable">{{before_photo_url}}</span><br>
+            (Image element)
+          </div>
+          <div class="photo-caption">
+            <strong>Location:</strong> <span class="variable">{{before_caption}}</span>
+          </div>
+          <div class="measurements">
+            <strong>Measurements:</strong> <span class="variable">{{before_measurements}}</span>
+          </div>
+        </div>
+        <div class="photo-side">
+          <h4>After</h4>
+          <div class="photo-placeholder">
+            <span class="variable">{{after_photo_url}}</span><br>
+            (Image element)
+          </div>
+          <div class="photo-caption">
+            <strong>Work Done:</strong> <span class="variable">{{after_caption}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Window 2 (shows the repeat pattern) -->
+    <div class="window-comparison" style="opacity: 0.6;">
+      <div class="window-header">
+        <h3>Window 2 <span style="font-size: 12px; color: #666;">(repeat pattern continues...)</span></h3>
+        <div class="window-num">2</div>
+      </div>
+      <div class="comparison-grid">
+        <div class="photo-side">
+          <h4>Before</h4>
+          <div class="photo-placeholder" style="height: 120px;">Repeats for each window in array</div>
+        </div>
+        <div class="photo-side">
+          <h4>After</h4>
+          <div class="photo-placeholder" style="height: 120px;">Repeats for each window in array</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="note">
+      <strong>Tip:</strong> In CraftMyPDF, set "Items per page" in your repeat section to control how many comparisons appear per page (recommend 2-3).
+    </div>
+  </div>
+
+  <!-- PAGE 3: SUMMARY -->
+  <div class="page">
+    <div class="page-header">
+      <img src="https://dallaswindowbutler.b-cdn.net/DWB%20Logo%20transparent.png" alt="Logo">
+      <span class="page-title">Service Summary</span>
+    </div>
+
+    <div class="summary-section">
+      <h2>Project Summary</h2>
+      <div class="note">
+        In CraftMyPDF: Add a Text element and set its content to <code>{{ai_summary}}</code>
+      </div>
+      <p class="summary-text">
+        <span class="variable">{{ai_summary}}</span>
+      </p>
+      <p class="summary-text" style="margin-top: 15px; color: #666; font-style: italic;">
+        This summary describes the window service work completed, including observations about the before condition, work performed, and final results. The AI generates this based on technician notes.
+      </p>
+    </div>
+
+    <div class="summary-section">
+      <h2>Work Completed</h2>
+      <div class="note">
+        In CraftMyPDF: Use a "Repeat Section" with <code>{{#each checklist_items}}</code> and display <code>{{this}}</code> for each item.
+      </div>
+      <ul class="checklist">
+        <li><span class="variable">{{this}}</span> - Checklist item 1</li>
+        <li><span class="variable">{{this}}</span> - Checklist item 2</li>
+        <li><span class="variable">{{this}}</span> - Checklist item 3</li>
+        <li><span class="variable">{{this}}</span> - Checklist item 4</li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      <p><strong>Dallas Window Butler</strong></p>
+      <p>Thank you for choosing us for your window service needs.</p>
+      <p style="margin-top: 10px; color: #999;">
+        Report generated on <span class="variable">{{completion_date}}</span>
+      </p>
+    </div>
+  </div>
+
+  <!-- VARIABLE REFERENCE -->
+  <div class="instructions">
+    <h2>Quick Variable Reference for CraftMyPDF</h2>
+    <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+      <tr style="border-bottom: 1px solid #444;">
+        <th style="text-align: left; padding: 8px; color: #049bf2;">Variable</th>
+        <th style="text-align: left; padding: 8px; color: #049bf2;">Type</th>
+        <th style="text-align: left; padding: 8px; color: #049bf2;">Description</th>
+      </tr>
+      <tr style="border-bottom: 1px solid #333;">
+        <td style="padding: 8px;"><code>{{customer_name}}</code></td>
+        <td style="padding: 8px;">Text</td>
+        <td style="padding: 8px;">Customer's full name</td>
+      </tr>
+      <tr style="border-bottom: 1px solid #333;">
+        <td style="padding: 8px;"><code>{{address}}</code></td>
+        <td style="padding: 8px;">Text</td>
+        <td style="padding: 8px;">Service address</td>
+      </tr>
+      <tr style="border-bottom: 1px solid #333;">
+        <td style="padding: 8px;"><code>{{job_type}}</code></td>
+        <td style="padding: 8px;">Text</td>
+        <td style="padding: 8px;">Window Replacement, Inspection, etc.</td>
+      </tr>
+      <tr style="border-bottom: 1px solid #333;">
+        <td style="padding: 8px;"><code>{{completion_date}}</code></td>
+        <td style="padding: 8px;">Text</td>
+        <td style="padding: 8px;">Formatted date string</td>
+      </tr>
+      <tr style="border-bottom: 1px solid #333;">
+        <td style="padding: 8px;"><code>{{windows}}</code></td>
+        <td style="padding: 8px;">Array</td>
+        <td style="padding: 8px;">Array of window objects (use with #each)</td>
+      </tr>
+      <tr style="border-bottom: 1px solid #333;">
+        <td style="padding: 8px;"><code>{{number}}</code></td>
+        <td style="padding: 8px;">Number</td>
+        <td style="padding: 8px;">Window number (inside #each windows)</td>
+      </tr>
+      <tr style="border-bottom: 1px solid #333;">
+        <td style="padding: 8px;"><code>{{before_photo_url}}</code></td>
+        <td style="padding: 8px;">Image URL</td>
+        <td style="padding: 8px;">Before photo (inside #each windows)</td>
+      </tr>
+      <tr style="border-bottom: 1px solid #333;">
+        <td style="padding: 8px;"><code>{{after_photo_url}}</code></td>
+        <td style="padding: 8px;">Image URL</td>
+        <td style="padding: 8px;">After photo (inside #each windows)</td>
+      </tr>
+      <tr style="border-bottom: 1px solid #333;">
+        <td style="padding: 8px;"><code>{{before_caption}}</code></td>
+        <td style="padding: 8px;">Text</td>
+        <td style="padding: 8px;">Before photo caption</td>
+      </tr>
+      <tr style="border-bottom: 1px solid #333;">
+        <td style="padding: 8px;"><code>{{after_caption}}</code></td>
+        <td style="padding: 8px;">Text</td>
+        <td style="padding: 8px;">After photo caption</td>
+      </tr>
+      <tr style="border-bottom: 1px solid #333;">
+        <td style="padding: 8px;"><code>{{before_measurements}}</code></td>
+        <td style="padding: 8px;">Text</td>
+        <td style="padding: 8px;">Window dimensions</td>
+      </tr>
+      <tr style="border-bottom: 1px solid #333;">
+        <td style="padding: 8px;"><code>{{ai_summary}}</code></td>
+        <td style="padding: 8px;">Text</td>
+        <td style="padding: 8px;">AI-generated summary paragraph</td>
+      </tr>
+      <tr>
+        <td style="padding: 8px;"><code>{{checklist_items}}</code></td>
+        <td style="padding: 8px;">Array</td>
+        <td style="padding: 8px;">Work completed items (use with #each)</td>
+      </tr>
+    </table>
+  </div>
+
+</body>
+</html>

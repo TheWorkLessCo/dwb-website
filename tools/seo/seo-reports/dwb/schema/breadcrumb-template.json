@@ -1,0 +1,24 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "http://localhost:3000"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "http://localhost:3000/services"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{PAGE_NAME}}",
+      "item": "{{PAGE_URL}}"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "http://localhost:3000/#service",
+  "name": "Premium Replacement Windows For Your DFW Home... Minus The Nightmare Sales Pitch.",
+  "url": "http://localhost:3000",
+  "description": "Professional premium replacement windows for your dfw home... minus the nightmare sales pitch. services provided by Dallas Window Butler in the Dallas–Fort Worth, TX area.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "@id": "http://localhost:3000/#organization",
+    "name": "Dallas Window Butler",
+    "url": "http://localhost:3000"
+  },
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": "32.7767",
+      "longitude": "-96.7970"
+    },
+    "geoRadius": "50 mi"
+  },
+  "serviceType": "Premium Replacement Windows For Your DFW Home... Minus The Nightmare Sales Pitch.",
+  "category": "Home Services",
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "priceCurrency": "USD",
+      "price": "Contact for quote"
+    }
+  },
+  "termsOfService": "http://localhost:3000/terms",
+  "serviceOutput": {
+    "@type": "Thing",
+    "name": "Clean, professional results"
+  }
+}

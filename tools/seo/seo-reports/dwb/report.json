@@ -1,0 +1,1306 @@
+{
+  "meta": {
+    "generatedAt": "2026-01-27T20:42:46.928Z",
+    "tool": "SEO Snapshot v1.0.0",
+    "targetUrl": "http://localhost:3000",
+    "configuration": {
+      "maxPages": 20,
+      "businessName": "Dallas Window Butler",
+      "location": "Dallas–Fort Worth, TX"
+    }
+  },
+  "summary": {
+    "totalPagesFound": 27,
+    "totalPagesCrawled": 20,
+    "successfulPages": 18,
+    "errorPages": 2,
+    "blockedByRobots": 0,
+    "robotsTxtFound": true,
+    "sitemapFound": true,
+    "sitemapUrlCount": 23
+  },
+  "issues": [
+    {
+      "id": "issue-4",
+      "severity": "high",
+      "category": "on-page",
+      "title": "Missing H1 headings",
+      "description": "1 page(s) are missing H1 headings.",
+      "affectedUrls": [
+        "http://localhost:3000/services/glass-ig-repair"
+      ],
+      "affectedCount": 1,
+      "recommendation": "Add a single, descriptive H1 heading to each page."
+    },
+    {
+      "id": "issue-6",
+      "severity": "high",
+      "category": "crawlability",
+      "title": "Pages returning error status codes",
+      "description": "2 page(s) returned 4xx or 5xx status codes.",
+      "affectedUrls": [
+        "http://localhost:3000/about (404)",
+        "http://localhost:3000/privacy (404)"
+      ],
+      "affectedCount": 2,
+      "recommendation": "Fix or remove broken pages. Update internal links pointing to these URLs."
+    },
+    {
+      "id": "issue-2",
+      "severity": "medium",
+      "category": "on-page",
+      "title": "Title tags too long",
+      "description": "3 page(s) have title tags exceeding 60 characters.",
+      "affectedUrls": [
+        "http://localhost:3000/mckinney-windows",
+        "http://localhost:3000/north-richardson-windows",
+        "http://localhost:3000/blog"
+      ],
+      "affectedCount": 3,
+      "recommendation": "Shorten title tags to 60 characters or less to prevent truncation in search results."
+    },
+    {
+      "id": "issue-3",
+      "severity": "medium",
+      "category": "on-page",
+      "title": "Meta descriptions too long",
+      "description": "11 page(s) have meta descriptions exceeding 160 characters.",
+      "affectedUrls": [
+        "http://localhost:3000",
+        "http://localhost:3000/services/window-replacement",
+        "http://localhost:3000/services/glass-ig-repair",
+        "http://localhost:3000/services/patio-doors",
+        "http://localhost:3000/services/solar-screens",
+        "http://localhost:3000/rockwall-windows",
+        "http://localhost:3000/plano-windows",
+        "http://localhost:3000/mckinney-windows",
+        "http://localhost:3000/allen-windows",
+        "http://localhost:3000/north-richardson-windows"
+      ],
+      "affectedCount": 11,
+      "recommendation": "Shorten meta descriptions to 160 characters or less to prevent truncation."
+    },
+    {
+      "id": "issue-5",
+      "severity": "medium",
+      "category": "on-page",
+      "title": "Missing canonical tags",
+      "description": "3 page(s) are missing canonical tags.",
+      "affectedUrls": [
+        "http://localhost:3000",
+        "http://localhost:3000/services/glass-ig-repair",
+        "http://localhost:3000/book"
+      ],
+      "affectedCount": 3,
+      "recommendation": "Add self-referencing canonical tags to prevent duplicate content issues."
+    },
+    {
+      "id": "issue-1",
+      "severity": "low",
+      "category": "crawlability",
+      "title": "Indexable pages missing from sitemap",
+      "description": "18 indexable page(s) found during crawl are not in the sitemap.",
+      "affectedUrls": [
+        "http://localhost:3000",
+        "http://localhost:3000/services/window-replacement",
+        "http://localhost:3000/services/glass-ig-repair",
+        "http://localhost:3000/services/patio-doors",
+        "http://localhost:3000/services/solar-screens",
+        "http://localhost:3000/services/blinds-shades",
+        "http://localhost:3000/services/motorized-patio-shades",
+        "http://localhost:3000/services/motorized-awnings",
+        "http://localhost:3000/services/waterproofing-sealing",
+        "http://localhost:3000/rockwall-windows"
+      ],
+      "affectedCount": 18,
+      "recommendation": "Add these pages to your sitemap to ensure they are discovered by search engines."
+    },
+    {
+      "id": "issue-7",
+      "severity": "medium",
+      "category": "on-page",
+      "title": "Duplicate title tags",
+      "description": "1 title tags are used on multiple pages.",
+      "affectedUrls": [
+        "http://localhost:3000",
+        "http://localhost:3000/services/glass-ig-repair"
+      ],
+      "affectedCount": 2,
+      "recommendation": "Create unique title tags for each page to improve click-through rates."
+    },
+    {
+      "id": "issue-8",
+      "severity": "medium",
+      "category": "on-page",
+      "title": "Duplicate meta descriptions",
+      "description": "1 meta descriptions are used on multiple pages.",
+      "affectedUrls": [
+        "http://localhost:3000",
+        "http://localhost:3000/services/glass-ig-repair"
+      ],
+      "affectedCount": 2,
+      "recommendation": "Create unique meta descriptions for each page to improve click-through rates."
+    }
+  ],
+  "robots": {
+    "found": true,
+    "raw": "# Robots.txt for Dallas Window Butler\n# https://dallaswindowbutler.com\n\nUser-agent: *\nAllow: /\n\n# Disallow offer pages (landing pages)\nDisallow: /offer/\n\n# Disallow API routes\nDisallow: /api/\n\n# Allow all service area pages for local SEO\nAllow: /rockwall-windows\nAllow: /mckinney-windows\nAllow: /allen-windows\nAllow: /plano-windows\nAllow: /north-richardson-windows\n\n# Sitemap location\nSitemap: https://dallaswindowbutler.com/sitemap.xml\n"
+  },
+  "sitemap": {
+    "found": true,
+    "source": "https://dallaswindowbutler.com/sitemap.xml",
+    "urlCount": 23,
+    "errors": []
+  },
+  "pages": [
+    {
+      "url": "http://localhost:3000",
+      "finalUrl": "http://localhost:3000",
+      "statusCode": 200,
+      "robotsAllowed": true,
+      "redirectChain": [],
+      "desktop": {
+        "title": "Best Window Replacement Company | Dallas Window Butler",
+        "titleLength": 54,
+        "metaDescription": "Dallas Window Butler offers the best window replacement and glass/IG unit repair in Rockwall & nearby cities. Energy-efficient windows, expert installation, and a lifetime workmanship warranty. Get a free quote today!",
+        "metaDescriptionLength": 217,
+        "metaRobots": null,
+        "canonical": null,
+        "h1": [
+          "Premium Replacement Windows For Your DFW Home... Minus The Nightmare Sales Pitch."
+        ],
+        "h2": [
+          "LifetimeServiceWarranty",
+          "The Transformation Framework",
+          "Your Old Windows Are Failing You (And Costing You A Fortune).",
+          "You Deserve Respect, Not a Sales Pitch.",
+          "Experience The \"White Glove\" Difference.",
+          "Don't Just Take Our Word For It.",
+          "As Easy as 1, 2, 3",
+          "The Difference Is Clear.",
+          "Engineered Specifically For The Texas Heat.",
+          "The Difference Is Clear.",
+          "Got Questions? We've Got Answers.",
+          "Our Service Areas",
+          "Don't Wait — Lock in $100 Off Per Window Today",
+          "Exceptional service and top-quality workmanship."
+        ],
+        "openGraph": {
+          "title": null,
+          "description": null,
+          "image": null,
+          "url": null,
+          "type": null
+        },
+        "jsonLdCount": 5,
+        "jsonLdTypes": [
+          "LocalBusiness",
+          "SiteNavigationElement",
+          "Organization",
+          "FAQPage"
+        ],
+        "textLength": 35667
+      },
+      "mobile": {
+        "title": "Best Window Replacement Company | Dallas Window Butler",
+        "metaDescription": "Dallas Window Butler offers the best window replacement and glass/IG unit repair in Rockwall & nearby cities. Energy-efficient windows, expert installation, and a lifetime workmanship warranty. Get a free quote today!",
+        "metaRobots": null,
+        "canonical": null,
+        "h1": [
+          "Premium Replacement Windows For Your DFW Home... Minus The Nightmare Sales Pitch."
+        ],
+        "textLength": 35667
+      },
+      "mobileParity": {
+        "passed": true,
+        "issues": []
+      }
+    },
+    {
+      "url": "http://localhost:3000/services/window-replacement",
+      "finalUrl": "http://localhost:3000/services/window-replacement",
+      "statusCode": 200,
+      "robotsAllowed": true,
+      "redirectChain": [],
+      "desktop": {
+        "title": "Window Replacement Services | Dallas Window Butler",
+        "titleLength": 50,
+        "metaDescription": "Professional window replacement services in Dallas-Fort Worth. Energy-efficient windows, expert installation, lifetime warranty. Serving Rockwall, McKinney, Allen & more.",
+        "metaDescriptionLength": 170,
+        "metaRobots": null,
+        "canonical": "https://dallaswindowbutler.com/services/window-replacement",
+        "h1": [
+          "Premium Window Replacement For Your DFW Home... Built For Performance, Not Pressure."
+        ],
+        "h2": [
+          "LifetimeServiceWarranty",
+          "Window Replacement Services",
+          "Why Choose Our Window Replacement?",
+          "Got Questions? We've Got Answers.",
+          "Ready to Replace Your Windows?",
+          "Exceptional service and top-quality workmanship."
+        ],
+        "openGraph": {
+          "title": "Window Replacement Services | Dallas Window Butler",
+          "description": "Professional window replacement services in Dallas-Fort Worth. Energy-efficient windows, expert installation, lifetime warranty.",
+          "image": null,
+          "url": "https://dallaswindowbutler.com/services/window-replacement",
+          "type": "website"
+        },
+        "jsonLdCount": 2,
+        "jsonLdTypes": [
+          "LocalBusiness",
+          "SiteNavigationElement"
+        ],
+        "textLength": 47835
+      },
+      "mobile": {
+        "title": "Window Replacement Services | Dallas Window Butler",
+        "metaDescription": "Professional window replacement services in Dallas-Fort Worth. Energy-efficient windows, expert installation, lifetime warranty. Serving Rockwall, McKinney, Allen & more.",
+        "metaRobots": null,
+        "canonical": "https://dallaswindowbutler.com/services/window-replacement",
+        "h1": [
+          "Premium Window Replacement For Your DFW Home... Built For Performance, Not Pressure."
+        ],
+        "textLength": 47835
+      },
+      "mobileParity": {
+        "passed": true,
+        "issues": []
+      }
+    },
+    {
+      "url": "http://localhost:3000/services/glass-ig-repair",
+      "finalUrl": "http://localhost:3000/services/glass-ig-repair",
+      "statusCode": 200,
+      "robotsAllowed": true,
+      "redirectChain": [],
+      "desktop": {
+        "title": "Best Window Replacement Company | Dallas Window Butler",
+        "titleLength": 54,
+        "metaDescription": "Dallas Window Butler offers the best window replacement and glass/IG unit repair in Rockwall & nearby cities. Energy-efficient windows, expert installation, and a lifetime workmanship warranty. Get a free quote today!",
+        "metaDescriptionLength": 217,
+        "metaRobots": null,
+        "canonical": null,
+        "h1": [],
+        "h2": [
+          "Exceptional service and top-quality workmanship."
+        ],
+        "openGraph": {
+          "title": null,
+          "description": null,
+          "image": null,
+          "url": null,
+          "type": null
+        },
+        "jsonLdCount": 2,
+        "jsonLdTypes": [
+          "LocalBusiness",
+          "SiteNavigationElement"
+        ],
+        "textLength": 24748
+      },
+      "mobile": {
+        "title": "Best Window Replacement Company | Dallas Window Butler",
+        "metaDescription": "Dallas Window Butler offers the best window replacement and glass/IG unit repair in Rockwall & nearby cities. Energy-efficient windows, expert installation, and a lifetime workmanship warranty. Get a free quote today!",
+        "metaRobots": null,
+        "canonical": null,
+        "h1": [],
+        "textLength": 24748
+      },
+      "mobileParity": {
+        "passed": true,
+        "issues": []
+      }
+    },
+    {
+      "url": "http://localhost:3000/services/patio-doors",
+      "finalUrl": "http://localhost:3000/services/patio-doors",
+      "statusCode": 200,
+      "robotsAllowed": true,
+      "redirectChain": [],
+      "desktop": {
+        "title": "Patio Door Replacement Services | Dallas Window Butler",
+        "titleLength": 54,
+        "metaDescription": "Professional patio door replacement services in Dallas-Fort Worth. Energy-efficient sliding doors, French doors, expert installation, lifetime warranty. Serving Rockwall, McKinney, Allen & more.",
+        "metaDescriptionLength": 194,
+        "metaRobots": null,
+        "canonical": "https://dallaswindowbutler.com/services/patio-doors",
+        "h1": [
+          "Premium Patio Door Replacement For Your DFW Home... Flawless Design, Master Installation."
+        ],
+        "h2": [
+          "LifetimeServiceWarranty",
+          "Patio Door Replacement Services",
+          "Why Choose Our Patio Door Replacement?",
+          "Got Questions? We've Got Answers.",
+          "Ready to Replace Your Patio Doors?",
+          "Exceptional service and top-quality workmanship."
+        ],
+        "openGraph": {
+          "title": "Patio Door Replacement Services | Dallas Window Butler",
+          "description": "Professional patio door replacement services in Dallas-Fort Worth. Energy-efficient doors, expert installation, lifetime warranty.",
+          "image": null,
+          "url": "https://dallaswindowbutler.com/services/patio-doors",
+          "type": "website"
+        },
+        "jsonLdCount": 2,
+        "jsonLdTypes": [
+          "LocalBusiness",
+          "SiteNavigationElement"
+        ],
+        "textLength": 47684
+      },
+      "mobile": {
+        "title": "Patio Door Replacement Services | Dallas Window Butler",
+        "metaDescription": "Professional patio door replacement services in Dallas-Fort Worth. Energy-efficient sliding doors, French doors, expert installation, lifetime warranty. Serving Rockwall, McKinney, Allen & more.",
+        "metaRobots": null,
+        "canonical": "https://dallaswindowbutler.com/services/patio-doors",
+        "h1": [
+          "Premium Patio Door Replacement For Your DFW Home... Flawless Design, Master Installation."
+        ],
+        "textLength": 47684
+      },
+      "mobileParity": {
+        "passed": true,
+        "issues": []
+      }
+    },
+    {
+      "url": "http://localhost:3000/services/solar-screens",
+      "finalUrl": "http://localhost:3000/services/solar-screens",
+      "statusCode": 200,
+      "robotsAllowed": true,
+      "redirectChain": [],
+      "desktop": {
+        "title": "Solar Screen Installation Services | Dallas Window Butler",
+        "titleLength": 57,
+        "metaDescription": "Professional solar screen installation services in Dallas-Fort Worth. Reduce heat, glare, and UV rays while maintaining your view. Expert installation, lifetime warranty. Serving Rockwall, McKinney, Allen & more.",
+        "metaDescriptionLength": 212,
+        "metaRobots": null,
+        "canonical": "https://dallaswindowbutler.com/services/solar-screens",
+        "h1": [
+          "Custom Solar Screen Installation For Your DFW Home... Beat The Texas Heat, Save On Bills."
+        ],
+        "h2": [
+          "LifetimeServiceWarranty",
+          "Solar Screen Installation Services",
+          "Why Choose Solar Screens?",
+          "Got Questions? We've Got Answers.",
+          "Ready to Beat the Texas Heat?",
+          "Exceptional service and top-quality workmanship."
+        ],
+        "openGraph": {
+          "title": "Solar Screen Installation Services | Dallas Window Butler",
+          "description": "Professional solar screen installation services in Dallas-Fort Worth. Reduce heat, glare, and UV rays while maintaining your view.",
+          "image": null,
+          "url": "https://dallaswindowbutler.com/services/solar-screens",
+          "type": "website"
+        },
+        "jsonLdCount": 2,
+        "jsonLdTypes": [
+          "LocalBusiness",
+          "SiteNavigationElement"
+        ],
+        "textLength": 47752
+      },
+      "mobile": {
+        "title": "Solar Screen Installation Services | Dallas Window Butler",
+        "metaDescription": "Professional solar screen installation services in Dallas-Fort Worth. Reduce heat, glare, and UV rays while maintaining your view. Expert installation, lifetime warranty. Serving Rockwall, McKinney, Allen & more.",
+        "metaRobots": null,
+        "canonical": "https://dallaswindowbutler.com/services/solar-screens",
+        "h1": [
+          "Custom Solar Screen Installation For Your DFW Home... Beat The Texas Heat, Save On Bills."
+        ],
+        "textLength": 47752
+      },
+      "mobileParity": {
+        "passed": true,
+        "issues": []
+      }
+    },
+    {
+      "url": "http://localhost:3000/services/blinds-shades",
+      "finalUrl": "http://localhost:3000/services/blinds-shades",
+      "statusCode": 200,
+      "robotsAllowed": true,
+      "redirectChain": [],
+      "desktop": {
+        "title": "Blinds & Shades | Dallas Window Butler",
+        "titleLength": 38,
+        "metaDescription": "Custom blinds & shades with expert install, transparent pricing, and lifetime-backed workmanship for Dallas–area homes.",
+        "metaDescriptionLength": 119,
+        "metaRobots": null,
+        "canonical": "https://dallaswindowbutler.com/services/blinds-shades",
+        "h1": [
+          "Custom Blinds & Shades For Your DFW Home... Luxury Control For Every Window."
+        ],
+        "h2": [
+          "LifetimeServiceWarranty",
+          "Styles & Options",
+          "Why Blinds & Shades",
+          "Our Installation Process",
+          "Got Questions? We've Got Answers.",
+          "Ready for Custom Blinds & Shades?",
+          "Exceptional service and top-quality workmanship."
+        ],
+        "openGraph": {
+          "title": "Blinds & Shades | Dallas Window Butler",
+          "description": "Custom blinds & shades with expert install, transparent pricing, and lifetime-backed workmanship for Dallas–area homes.",
+          "image": null,
+          "url": "https://dallaswindowbutler.com/services/blinds-shades",
+          "type": "website"
+        },
+        "jsonLdCount": 2,
+        "jsonLdTypes": [
+          "LocalBusiness",
+          "SiteNavigationElement"
+        ],
+        "textLength": 50853
+      },
+      "mobile": {
+        "title": "Blinds & Shades | Dallas Window Butler",
+        "metaDescription": "Custom blinds & shades with expert install, transparent pricing, and lifetime-backed workmanship for Dallas–area homes.",
+        "metaRobots": null,
+        "canonical": "https://dallaswindowbutler.com/services/blinds-shades",
+        "h1": [
+          "Custom Blinds & Shades For Your DFW Home... Luxury Control For Every Window."
+        ],
+        "textLength": 50853
+      },
+      "mobileParity": {
+        "passed": true,
+        "issues": []
+      }
+    },
+    {
+      "url": "http://localhost:3000/services/motorized-patio-shades",
+      "finalUrl": "http://localhost:3000/services/motorized-patio-shades",
+      "statusCode": 200,
+      "robotsAllowed": true,
+      "redirectChain": [],
+      "desktop": {
+        "title": "Motorized Patio Shades | Dallas Window Butler",
+        "titleLength": 45,
+        "metaDescription": "Custom motorized patio shades with expert install, transparent pricing, and lifetime-backed workmanship for Dallas–area homes.",
+        "metaDescriptionLength": 126,
+        "metaRobots": null,
+        "canonical": "https://dallaswindowbutler.com/services/motorized-patio-shades",
+        "h1": [
+          "Motorized Patio Shades For Your DFW Home... Outdoor Comfort At The Touch Of A Button."
+        ],
+        "h2": [
+          "LifetimeServiceWarranty",
+          "Patio Shade Solutions",
+          "Why Motorized Patio Shades",
+          "Our Installation Process",
+          "Got Questions? We've Got Answers.",
+          "Ready for Motorized Patio Shades?",
+          "Exceptional service and top-quality workmanship."
+        ],
+        "openGraph": {
+          "title": "Motorized Patio Shades | Dallas Window Butler",
+          "description": "Custom motorized patio shades with expert install, transparent pricing, and lifetime-backed workmanship for Dallas–area homes.",
+          "image": null,
+          "url": "https://dallaswindowbutler.com/services/motorized-patio-shades",
+          "type": "website"
+        },
+        "jsonLdCount": 3,
+        "jsonLdTypes": [
+          "LocalBusiness",
+          "SiteNavigationElement",
+          "Service"
+        ],
+        "textLength": 52853
+      },
+      "mobile": {
+        "title": "Motorized Patio Shades | Dallas Window Butler",
+        "metaDescription": "Custom motorized patio shades with expert install, transparent pricing, and lifetime-backed workmanship for Dallas–area homes.",
+        "metaRobots": null,
+        "canonical": "https://dallaswindowbutler.com/services/motorized-patio-shades",
+        "h1": [
+          "Motorized Patio Shades For Your DFW Home... Outdoor Comfort At The Touch Of A Button."
+        ],
+        "textLength": 52853
+      },
+      "mobileParity": {
+        "passed": true,
+        "issues": []
+      }
+    },
+    {
+      "url": "http://localhost:3000/services/motorized-awnings",
+      "finalUrl": "http://localhost:3000/services/motorized-awnings",
+      "statusCode": 200,
+      "robotsAllowed": true,
+      "redirectChain": [],
+      "desktop": {
+        "title": "Motorized Awnings | Dallas Window Butler",
+        "titleLength": 40,
+        "metaDescription": "Custom motorized awnings with expert install, transparent pricing, and lifetime-backed workmanship for Dallas–area homes.",
+        "metaDescriptionLength": 121,
+        "metaRobots": null,
+        "canonical": "https://dallaswindowbutler.com/services/motorized-awnings",
+        "h1": [
+          "Premium Motorized Awnings For Your DFW Home... Expand Your Living Space Instantly."
+        ],
+        "h2": [
+          "LifetimeServiceWarranty",
+          "Awning Solutions",
+          "Why Motorized Awnings",
+          "Our Installation Process",
+          "Got Questions? We've Got Answers.",
+          "Ready for Motorized Awnings?",
+          "Exceptional service and top-quality workmanship."
+        ],
+        "openGraph": {
+          "title": "Motorized Awnings | Dallas Window Butler",
+          "description": "Custom motorized awnings with expert install, transparent pricing, and lifetime-backed workmanship for Dallas–area homes.",
+          "image": null,
+          "url": "https://dallaswindowbutler.com/services/motorized-awnings",
+          "type": "website"
+        },
+        "jsonLdCount": 2,
+        "jsonLdTypes": [
+          "LocalBusiness",
+          "SiteNavigationElement"
+        ],
+        "textLength": 50756
+      },
+      "mobile": {
+        "title": "Motorized Awnings | Dallas Window Butler",
+        "metaDescription": "Custom motorized awnings with expert install, transparent pricing, and lifetime-backed workmanship for Dallas–area homes.",
+        "metaRobots": null,
+        "canonical": "https://dallaswindowbutler.com/services/motorized-awnings",
+        "h1": [
+          "Premium Motorized Awnings For Your DFW Home... Expand Your Living Space Instantly."
+        ],
+        "textLength": 50756
+      },
+      "mobileParity": {
+        "passed": true,
+        "issues": []
+      }
+    },
+    {
+      "url": "http://localhost:3000/services/waterproofing-sealing",
+      "finalUrl": "http://localhost:3000/services/waterproofing-sealing",
+      "statusCode": 200,
+      "robotsAllowed": true,
+      "redirectChain": [],
+      "desktop": {
+        "title": "Waterproofing & Sealing | Dallas Window Butler",
+        "titleLength": 46,
+        "metaDescription": "Custom waterproofing & sealing with expert install, transparent pricing, and lifetime-backed workmanship for Dallas–area homes.",
+        "metaDescriptionLength": 127,
+        "metaRobots": null,
+        "canonical": "https://dallaswindowbutler.com/services/waterproofing-sealing",
+        "h1": [
+          "Expert Waterproofing & Sealing For Your DFW Home... Stop Leaks Before They Cause Damage."
+        ],
+        "h2": [
+          "LifetimeServiceWarranty",
+          "Waterproofing Services",
+          "Why Waterproofing & Sealing",
+          "Our Installation Process",
+          "Got Questions? We've Got Answers.",
+          "Ready for Waterproofing & Sealing?",
+          "Exceptional service and top-quality workmanship."
+        ],
+        "openGraph": {
+          "title": "Waterproofing & Sealing | Dallas Window Butler",
+          "description": "Custom waterproofing & sealing with expert install, transparent pricing, and lifetime-backed workmanship for Dallas–area homes.",
+          "image": null,
+          "url": "https://dallaswindowbutler.com/services/waterproofing-sealing",
+          "type": "website"
+        },
+        "jsonLdCount": 2,
+        "jsonLdTypes": [
+          "LocalBusiness",
+          "SiteNavigationElement"
+        ],
+        "textLength": 50766
+      },
+      "mobile": {
+        "title": "Waterproofing & Sealing | Dallas Window Butler",
+        "metaDescription": "Custom waterproofing & sealing with expert install, transparent pricing, and lifetime-backed workmanship for Dallas–area homes.",
+        "metaRobots": null,
+        "canonical": "https://dallaswindowbutler.com/services/waterproofing-sealing",
+        "h1": [
+          "Expert Waterproofing & Sealing For Your DFW Home... Stop Leaks Before They Cause Damage."
+        ],
+        "textLength": 50766
+      },
+      "mobileParity": {
+        "passed": true,
+        "issues": []
+      }
+    },
+    {
+      "url": "http://localhost:3000/rockwall-windows",
+      "finalUrl": "http://localhost:3000/rockwall-windows",
+      "statusCode": 200,
+      "robotsAllowed": true,
+      "redirectChain": [],
+      "desktop": {
+        "title": "Best Window Replacement in Rockwall, TX | 5-Star Service",
+        "titleLength": 56,
+        "metaDescription": "Looking for Rockwall window replacement? Dallas Window Butler offers energy-efficient vinyl windows, expert glass repair, and a lifetime warranty. 100+ local reviews. Get a firm price today!",
+        "metaDescriptionLength": 190,
+        "metaRobots": null,
+        "canonical": "https://dallaswindowbutler.com/rockwall-windows",
+        "h1": [
+          "Best Window Replacement in Rockwall, TX... Premium Quality, Zero Sales Games."
+        ],
+        "h2": [
+          "LifetimeServiceWarranty",
+          "The Trusted Window Butler for Rockwall Neighborhoods.",
+          "Energy-Efficient Windows for Rockwall Homes",
+          "The Difference Is Clear.",
+          "Expert Glass & IG Unit Repair in Rockwall",
+          "Is This Right For Your Rockwall Home?",
+          "Got Questions? We've Got Answers.",
+          "Don't Wait — Lock in $100 Off Per Window Today",
+          "Exceptional service and top-quality workmanship."
+        ],
+        "openGraph": {
+          "title": "Best Window Replacement in Rockwall, TX | Dallas Window Butler",
+          "description": "Expert window installation and glass repair in Rockwall. Energy-efficient Low-E glass packages and lifetime-backed workmanship. Call for a no-pressure quote!",
+          "image": null,
+          "url": "https://dallaswindowbutler.com/rockwall-windows",
+          "type": "website"
+        },
+        "jsonLdCount": 10,
+        "jsonLdTypes": [
+          "LocalBusiness",
+          "SiteNavigationElement",
+          "WindowInstallation",
+          "Service",
+          "BreadcrumbList",
+          "HowTo",
+          "Review",
+          "FAQPage"
+        ],
+        "textLength": 102398
+      },
+      "mobile": {
+        "title": "Best Window Replacement in Rockwall, TX | 5-Star Service",
+        "metaDescription": "Looking for Rockwall window replacement? Dallas Window Butler offers energy-efficient vinyl windows, expert glass repair, and a lifetime warranty. 100+ local reviews. Get a firm price today!",
+        "metaRobots": null,
+        "canonical": "https://dallaswindowbutler.com/rockwall-windows",
+        "h1": [
+          "Best Window Replacement in Rockwall, TX... Premium Quality, Zero Sales Games."
+        ],
+        "textLength": 102398
+      },
+      "mobileParity": {
+        "passed": true,
+        "issues": []
+      }
+    },
+    {
+      "url": "http://localhost:3000/plano-windows",
+      "finalUrl": "http://localhost:3000/plano-windows",
+      "statusCode": 200,
+      "robotsAllowed": true,
+      "redirectChain": [],
+      "desktop": {
+        "title": "Best Window Replacement in Plano, TX | 5-Star Local Service",
+        "titleLength": 59,
+        "metaDescription": "Looking for Plano window replacement? Dallas Window Butler provides energy-efficient vinyl windows, expert glass repair, and a lifetime warranty. 100+ local reviews. Serving West Plano, Willow Bend & Legacy West. Get a free quote!",
+        "metaDescriptionLength": 230,
+        "metaRobots": null,
+        "canonical": "https://dallaswindowbutler.com/plano-windows",
+        "h1": [
+          "Best Window Replacement in Plano, TX... Premium Quality, Zero Sales Games."
+        ],
+        "h2": [
+          "LifetimeServiceWarranty",
+          "The Trusted Window Butler for Plano Neighborhoods.",
+          "Energy-Efficient Windows for Plano Homes",
+          "The Difference Is Clear.",
+          "Expert Glass & IG Unit Repair in Plano",
+          "Is This Right For Your Plano Home?",
+          "Got Questions? We've Got Answers.",
+          "Don't Wait — Lock in $100 Off Per Window Today",
+          "Exceptional service and top-quality workmanship."
+        ],
+        "openGraph": {
+          "title": "Best Window Replacement in Plano, TX | Dallas Window Butler",
+          "description": "Expert window installation and glass repair in Plano. Energy-efficient Low-E glass packages and lifetime-backed workmanship. Call for a no-pressure quote!",
+          "image": null,
+          "url": "https://dallaswindowbutler.com/plano-windows",
+          "type": "website"
+        },
+        "jsonLdCount": 10,
+        "jsonLdTypes": [
+          "LocalBusiness",
+          "SiteNavigationElement",
+          "WindowInstallation",
+          "Service",
+          "BreadcrumbList",
+          "HowTo",
+          "Review",
+          "FAQPage"
+        ],
+        "textLength": 103203
+      },
+      "mobile": {
+        "title": "Best Window Replacement in Plano, TX | 5-Star Local Service",
+        "metaDescription": "Looking for Plano window replacement? Dallas Window Butler provides energy-efficient vinyl windows, expert glass repair, and a lifetime warranty. 100+ local reviews. Serving West Plano, Willow Bend & Legacy West. Get a free quote!",
+        "metaRobots": null,
+        "canonical": "https://dallaswindowbutler.com/plano-windows",
+        "h1": [
+          "Best Window Replacement in Plano, TX... Premium Quality, Zero Sales Games."
+        ],
+        "textLength": 103203
+      },
+      "mobileParity": {
+        "passed": true,
+        "issues": []
+      }
+    },
+    {
+      "url": "http://localhost:3000/mckinney-windows",
+      "finalUrl": "http://localhost:3000/mckinney-windows",
+      "statusCode": 200,
+      "robotsAllowed": true,
+      "redirectChain": [],
+      "desktop": {
+        "title": "Best Window Replacement in McKinney, TX | 5-Star Local Service",
+        "titleLength": 62,
+        "metaDescription": "Looking for McKinney window replacement? Dallas Window Butler offers energy-efficient vinyl windows, expert glass repair, and a lifetime warranty. 100+ local reviews. Serving Stonebridge Ranch, Adriatica Village & Downtown. Get a free quote!",
+        "metaDescriptionLength": 241,
+        "metaRobots": null,
+        "canonical": "https://dallaswindowbutler.com/mckinney-windows",
+        "h1": [
+          "Best Window Replacement in McKinney, TX... Premium Quality, Zero Sales Games."
+        ],
+        "h2": [
+          "LifetimeServiceWarranty",
+          "The Trusted Window Butler for McKinney Neighborhoods.",
+          "Energy-Efficient Windows for McKinney Homes",
+          "The Difference Is Clear.",
+          "Expert Glass & IG Unit Repair in McKinney",
+          "Is This Right For Your McKinney Home?",
+          "Got Questions? We've Got Answers.",
+          "Don't Wait — Lock in $100 Off Per Window Today",
+          "Exceptional service and top-quality workmanship."
+        ],
+        "openGraph": {
+          "title": "Best Window Replacement in McKinney, TX | Dallas Window Butler",
+          "description": "Expert window installation and glass repair in McKinney. Energy-efficient Low-E glass packages and lifetime-backed workmanship. Call for a no-pressure quote!",
+          "image": null,
+          "url": "https://dallaswindowbutler.com/mckinney-windows",
+          "type": "website"
+        },
+        "jsonLdCount": 10,
+        "jsonLdTypes": [
+          "LocalBusiness",
+          "SiteNavigationElement",
+          "WindowInstallation",
+          "Service",
+          "BreadcrumbList",
+          "HowTo",
+          "Review",
+          "FAQPage"
+        ],
+        "textLength": 103768
+      },
+      "mobile": {
+        "title": "Best Window Replacement in McKinney, TX | 5-Star Local Service",
+        "metaDescription": "Looking for McKinney window replacement? Dallas Window Butler offers energy-efficient vinyl windows, expert glass repair, and a lifetime warranty. 100+ local reviews. Serving Stonebridge Ranch, Adriatica Village & Downtown. Get a free quote!",
+        "metaRobots": null,
+        "canonical": "https://dallaswindowbutler.com/mckinney-windows",
+        "h1": [
+          "Best Window Replacement in McKinney, TX... Premium Quality, Zero Sales Games."
+        ],
+        "textLength": 103768
+      },
+      "mobileParity": {
+        "passed": true,
+        "issues": []
+      }
+    },
+    {
+      "url": "http://localhost:3000/allen-windows",
+      "finalUrl": "http://localhost:3000/allen-windows",
+      "statusCode": 200,
+      "robotsAllowed": true,
+      "redirectChain": [],
+      "desktop": {
+        "title": "Best Window Replacement in Allen, TX | 5-Star Local Service",
+        "titleLength": 59,
+        "metaDescription": "Looking for Allen window replacement? Dallas Window Butler provides energy-efficient vinyl windows, expert glass repair, and a lifetime warranty. 100+ local reviews. Serving Twin Creeks, Watters Creek & Celebration Park. Get a free quote!",
+        "metaDescriptionLength": 238,
+        "metaRobots": null,
+        "canonical": "https://dallaswindowbutler.com/allen-windows",
+        "h1": [
+          "Best Window Replacement in Allen, TX... Premium Quality, Zero Sales Games."
+        ],
+        "h2": [
+          "LifetimeServiceWarranty",
+          "The Trusted Window Butler for Allen Neighborhoods.",
+          "Energy-Efficient Windows for Allen Homes",
+          "The Difference Is Clear.",
+          "Expert Glass & IG Unit Repair in Allen",
+          "Is This Right For Your Allen Home?",
+          "Got Questions? We've Got Answers.",
+          "Don't Wait — Lock in $100 Off Per Window Today",
+          "Exceptional service and top-quality workmanship."
+        ],
+        "openGraph": {
+          "title": "Best Window Replacement in Allen, TX | Dallas Window Butler",
+          "description": "Expert window installation and glass repair in Allen. Energy-efficient Low-E glass packages and lifetime-backed workmanship. Call for a no-pressure quote!",
+          "image": null,
+          "url": "https://dallaswindowbutler.com/allen-windows",
+          "type": "website"
+        },
+        "jsonLdCount": 10,
+        "jsonLdTypes": [
+          "LocalBusiness",
+          "SiteNavigationElement",
+          "WindowInstallation",
+          "Service",
+          "BreadcrumbList",
+          "HowTo",
+          "Review",
+          "FAQPage"
+        ],
+        "textLength": 103515
+      },
+      "mobile": {
+        "title": "Best Window Replacement in Allen, TX | 5-Star Local Service",
+        "metaDescription": "Looking for Allen window replacement? Dallas Window Butler provides energy-efficient vinyl windows, expert glass repair, and a lifetime warranty. 100+ local reviews. Serving Twin Creeks, Watters Creek & Celebration Park. Get a free quote!",
+        "metaRobots": null,
+        "canonical": "https://dallaswindowbutler.com/allen-windows",
+        "h1": [
+          "Best Window Replacement in Allen, TX... Premium Quality, Zero Sales Games."
+        ],
+        "textLength": 103515
+      },
+      "mobileParity": {
+        "passed": true,
+        "issues": []
+      }
+    },
+    {
+      "url": "http://localhost:3000/north-richardson-windows",
+      "finalUrl": "http://localhost:3000/north-richardson-windows",
+      "statusCode": 200,
+      "robotsAllowed": true,
+      "redirectChain": [],
+      "desktop": {
+        "title": "Best Window Replacement in North Richardson, TX | 5-Star Service",
+        "titleLength": 64,
+        "metaDescription": "Looking for North Richardson window replacement? Dallas Window Butler provides energy-efficient vinyl windows, expert glass repair, and a lifetime warranty. 100+ local reviews. Serving CityLine, Canyon Creek & Richardson Heights. Get a free quote!",
+        "metaDescriptionLength": 247,
+        "metaRobots": null,
+        "canonical": "https://dallaswindowbutler.com/north-richardson-windows",
+        "h1": [
+          "Best Window Replacement in North Richardson, TX... Premium Quality, Zero Sales Games."
+        ],
+        "h2": [
+          "LifetimeServiceWarranty",
+          "The Trusted Window Butler for North Richardson Neighborhoods.",
+          "Energy-Efficient Windows for North Richardson Homes",
+          "The Difference Is Clear.",
+          "Expert Glass & IG Unit Repair in North Richardson",
+          "Is This Right For Your North Richardson Home?",
+          "Got Questions? We've Got Answers.",
+          "Don't Wait — Lock in $100 Off Per Window Today",
+          "Exceptional service and top-quality workmanship."
+        ],
+        "openGraph": {
+          "title": "Best Window Replacement in North Richardson, TX | Dallas Window Butler",
+          "description": "Expert window installation and glass repair in North Richardson. Energy-efficient Low-E glass packages and lifetime-backed workmanship. Call for a no-pressure quote!",
+          "image": null,
+          "url": "https://dallaswindowbutler.com/north-richardson-windows",
+          "type": "website"
+        },
+        "jsonLdCount": 10,
+        "jsonLdTypes": [
+          "LocalBusiness",
+          "SiteNavigationElement",
+          "WindowInstallation",
+          "Service",
+          "BreadcrumbList",
+          "HowTo",
+          "Review",
+          "FAQPage"
+        ],
+        "textLength": 104373
+      },
+      "mobile": {
+        "title": "Best Window Replacement in North Richardson, TX | 5-Star Service",
+        "metaDescription": "Looking for North Richardson window replacement? Dallas Window Butler provides energy-efficient vinyl windows, expert glass repair, and a lifetime warranty. 100+ local reviews. Serving CityLine, Canyon Creek & Richardson Heights. Get a free quote!",
+        "metaRobots": null,
+        "canonical": "https://dallaswindowbutler.com/north-richardson-windows",
+        "h1": [
+          "Best Window Replacement in North Richardson, TX... Premium Quality, Zero Sales Games."
+        ],
+        "textLength": 104373
+      },
+      "mobileParity": {
+        "passed": true,
+        "issues": []
+      }
+    },
+    {
+      "url": "http://localhost:3000/testimonials",
+      "finalUrl": "http://localhost:3000/testimonials",
+      "statusCode": 200,
+      "robotsAllowed": true,
+      "redirectChain": [],
+      "desktop": {
+        "title": "Customer Testimonials | Dallas Window Butler",
+        "titleLength": 44,
+        "metaDescription": "Read real reviews from satisfied Dallas-area homeowners who trusted Dallas Window Butler for expert window, glass, and door services.",
+        "metaDescriptionLength": 133,
+        "metaRobots": null,
+        "canonical": "https://dallaswindowbutler.com/testimonials",
+        "h1": [
+          "What DFW Homeowners Are Saying... Real Reviews, Real Results."
+        ],
+        "h2": [
+          "Featured Reviews",
+          "Have we served your home?",
+          "Ready to Join Our Satisfied Customers?",
+          "Exceptional service and top-quality workmanship."
+        ],
+        "openGraph": {
+          "title": "Customer Testimonials | Dallas Window Butler",
+          "description": "Real feedback from satisfied clients who trusted Dallas Window Butler for expert window, glass, and door services.",
+          "image": null,
+          "url": "https://dallaswindowbutler.com/testimonials",
+          "type": "website"
+        },
+        "jsonLdCount": 2,
+        "jsonLdTypes": [
+          "LocalBusiness",
+          "SiteNavigationElement"
+        ],
+        "textLength": 77240
+      },
+      "mobile": {
+        "title": "Customer Testimonials | Dallas Window Butler",
+        "metaDescription": "Read real reviews from satisfied Dallas-area homeowners who trusted Dallas Window Butler for expert window, glass, and door services.",
+        "metaRobots": null,
+        "canonical": "https://dallaswindowbutler.com/testimonials",
+        "h1": [
+          "What DFW Homeowners Are Saying... Real Reviews, Real Results."
+        ],
+        "textLength": 77240
+      },
+      "mobileParity": {
+        "passed": true,
+        "issues": []
+      }
+    },
+    {
+      "url": "http://localhost:3000/blog",
+      "finalUrl": "http://localhost:3000/blog",
+      "statusCode": 200,
+      "robotsAllowed": true,
+      "redirectChain": [],
+      "desktop": {
+        "title": "Dallas Window Butler Blog | Expert Window Tips & Home Insights",
+        "titleLength": 62,
+        "metaDescription": "Stay informed with Dallas Window Butler. Discover tips, guides, and updates on windows, doors, and home efficiency from trusted local pros.",
+        "metaDescriptionLength": 139,
+        "metaRobots": null,
+        "canonical": "https://dallaswindowbutler.com/blog",
+        "h1": [
+          "Dallas Window Butler Blog"
+        ],
+        "h2": [
+          "Recent Posts",
+          "Ready to Upgrade Your Home?",
+          "Exceptional service and top-quality workmanship."
+        ],
+        "openGraph": {
+          "title": "Dallas Window Butler Blog | Expert Window Tips & Home Insights",
+          "description": "Discover tips, guides, and updates on windows, doors, and home efficiency from trusted local pros.",
+          "image": null,
+          "url": "https://dallaswindowbutler.com/blog",
+          "type": "website"
+        },
+        "jsonLdCount": 2,
+        "jsonLdTypes": [
+          "LocalBusiness",
+          "SiteNavigationElement"
+        ],
+        "textLength": 41770
+      },
+      "mobile": {
+        "title": "Dallas Window Butler Blog | Expert Window Tips & Home Insights",
+        "metaDescription": "Stay informed with Dallas Window Butler. Discover tips, guides, and updates on windows, doors, and home efficiency from trusted local pros.",
+        "metaRobots": null,
+        "canonical": "https://dallaswindowbutler.com/blog",
+        "h1": [
+          "Dallas Window Butler Blog"
+        ],
+        "textLength": 41770
+      },
+      "mobileParity": {
+        "passed": true,
+        "issues": []
+      }
+    },
+    {
+      "url": "http://localhost:3000/about",
+      "finalUrl": "http://localhost:3000/about",
+      "statusCode": 404,
+      "robotsAllowed": true,
+      "redirectChain": [],
+      "desktop": {
+        "title": null,
+        "titleLength": 0,
+        "metaDescription": null,
+        "metaDescriptionLength": 0,
+        "metaRobots": null,
+        "canonical": null,
+        "h1": [],
+        "h2": [],
+        "openGraph": {},
+        "jsonLdCount": 0,
+        "jsonLdTypes": [],
+        "textLength": 0
+      },
+      "mobile": {
+        "title": null,
+        "metaDescription": null,
+        "metaRobots": null,
+        "canonical": null,
+        "h1": [],
+        "textLength": 0
+      },
+      "mobileParity": {
+        "passed": true,
+        "issues": []
+      }
+    },
+    {
+      "url": "http://localhost:3000/book",
+      "finalUrl": "http://localhost:3000/book",
+      "statusCode": 200,
+      "robotsAllowed": true,
+      "redirectChain": [],
+      "desktop": {
+        "title": "Book Your Free Quote - Dallas Window Butler",
+        "titleLength": 43,
+        "metaDescription": "Schedule your free in-home consultation for window and door replacement in Rockwall, TX.",
+        "metaDescriptionLength": 88,
+        "metaRobots": null,
+        "canonical": null,
+        "h1": [
+          "Get Your Free Quote"
+        ],
+        "h2": [
+          "Exceptional service and top-quality workmanship."
+        ],
+        "openGraph": {
+          "title": null,
+          "description": null,
+          "image": null,
+          "url": null,
+          "type": null
+        },
+        "jsonLdCount": 2,
+        "jsonLdTypes": [
+          "LocalBusiness",
+          "SiteNavigationElement"
+        ],
+        "textLength": 23419
+      },
+      "mobile": {
+        "title": "Book Your Free Quote - Dallas Window Butler",
+        "metaDescription": "Schedule your free in-home consultation for window and door replacement in Rockwall, TX.",
+        "metaRobots": null,
+        "canonical": null,
+        "h1": [
+          "Get Your Free Quote"
+        ],
+        "textLength": 23419
+      },
+      "mobileParity": {
+        "passed": true,
+        "issues": []
+      }
+    },
+    {
+      "url": "http://localhost:3000/services/glass-repair",
+      "finalUrl": "http://localhost:3000/services/glass-repair",
+      "statusCode": 200,
+      "robotsAllowed": true,
+      "redirectChain": [],
+      "desktop": {
+        "title": "Glass & IG Unit Repair Services | Dallas Window Butler",
+        "titleLength": 54,
+        "metaDescription": "Professional glass and insulated glass (IG) unit repair services in Dallas-Fort Worth. Cost-effective alternative to full window replacement. Expert installation.",
+        "metaDescriptionLength": 162,
+        "metaRobots": null,
+        "canonical": "https://dallaswindowbutler.com/services/glass-repair",
+        "h1": [
+          "Expert Glass & IG Unit Repair For Your DFW Home... Restore Clarity Without The Full Cost."
+        ],
+        "h2": [
+          "LifetimeServiceWarranty",
+          "Glass Repair Services",
+          "Why Choose Glass Repair Over Replacement?",
+          "Got Questions? We've Got Answers.",
+          "Need Glass or IG Unit Repair?",
+          "Exceptional service and top-quality workmanship."
+        ],
+        "openGraph": {
+          "title": "Glass & IG Unit Repair Services | Dallas Window Butler",
+          "description": "Professional glass repair and IG unit replacement with warranty",
+          "image": null,
+          "url": "https://dallaswindowbutler.com/services/glass-repair",
+          "type": "website"
+        },
+        "jsonLdCount": 2,
+        "jsonLdTypes": [
+          "LocalBusiness",
+          "SiteNavigationElement"
+        ],
+        "textLength": 47323
+      },
+      "mobile": {
+        "title": "Glass & IG Unit Repair Services | Dallas Window Butler",
+        "metaDescription": "Professional glass and insulated glass (IG) unit repair services in Dallas-Fort Worth. Cost-effective alternative to full window replacement. Expert installation.",
+        "metaRobots": null,
+        "canonical": "https://dallaswindowbutler.com/services/glass-repair",
+        "h1": [
+          "Expert Glass & IG Unit Repair For Your DFW Home... Restore Clarity Without The Full Cost."
+        ],
+        "textLength": 47323
+      },
+      "mobileParity": {
+        "passed": true,
+        "issues": []
+      }
+    },
+    {
+      "url": "http://localhost:3000/privacy",
+      "finalUrl": "http://localhost:3000/privacy",
+      "statusCode": 404,
+      "robotsAllowed": true,
+      "redirectChain": [],
+      "desktop": {
+        "title": null,
+        "titleLength": 0,
+        "metaDescription": null,
+        "metaDescriptionLength": 0,
+        "metaRobots": null,
+        "canonical": null,
+        "h1": [],
+        "h2": [],
+        "openGraph": {},
+        "jsonLdCount": 0,
+        "jsonLdTypes": [],
+        "textLength": 0
+      },
+      "mobile": {
+        "title": null,
+        "metaDescription": null,
+        "metaRobots": null,
+        "canonical": null,
+        "h1": [],
+        "textLength": 0
+      },
+      "mobileParity": {
+        "passed": true,
+        "issues": []
+      }
+    }
+  ],
+  "duplicates": {
+    "titles": [
+      {
+        "value": "Best Window Replacement Company | Dallas Window Butler",
+        "urls": [
+          "http://localhost:3000",
+          "http://localhost:3000/services/glass-ig-repair"
+        ]
+      }
+    ],
+    "metaDescriptions": [
+      {
+        "value": "Dallas Window Butler offers the best window replacement and glass/IG unit repair in Rockwall & nearby cities. Energy-efficient windows, expert installation, and a lifetime workmanship warranty. Get a free quote today!",
+        "urls": [
+          "http://localhost:3000",
+          "http://localhost:3000/services/glass-ig-repair"
+        ]
+      }
+    ]
+  },
+  "structuredData": {
+    "totalSchemas": 80,
+    "typeBreakdown": {
+      "LocalBusiness": 19,
+      "SiteNavigationElement": 18,
+      "Organization": 1,
+      "FAQPage": 6,
+      "Service": 6,
+      "WindowInstallation": 5,
+      "BreadcrumbList": 5,
+      "HowTo": 5,
+      "Review": 15
+    }
+  },
+  "generatedSchemas": {
+    "totalGenerated": 14,
+    "types": [
+      "service-home",
+      "service-window-replacement",
+      "service-glass-ig-repair",
+      "service-patio-doors",
+      "service-solar-screens",
+      "service-blinds-shades",
+      "service-motorized-awnings",
+      "service-waterproofing-sealing",
+      "service-testimonials",
+      "service-book",
+      "service-glass-repair",
+      "breadcrumb-template",
+      "faq-template",
+      "website"
+    ]
+  },
+  "internalLinks": [
+    "http://localhost:3000/",
+    "http://localhost:3000/services/window-replacement",
+    "http://localhost:3000/services/glass-ig-repair",
+    "http://localhost:3000/services/patio-doors",
+    "http://localhost:3000/services/solar-screens",
+    "http://localhost:3000/services/blinds-shades",
+    "http://localhost:3000/services/motorized-patio-shades",
+    "http://localhost:3000/services/motorized-awnings",
+    "http://localhost:3000/services/waterproofing-sealing",
+    "http://localhost:3000/rockwall-windows",
+    "http://localhost:3000/plano-windows",
+    "http://localhost:3000/mckinney-windows",
+    "http://localhost:3000/allen-windows",
+    "http://localhost:3000/north-richardson-windows",
+    "http://localhost:3000/testimonials",
+    "http://localhost:3000/blog",
+    "http://localhost:3000/about",
+    "http://localhost:3000/book",
+    "http://localhost:3000/services/glass-repair",
+    "http://localhost:3000/privacy",
+    "http://localhost:3000/terms",
+    "http://localhost:3000/blog/5-signs-replace-windows",
+    "http://localhost:3000/blog/energy-efficient-glass-texas",
+    "http://localhost:3000/blog/understanding-low-e-glass",
+    "http://localhost:3000/blog/vinyl-vs-aluminum-windows",
+    "http://localhost:3000/blog/patio-door-upgrades-home-value",
+    "http://localhost:3000/blog/dallas-window-butler-difference"
+  ],
+  "externalLinks": [
+    "https://www.facebook.com/share/1BWUJHAgi2",
+    "https://www.instagram.com/dallaswindowbutler?igsh=MW9ieDY2eDE1MDhjMg%3D%3D",
+    "https://maps.app.goo.gl/ZmVJUtp4y1rEJQcp6",
+    "https://clienthub.getjobber.com/client_hubs/765818e4-20d7-4c73-8ea5-113760712b29/public/work_request/new?source=social_media"
+  ]
+}
