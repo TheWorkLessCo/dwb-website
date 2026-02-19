@@ -2,6 +2,10 @@ import type { Metadata } from "next"
 import { blogPosts } from "./blogPosts"
 import { BlogPostContent } from "./BlogPostContent"
 
+export function generateStaticParams() {
+  return Object.keys(blogPosts).map((slug) => ({ slug }))
+}
+
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const post = blogPosts[params.slug]
 
