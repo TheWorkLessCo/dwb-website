@@ -5,6 +5,7 @@ import { Star, Check, Shield, Sun, Thermometer, Eye, Zap, Quote, DollarSign, Pal
 import Image from "next/image"
 import { WarrantyCard } from "@/components/warranty-card"
 import ServiceFAQ from "@/components/ServiceFAQ"
+import ImageBridge from "@/components/ImageBridge"
 import { ResultsBar } from "@/components/results-bar"
 import { CTA_CONFIG } from "@/lib/cta"
 
@@ -580,6 +581,9 @@ export default function SolarScreensPage() {
           </div>
         </div>
       </section>
+
+      {/* ImageBridge - above FAQ */}
+      <ImageBridge />
 
       {/* FAQ Section */}
       <ServiceFAQ serviceName="Solar Screens" />

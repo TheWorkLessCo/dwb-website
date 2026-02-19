@@ -7,29 +7,29 @@ interface ImageBridgeProps {
 // City-specific images mapping
 const cityImages: Record<string, { src: string; alt: string }> = {
   rockwall: {
-    src: "/img/rockwall-install-gallery.jpg",
+    src: "https://dallaswindowbutler.b-cdn.net/why-choose-vinyl-YZ9xjaKZN0F0KXed.avif",
     alt: "Window installation in Rockwall, TX — lakefront home project",
   },
   mckinney: {
-    src: "/img/mckinney-install-gallery.jpg",
+    src: "https://dallaswindowbutler.b-cdn.net/why-choose-vinyl-YZ9xjaKZN0F0KXed.avif",
     alt: "Window replacement in McKinney, TX — historic area project",
   },
   allen: {
-    src: "/img/allen-install-gallery.jpg",
+    src: "https://dallaswindowbutler.b-cdn.net/why-choose-vinyl-YZ9xjaKZN0F0KXed.avif",
     alt: "Window installation in Allen, TX — Watters Creek area project",
   },
   plano: {
-    src: "/img/plano-install-gallery.jpg",
+    src: "https://dallaswindowbutler.b-cdn.net/why-choose-vinyl-YZ9xjaKZN0F0KXed.avif",
     alt: "Window replacement in Plano, TX — West Plano home project",
   },
   "north-richardson": {
-    src: "/img/north-richardson-install-gallery.jpg",
+    src: "https://dallaswindowbutler.b-cdn.net/why-choose-vinyl-YZ9xjaKZN0F0KXed.avif",
     alt: "Window installation in North Richardson, TX — CityLine area project",
   },
 }
 
 const defaultImage = {
-  src: "/img/reviews-bridge.jpg",
+  src: "https://dallaswindowbutler.b-cdn.net/why-choose-vinyl-YZ9xjaKZN0F0KXed.avif",
   alt: "Dallas Window Butler project gallery — real install example",
 }
 

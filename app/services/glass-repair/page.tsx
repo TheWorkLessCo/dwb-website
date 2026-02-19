@@ -1,10 +1,11 @@
 import type { Metadata } from "next"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Star, Check, Shield, Wrench, Zap, DollarSign, Droplets, Eye, Clock, Quote, Layers, Thermometer, Calendar, Ruler, CheckCircle, Sparkles } from "lucide-react"
+import { Star, Check, Shield, Wrench, Zap, DollarSign, Droplets, Eye, Clock, Quote, Calendar, Ruler, CheckCircle, Sparkles } from "lucide-react"
 import Image from "next/image"
 import { WarrantyCard } from "@/components/warranty-card"
 import ServiceFAQ from "@/components/ServiceFAQ"
+import ImageBridge from "@/components/ImageBridge"
 import { ResultsBar } from "@/components/results-bar"
 import { CTA_CONFIG } from "@/lib/cta"
 
@@ -116,7 +117,7 @@ export default function GlassRepairPage() {
           itemOffered: {
             "@type": "Service",
             name: "Emergency Glass Repair",
-            description: "Same-day emergency glass replacement services",
+            description: "Next-day emergency glass replacement services",
           },
         },
       ],
@@ -128,7 +129,7 @@ export default function GlassRepairPage() {
       {/* Hero Section */}
       <section
         className="relative min-h-[600px] bg-cover bg-center bg-no-repeat py-12 lg:py-20"
-        style={{ backgroundImage: "url('/images/glass-repair-hero-bg.jpg')" }}
+        style={{ backgroundImage: "url('https://dallaswindowbutler.b-cdn.net/aeris-double-hung-picture-white-cottage-grid-1-Yan1My6PXrHX0jzJ.jpg')" }}
       >
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-black/35" />
@@ -312,7 +313,7 @@ export default function GlassRepairPage() {
               <CardContent className="p-6">
                 <DollarSign className="h-12 w-12 text-brand-blue mx-auto mb-4" />
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Emergency Service</h3>
-                <p className="text-gray-600">Same-day emergency glass repair when you need it most</p>
+                <p className="text-gray-600">Next-day emergency glass repair when you need it most</p>
               </CardContent>
             </Card>
           </div>
@@ -460,71 +461,99 @@ export default function GlassRepairPage() {
         </div>
       </section>
 
-      {/* Technical Features Section */}
-      <section className="py-16 lg:py-20 bg-slate-50">
-        <div className="container mx-auto px-4 max-w-6xl">
+      {/* Technical Features Section - Engineered For Texas Heat */}
+      <section className="py-20 bg-[#049bf2]">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          {/* Section Headlines */}
           <div className="text-center mb-12">
-            <span className="inline-block px-4 py-1.5 mb-4 text-sm font-medium text-[#049BF2] bg-[#049BF2]/10 rounded-full">
-              Quality Glass
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              What Goes Into Your New Glass
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+              Engineered Specifically For The Texas Heat.
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              We don&apos;t just replace glass—we upgrade your windows with modern, energy-efficient technology.
+            <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto">
+              We don&apos;t just replace glass. We install high-performance thermal barriers.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {/* Feature 1 */}
-            <div className="flex gap-4 p-6 bg-white rounded-xl border border-gray-100">
-              <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                <Layers className="w-6 h-6 text-blue-600" />
-              </div>
-              <div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">Insulated Glass Units (IGU)</h3>
-                <p className="text-gray-600">
-                  Two panes of glass with an air-tight seal and spacer system. This creates a thermal barrier that keeps your home comfortable year-round.
-                </p>
-              </div>
+          {/* Horizontal Layout: SHGC Image + 2x2 Feature Grid */}
+          <div className="flex flex-col lg:flex-row gap-8">
+            {/* SHGC Diagram - Left Side */}
+            <div className="lg:w-2/5 relative rounded-xl overflow-hidden shadow-lg min-h-[300px] lg:min-h-0">
+              <Image
+                src="https://dallaswindowbutler.b-cdn.net/Solar%20Heat%20Gain%20Coefficient%20(SHGC).jpg"
+                alt="Solar Heat Gain Coefficient (SHGC) diagram showing how energy-efficient windows reduce heat transfer"
+                fill
+                className="object-cover"
+              />
             </div>
 
-            {/* Feature 2 */}
-            <div className="flex gap-4 p-6 bg-white rounded-xl border border-gray-100">
-              <div className="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center">
-                <Thermometer className="w-6 h-6 text-orange-600" />
+            {/* 2x2 Feature Grid - Right Side */}
+            <div className="lg:w-3/5 grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* CARD 1 - IGU */}
+              <div className="bg-white border-2 border-gray-200 rounded-xl p-6 lg:p-8 hover:border-[#049BF2] hover:shadow-lg transition-all duration-300 group">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-7 h-7 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                    </svg>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-[#0a2540] mb-2">Insulated Glass Units (IGU)</h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      Two panes of glass with an air-tight seal and spacer system. This creates a thermal barrier that keeps your home comfortable year-round.
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">Low-E Coating Available</h3>
-                <p className="text-gray-600">
-                  Upgrade to Low-E glass that reflects heat while letting light through. Perfect for Texas summers—keeps your home cooler without darkening your view.
-                </p>
-              </div>
-            </div>
 
-            {/* Feature 3 */}
-            <div className="flex gap-4 p-6 bg-white rounded-xl border border-gray-100">
-              <div className="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
-                <Shield className="w-6 h-6 text-purple-600" />
+              {/* CARD 2 - Low-E */}
+              <div className="bg-white border-2 border-gray-200 rounded-xl p-6 lg:p-8 hover:border-[#049BF2] hover:shadow-lg transition-all duration-300 group">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-orange-100 to-yellow-100 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-7 h-7 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-[#0a2540] mb-2">Low-E Coating Available</h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      Upgrade to Low-E glass that reflects heat while letting light through. Perfect for Texas summers—keeps your home cooler without darkening your view.
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">Argon Gas Fill</h3>
-                <p className="text-gray-600">
-                  The space between panes is filled with Argon gas for superior insulation. Denser than air, it significantly reduces heat transfer through your windows.
-                </p>
-              </div>
-            </div>
 
-            {/* Feature 4 */}
-            <div className="flex gap-4 p-6 bg-white rounded-xl border border-gray-100">
-              <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-                <Zap className="w-6 h-6 text-green-600" />
+              {/* CARD 3 - Argon Gas */}
+              <div className="bg-white border-2 border-gray-200 rounded-xl p-6 lg:p-8 hover:border-[#049BF2] hover:shadow-lg transition-all duration-300 group">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-purple-100 to-violet-100 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-7 h-7 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-[#0a2540] mb-2">Argon Gas Fill</h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      The space between panes is filled with Argon gas for superior insulation. Denser than air, it significantly reduces heat transfer through your windows.
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">Warm-Edge Spacer System</h3>
-                <p className="text-gray-600">
-                  Modern spacer technology reduces condensation and improves energy efficiency at the glass edge—the weakest point of traditional IG units.
-                </p>
+
+              {/* CARD 4 - Warm-Edge Spacer */}
+              <div className="bg-white border-2 border-gray-200 rounded-xl p-6 lg:p-8 hover:border-[#049BF2] hover:shadow-lg transition-all duration-300 group">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-green-100 to-emerald-100 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-7 h-7 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-[#0a2540] mb-2">Warm-Edge Spacer System</h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      Modern spacer technology reduces condensation and improves energy efficiency at the glass edge—the weakest point of traditional IG units.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -614,6 +643,9 @@ export default function GlassRepairPage() {
           </div>
         </div>
       </section>
+
+      {/* ImageBridge - above FAQ */}
+      <ImageBridge />
 
       {/* FAQ Section */}
       <ServiceFAQ serviceName="Glass / IG Unit Repair" />

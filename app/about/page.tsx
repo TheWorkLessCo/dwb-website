@@ -235,8 +235,8 @@ export default function AboutPage() {
               <div className="relative">
                 <div className="aspect-[4/5] relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
                   <Image
-                    src="/images/owner-portrait.jpg"
-                    alt="Dallas Window Butler team member in branded shirt"
+                    src="https://dallaswindowbutler.b-cdn.net/meetus.png"
+                    alt="Dallas Window Butler team"
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 50vw"

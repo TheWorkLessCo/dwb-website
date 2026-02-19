@@ -274,7 +274,7 @@ export function CitySeoPage({ cityData, customHeadings }: CitySeoPageProps) {
       {/* Hero Section */}
       <section
         className={
-          cityName === "Rockwall" || cityName === "Allen"
+          cityName === "Rockwall" || cityName === "Allen" || cityName === "Plano" || cityName === "McKinney"
             ? "relative py-12 lg:py-20 min-h-[600px] flex items-center"
             : "bg-gradient-to-br from-slate-50 to-white py-12 lg:py-20"
         }
@@ -293,10 +293,24 @@ export function CitySeoPage({ cityData, customHeadings }: CitySeoPageProps) {
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
               }
-              : undefined
+              : cityName === "Plano"
+                ? {
+                  backgroundImage: "url('https://dallaswindowbutler.b-cdn.net/white-endure-slider-window_flat-colonial-internal-grids-YKb31KBqVNu1plq9.jpg')",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
+                }
+                : cityName === "McKinney"
+                  ? {
+                    backgroundImage: "url('https://dallaswindowbutler.b-cdn.net/Mckinney%20Home.jpg')",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                  }
+                  : undefined
         }
       >
-        {(cityName === "Rockwall" || cityName === "Allen") && <div className="absolute inset-0 bg-black/35" />}
+        {(cityName === "Rockwall" || cityName === "Allen" || cityName === "Plano" || cityName === "McKinney") && <div className="absolute inset-0 bg-black/35" />}
 
         <div className="container mx-auto px-4 max-w-7xl relative z-10">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -658,12 +672,12 @@ export function CitySeoPage({ cityData, customHeadings }: CitySeoPageProps) {
       <ComparisonEngine />
 
       {/* Testimonials */}
-      <section className="py-16">
+      <section className="py-16 bg-[#049bf2]">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">{h2Headings[1]}</h2>
+            <h2 className="text-3xl font-bold text-white mb-4">{h2Headings[1]}</h2>
             {(cityName === "Rockwall" || customHeadings?.h2s?.[1]?.includes("Glass")) && (
-              <p className="text-gray-600 text-lg mb-8">
+              <p className="text-white/80 text-lg mb-8">
                 Replace failed insulated glass units while keeping your existing frames
               </p>
             )}
@@ -693,9 +707,6 @@ export function CitySeoPage({ cityData, customHeadings }: CitySeoPageProps) {
       {cityData.projectShowcases && cityData.projectShowcases.length > 0 && (
         <CityProjectShowcase projects={cityData.projectShowcases} cityName={cityName} />
       )}
-
-      {/* ImageBridge between testimonials and FAQ */}
-      <ImageBridge citySlug={cityData.slug} />
 
       {/* Right For You Tiles */}
       <section className="py-16">
@@ -779,6 +790,9 @@ export function CitySeoPage({ cityData, customHeadings }: CitySeoPageProps) {
           </div>
         </div>
       </section>
+
+      {/* ImageBridge - above FAQ */}
+      <ImageBridge citySlug={cityData.slug} />
 
       {/* FAQ Section */}
       <ModernFAQ cityFaqs={cityData.cityFaqs} />

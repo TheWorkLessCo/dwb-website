@@ -1,10 +1,11 @@
 import type { Metadata } from "next"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Star, Check, Shield, Sun, Droplets, XCircle, Quote, Thermometer, Wind, Volume2, Calendar, Ruler, CheckCircle, Sparkles } from "lucide-react"
+import { Star, Check, Shield, Sun, Droplets, XCircle, Quote, Calendar, Ruler, CheckCircle, Sparkles } from "lucide-react"
 import Image from "next/image"
 import { WarrantyCard } from "@/components/warranty-card"
 import ServiceFAQ from "@/components/ServiceFAQ"
+import ImageBridge from "@/components/ImageBridge"
 import { ResultsBar } from "@/components/results-bar"
 import { CTA_CONFIG } from "@/lib/cta"
 
@@ -131,7 +132,7 @@ export default function WindowReplacementPage() {
       <section
         className="relative py-12 lg:py-20 min-h-[600px] flex items-center"
         style={{
-          backgroundImage: "url('/images/window-replacement-hero-bg.jpg')",
+          backgroundImage: "url('https://dallaswindowbutler.b-cdn.net/Endure-DH-in-White-with-Cottage-Grids_DSC3678.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -565,71 +566,100 @@ export default function WindowReplacementPage() {
         </div>
       </section>
 
-      {/* Technical Features Section */}
-      <section className="py-16 lg:py-20 bg-white">
-        <div className="container mx-auto px-4 max-w-6xl">
+      {/* Technical Features Section - Engineered For Texas Heat */}
+      <section className="py-20 bg-[#049bf2]">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          {/* Section Headlines */}
           <div className="text-center mb-12">
-            <span className="inline-block px-4 py-1.5 mb-4 text-sm font-medium text-[#049BF2] bg-[#049BF2]/10 rounded-full">
-              Built for Texas
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Engineered for the Texas Heat
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+              Engineered Specifically For The Texas Heat.
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Every window we install is specifically designed to handle North Texas temperatures.
+            <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto">
+              We don&apos;t just install windows. We install high-performance thermal barriers.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {/* Feature 1 */}
-            <div className="flex gap-4 p-6 bg-slate-50 rounded-xl">
-              <div className="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center">
-                <Thermometer className="w-6 h-6 text-orange-600" />
-              </div>
-              <div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">Low-E 366 Glass Coating</h3>
-                <p className="text-gray-600">
-                  Reflects 95% of the sun&apos;s UV rays, keeping your rooms cool and preventing furniture fade. Think of it as sunscreen for your home.
-                </p>
-              </div>
+          {/* Horizontal Layout: SHGC Image + 2x2 Feature Grid */}
+          <div className="flex flex-col lg:flex-row gap-8">
+            {/* SHGC Diagram - Left Side */}
+            <div className="lg:w-2/5 relative rounded-xl overflow-hidden shadow-lg min-h-[300px] lg:min-h-0">
+              <Image
+                src="https://dallaswindowbutler.b-cdn.net/Solar%20Heat%20Gain%20Coefficient%20(SHGC).jpg"
+                alt="Solar Heat Gain Coefficient (SHGC) diagram showing how energy-efficient windows reduce heat transfer"
+                fill
+                className="object-cover"
+              />
             </div>
 
-            {/* Feature 2 */}
-            <div className="flex gap-4 p-6 bg-slate-50 rounded-xl">
-              <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                <Wind className="w-6 h-6 text-blue-600" />
+            {/* 2x2 Feature Grid - Right Side */}
+            <div className="lg:w-3/5 grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* CARD 1 - Low-E Glass */}
+              <div className="bg-white border-2 border-gray-200 rounded-xl p-6 lg:p-8 hover:border-[#049BF2] hover:shadow-lg transition-all duration-300 group">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-orange-100 to-yellow-100 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-7 h-7 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-[#0a2540] mb-2">Low-E 366 Glass Coating</h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      Think of this as transparent sunscreen for your house. It reflects 95% of the sun&apos;s damaging UV rays, keeping your rooms cool and preventing your furniture from fading.
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">Argon Gas Fill</h3>
-                <p className="text-gray-600">
-                  The space between glass panes is filled with Argon gas—denser than air—creating an invisible thermal blanket that keeps conditioned air inside.
-                </p>
-              </div>
-            </div>
 
-            {/* Feature 3 */}
-            <div className="flex gap-4 p-6 bg-slate-50 rounded-xl">
-              <div className="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
-                <Shield className="w-6 h-6 text-purple-600" />
+              {/* CARD 2 - Argon Gas */}
+              <div className="bg-white border-2 border-gray-200 rounded-xl p-6 lg:p-8 hover:border-[#049BF2] hover:shadow-lg transition-all duration-300 group">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-7 h-7 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-[#0a2540] mb-2">Argon Gas Fill</h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      We fill the space between the glass panes with Argon gas. Denser than air, it acts as an invisible thermal blanket that traps your expensive AC air inside.
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">100% Virgin Vinyl Frames</h3>
-                <p className="text-gray-600">
-                  Unlike recycled vinyl that yellows and cracks, our frames are made from pure virgin vinyl. They never need painting and won&apos;t warp in the Dallas summer.
-                </p>
-              </div>
-            </div>
 
-            {/* Feature 4 */}
-            <div className="flex gap-4 p-6 bg-slate-50 rounded-xl">
-              <div className="flex-shrink-0 w-12 h-12 bg-gray-200 rounded-xl flex items-center justify-center">
-                <Volume2 className="w-6 h-6 text-gray-600" />
+              {/* CARD 3 - Virgin Vinyl */}
+              <div className="bg-white border-2 border-gray-200 rounded-xl p-6 lg:p-8 hover:border-[#049BF2] hover:shadow-lg transition-all duration-300 group">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-purple-100 to-violet-100 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-7 h-7 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-[#0a2540] mb-2">100% Virgin Vinyl</h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      Unlike &ldquo;recycled&rdquo; vinyl that yellows and cracks over time, our frames are made from pure, virgin vinyl. They never need painting and won&apos;t warp in the Dallas summer.
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">Double-Strength Glass</h3>
-                <p className="text-gray-600">
-                  Standard windows use single-strength glass. We upgrade you to double-strength, providing a stronger barrier against hail, wind, and neighborhood noise.
-                </p>
+
+              {/* CARD 4 - Double-Strength Glass */}
+              <div className="bg-white border-2 border-gray-200 rounded-xl p-6 lg:p-8 hover:border-[#049BF2] hover:shadow-lg transition-all duration-300 group">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-gray-100 to-slate-200 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-7 h-7 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
+                    </svg>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-[#0a2540] mb-2">Double-Strength Glass</h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      Standard windows use single-strength glass. We upgrade you to double-strength, providing a significantly stronger barrier against hail, wind, and neighborhood noise.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -719,6 +749,9 @@ export default function WindowReplacementPage() {
           </div>
         </div>
       </section>
+
+      {/* ImageBridge - above FAQ */}
+      <ImageBridge />
 
       {/* FAQ Section */}
       <ServiceFAQ serviceName="Window Replacement" />

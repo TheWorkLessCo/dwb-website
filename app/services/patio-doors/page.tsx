@@ -5,6 +5,7 @@ import { Star, Check, Shield, Home, Wrench, Clock, DoorClosed, Wind, Lock, Quote
 import Image from "next/image"
 import { WarrantyCard } from "@/components/warranty-card"
 import ServiceFAQ from "@/components/ServiceFAQ"
+import ImageBridge from "@/components/ImageBridge"
 import { ResultsBar } from "@/components/results-bar"
 import { CTA_CONFIG } from "@/lib/cta"
 
@@ -129,7 +130,7 @@ export default function PatioDoorPage() {
       {/* Hero Section */}
       <section
         className="relative bg-cover bg-center bg-no-repeat min-h-[600px] py-12 lg:py-20"
-        style={{ backgroundImage: "url('/images/patio-doors-hero-bg.jpg')" }}
+        style={{ backgroundImage: "url('https://dallaswindowbutler.b-cdn.net/Endure-4-Lite-Patio-Door-in-White-with-Internal-Blinds_DSC8668-HDR-Edit2.jpg')" }}
       >
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-black/35" />
@@ -618,6 +619,9 @@ export default function PatioDoorPage() {
           </div>
         </div>
       </section>
+
+      {/* ImageBridge - above FAQ */}
+      <ImageBridge />
 
       {/* FAQ Section */}
       <ServiceFAQ serviceName="Patio Doors" />

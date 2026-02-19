@@ -5,6 +5,7 @@ import { Star, Shield, Award, Clock, Sun, Smartphone, Check, Quote, Bug, Thermom
 import Image from "next/image"
 import { WarrantyCard } from "@/components/warranty-card"
 import ServiceFAQ from "@/components/ServiceFAQ"
+import ImageBridge from "@/components/ImageBridge"
 import { ResultsBar } from "@/components/results-bar"
 import { CTA_CONFIG } from "@/lib/cta"
 
@@ -539,6 +540,9 @@ export default function MotorizedPatioShadesPage() {
           </div>
         </div>
       </section>
+
+      {/* ImageBridge - above FAQ */}
+      <ImageBridge />
 
       {/* FAQ Section */}
       <ServiceFAQ serviceName="Motorized Patio Shades" />

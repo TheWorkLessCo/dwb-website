@@ -185,16 +185,27 @@ export default function HomePage() {
           </section>
 
           {/* 4. Solution/Mentor Section */}
-          <section className="py-20 bg-[#f8f9fa]">
-            <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <section className="py-20 relative overflow-hidden">
+            {/* Background Image */}
+            <div className="absolute inset-0">
+              <Image
+                src="https://dallaswindowbutler.b-cdn.net/endure-dh-windows-in-textured-matte-coal-black-with-internal-grids-endure-cover-1-m5KwDyZ8MBiyvDEW.webp"
+                alt=""
+                fill
+                className="object-cover"
+                priority={false}
+              />
+              <div className="absolute inset-0 bg-black/50" />
+            </div>
+            <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
               <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
                 {/* Right Column (Mobile: Top) - Image */}
                 <div className="w-full lg:w-1/2 order-1 lg:order-2">
                   <div className="relative">
                     <div className="aspect-[4/5] relative rounded-2xl lg:rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white">
                       <Image
-                        src="/images/owner-portrait.jpg"
-                        alt="Dallas Window Butler team member in branded shirt"
+                        src="https://dallaswindowbutler.b-cdn.net/meetus.png"
+                        alt="Dallas Window Butler team"
                         fill
                         className="object-cover"
                         sizes="(max-width: 768px) 100vw, 50vw"
@@ -222,23 +233,23 @@ export default function HomePage() {
                     <span className="inline-block text-[#049BF2] font-bold text-sm tracking-widest uppercase">
                       MEET DALLAS WINDOW BUTLER
                     </span>
-                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
                       You Deserve Respect, Not a Sales Pitch.
                     </h2>
                   </div>
 
-                  <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
+                  <div className="space-y-6 text-lg text-gray-100 leading-relaxed">
                     <p>
-                      We started Dallas Window Butler because we watched DFW homeowners get treated like transactions by the big guys—just another number on a quota sheet. You shouldn&apos;t have to fight off a <strong className="font-semibold text-gray-900">high-pressure closer</strong> just to get a fair price on your own home.
+                      We started Dallas Window Butler because we watched DFW homeowners get treated like transactions by the big guys—just another number on a quota sheet. You shouldn&apos;t have to fight off a <strong className="font-semibold text-white">high-pressure closer</strong> just to get a fair price on your own home.
                     </p>
                     <p>
-                      That&apos;s why we operate as the <strong className="font-semibold text-gray-900">Window Butler</strong>. We bring a white-glove standard to construction. From the first step inside your home to the final walkthrough, we treat your property the way a butler would—with precision, respect, and care.
+                      That&apos;s why we operate as the <strong className="font-semibold text-white">Window Butler</strong>. We bring a white-glove standard to construction. From the first step inside your home to the final walkthrough, we treat your property the way a butler would—with precision, respect, and care.
                     </p>
                     <p>
-                      But premium service shouldn&apos;t require a premium budget. By eliminating commissioned salespeople, we deliver <strong className="font-semibold text-gray-900">distributor-priced windows</strong> and glass with craftsman-grade installation. You pay for the materials and the labor—not the bloat.
+                      But premium service shouldn&apos;t require a premium budget. By eliminating commissioned salespeople, we deliver <strong className="font-semibold text-white">distributor-priced windows</strong> and glass with craftsman-grade installation. You pay for the materials and the labor—not the bloat.
                     </p>
                     <p>
-                      And because a window is only as good as the install, we back every job with a <strong className="font-semibold text-gray-900">Lifetime Warranty</strong> and our exclusive <strong className="font-semibold text-gray-900">Leak-Free Extended Service Agreement</strong>. Premium quality. No premium price tag. That&apos;s the standard.
+                      And because a window is only as good as the install, we back every job with a <strong className="font-semibold text-white">Lifetime Warranty</strong> and our exclusive <strong className="font-semibold text-white">Leak-Free Extended Service Agreement</strong>. Premium quality. No premium price tag. That&apos;s the standard.
                     </p>
                   </div>
 
@@ -254,52 +265,61 @@ export default function HomePage() {
           <TransformationFramework />
 
           {/* 6. Benefits Section */}
-          <section className="py-20 bg-white">
-            <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <div className="text-center mb-16">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
-                  Experience The &quot;White Glove&quot; Difference.
-                </h2>
+          <section className="py-20 relative" style={{ backgroundImage: 'url(https://dallaswindowbutler.b-cdn.net/White%20Endure%20Mulled%20Double%20Hung%20Windows.jpg)', backgroundAttachment: 'fixed', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+            <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+              {/* Heading Card */}
+              <div className="text-center mb-12">
+                <div className="inline-block bg-white/70 backdrop-blur-md rounded-2xl px-8 py-6 shadow-xl">
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
+                    Experience The &quot;White Glove&quot; Difference.
+                  </h2>
+                </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {/* CARD 1 - The Financial Win */}
-                <div className="group flex flex-col items-center text-center p-8 rounded-2xl transition-all duration-300 hover:-translate-y-2">
-                  <div className="w-16 h-16 bg-green-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-green-100 transition-colors">
-                    <DollarSign className="w-8 h-8 text-green-600" />
+                <div className="group bg-white/70 backdrop-blur-md rounded-2xl p-8 shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="w-16 h-16 bg-green-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-green-100 transition-colors">
+                      <DollarSign className="w-8 h-8 text-green-600" />
+                    </div>
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
+                      Stop Overpaying Your Electric Bill.
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      Stop cooling the neighborhood. Our multi-chamber vinyl frames and Low-E glass trap the cool air inside, often lowering summer energy bills by up to 30%.
+                    </p>
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
-                    Stop Overpaying Your Electric Bill.
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Stop cooling the neighborhood. Our multi-chamber vinyl frames and Low-E glass trap the cool air inside, often lowering summer energy bills by up to 30%.
-                  </p>
                 </div>
 
                 {/* CARD 2 - The 'Butler' Win */}
-                <div className="group flex flex-col items-center text-center p-8 rounded-2xl transition-all duration-300 hover:-translate-y-2">
-                  <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-blue-100 transition-colors">
-                    <Sparkles className="w-8 h-8 text-blue-600" />
+                <div className="group bg-white/70 backdrop-blur-md rounded-2xl p-8 shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-blue-100 transition-colors">
+                      <Sparkles className="w-8 h-8 text-blue-600" />
+                    </div>
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
+                      Forget The Construction Mess.
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      We didn&apos;t name ourselves &quot;Butler&quot; for nothing. We cover your furniture, protect your floors, and vacuum every speck of dust. Your home will be cleaner than we found it.
+                    </p>
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
-                    Forget The Construction Mess.
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    We didn&apos;t name ourselves &quot;Butler&quot; for nothing. We cover your furniture, protect your floors, and vacuum every speck of dust. Your home will be cleaner than we found it.
-                  </p>
                 </div>
 
                 {/* CARD 3 - The Lifestyle Win */}
-                <div className="group flex flex-col items-center text-center p-8 rounded-2xl transition-all duration-300 hover:-translate-y-2">
-                  <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-slate-100 transition-colors">
-                    <VolumeX className="w-8 h-8 text-slate-600" />
+                <div className="group bg-white/70 backdrop-blur-md rounded-2xl p-8 shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-slate-100 transition-colors">
+                      <VolumeX className="w-8 h-8 text-slate-600" />
+                    </div>
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
+                      Finally, Peace &amp; Quiet.
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      Mute the traffic, the barking dogs, and the lawnmowers. Our double-strength insulated glass creates a sound barrier so you can finally enjoy a tranquil home.
+                    </p>
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
-                    Finally, Peace &amp; Quiet.
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Mute the traffic, the barking dogs, and the lawnmowers. Our double-strength insulated glass creates a sound barrier so you can finally enjoy a tranquil home.
-                  </p>
                 </div>
               </div>
             </div>
@@ -485,20 +505,32 @@ export default function HomePage() {
           </section>
 
           {/* 8. The Features/Specs Section - "Engineered For Texas Heat" */}
-          <section className="py-20 bg-white">
-            <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <section className="py-20 bg-[#049bf2]">
+            <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               {/* Section Headlines */}
-              <div className="text-center mb-16">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
                   Engineered Specifically For The Texas Heat.
                 </h2>
-                <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+                <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto">
                   We don&apos;t just install windows. We install high-performance thermal barriers.
                 </p>
               </div>
 
-              {/* 2x2 Feature Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+              {/* Horizontal Layout: SHGC Image + 2x2 Feature Grid */}
+              <div className="flex flex-col lg:flex-row gap-8">
+                {/* SHGC Diagram - Left Side */}
+                <div className="lg:w-2/5 relative rounded-xl overflow-hidden shadow-lg min-h-[300px] lg:min-h-0">
+                  <Image
+                    src="https://dallaswindowbutler.b-cdn.net/Solar%20Heat%20Gain%20Coefficient%20(SHGC).jpg"
+                    alt="Solar Heat Gain Coefficient (SHGC) diagram showing how energy-efficient windows reduce heat transfer"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+
+                {/* 2x2 Feature Grid - Right Side */}
+                <div className="lg:w-3/5 grid grid-cols-1 md:grid-cols-2 gap-6">
 
                 {/* CARD 1 - The Heat Shield */}
                 <div className="bg-white border-2 border-gray-200 rounded-xl p-6 lg:p-8 hover:border-[#049BF2] hover:shadow-lg transition-all duration-300 group">
@@ -569,6 +601,7 @@ export default function HomePage() {
                   </div>
                 </div>
 
+                </div>
               </div>
             </div>
           </section>
